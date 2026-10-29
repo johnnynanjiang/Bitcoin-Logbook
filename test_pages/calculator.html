@@ -1,0 +1,374 @@
+<title>BTC 短线交易 2026</title>
+<meta name="description" content="Interactive version of the BTC short-term trading sheet: every formula recalculates live as you edit trades or the BTC price.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Layout: price bar → summary ledger (sheet rows 23–28) → per-platform subtotals (row 14) → editable trade grid. Tokens shared with index.html. */
+:root {
+  color-scheme: light;
+  --bg: #fcfcfb;
+  --surface: #ffffff;
+  --surface-2: #f4f3f0;
+  --calc: #fbf6e9;            /* tint for formula cells */
+  --border: #e4e2dd;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --text-3: #7a7974;
+  --accent: #f2a900;
+  --accent-ink: #8a5d00;
+  --buy: #2a78d6;
+  --sell: #eb6834;
+  --good: #1a7f37;
+  --bad: #c62828;
+  --focus: #2a78d6;
+  --sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #131312; --surface: #1a1a19; --surface-2: #232321; --calc: #262116;
+    --border: #2f2f2c; --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
+    --accent: #f7b733; --accent-ink: #f7c55c; --buy: #3987e5; --sell: #d95926;
+    --good: #4cc26b; --bad: #ef6b6b; --focus: #3987e5;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #131312; --surface: #1a1a19; --surface-2: #232321; --calc: #262116;
+  --border: #2f2f2c; --text: #ffffff; --text-2: #c3c2b7; --text-3: #8f8e86;
+  --accent: #f7b733; --accent-ink: #f7c55c; --buy: #3987e5; --sell: #d95926;
+  --good: #4cc26b; --bad: #ef6b6b; --focus: #3987e5;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--text); font: 14px/1.5 var(--sans); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-inline: 16px; padding-block: 28px 64px; display: grid; gap: 28px; }
+.num, input.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+h1 { font-size: 26px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-2); margin: 0 0 10px; font-weight: 600; }
+.sub { color: var(--text-2); margin: 6px 0 0; max-width: 68ch; }
+header { display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: end; justify-content: space-between; }
+.bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button, .btn { font: 500 13px var(--sans); color: var(--text); background: var(--surface); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; cursor: pointer; }
+button:hover { border-color: var(--text-3); }
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 2px solid var(--focus); outline-offset: 1px; }
+button.primary { background: var(--text); color: var(--bg); border-color: var(--text); }
+label.toggle { display: inline-flex; gap: 6px; align-items: center; color: var(--text-2); cursor: pointer; user-select: none; }
+
+.price { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; }
+.price .lbl { font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: 0.06em; }
+.price input { width: 150px; font-size: 18px; font-weight: 500; padding: 4px 8px; border: 1px solid var(--border); border-radius: 6px; background: var(--calc); color: var(--text); }
+.price .status { color: var(--text-3); font-size: 12px; min-width: 0; }
+.cellref { font: 500 11px var(--mono); color: var(--accent-ink); background: var(--calc); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
+
+.ledger { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.tile { background: var(--surface); padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.tile .k { display: flex; gap: 8px; align-items: center; justify-content: space-between; color: var(--text-2); font-size: 12.5px; }
+.tile .v { font: 500 21px var(--mono); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.tile.key { background: var(--calc); }
+.f { font: 12px var(--mono); color: var(--text-3); overflow-wrap: anywhere; }
+.f[hidden] { display: none !important; }
+.pos { color: var(--good); } .neg { color: var(--bad); }
+.foot { font-size: 12px; color: var(--text-3); margin: 8px 0 0; }
+
+.plats { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 12px; }
+.plat { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; display: grid; gap: 8px; min-width: 0; }
+.plat h3 { margin: 0; font-size: 14px; display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+.plat dl { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; }
+.plat dt { color: var(--text-2); font-size: 12.5px; }
+.plat dd { margin: 0; text-align: right; }
+
+.tablebox { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; min-width: 1180px; font-size: 13px; }
+th, td { border-bottom: 1px solid var(--border); padding: 0; text-align: left; vertical-align: top; }
+th { background: var(--surface-2); font-weight: 600; font-size: 11.5px; color: var(--text-2); padding: 8px 8px; white-space: nowrap; position: sticky; top: 0; }
+th .col { font: 500 10px var(--mono); color: var(--text-3); display: block; }
+th.fx, td.fx { background: var(--calc); }
+th.fx .col { color: var(--accent-ink); }
+td input, td select { width: 100%; border: 0; background: transparent; color: var(--text); font: inherit; padding: 8px; min-width: 0; }
+td input.num { text-align: right; font-size: 12.5px; }
+td input:hover, td select:hover { background: var(--surface-2); }
+td.fx .out { display: block; padding: 8px; text-align: right; font: 12.5px var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.fx .out.derived { font-style: italic; }
+td .fl { display: block; padding: 0 8px 6px; text-align: right; }
+tr.sell td:first-child { box-shadow: inset 3px 0 0 var(--sell); }
+tr.buy td:first-child { box-shadow: inset 3px 0 0 var(--buy); }
+.notebtn { border: 0; background: transparent; color: var(--text-2); padding: 8px; text-align: left; width: 100%; max-width: 260px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; border-radius: 0; font-size: 12.5px; }
+.notebtn.empty { color: var(--text-3); }
+tr.noterow td { background: var(--surface-2); padding: 8px 10px; }
+tr.noterow textarea { width: 100%; min-height: 120px; font: 12.5px/1.5 var(--mono); background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 8px; resize: vertical; }
+.del { border: 0; background: transparent; color: var(--text-3); padding: 8px 10px; font-size: 15px; line-height: 1; }
+.del:hover { color: var(--bad); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 12px; color: var(--text-2); margin: 10px 0 0; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; vertical-align: -1px; margin-right: 5px; }
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--text); color: var(--bg); padding: 8px 14px; border-radius: 6px; font-size: 13px; }
+@media (max-width: 520px) { h1 { font-size: 22px; } .tile .v { font-size: 18px; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <h1>BTC 短线交易 2026</h1>
+      <p class="sub">Every formula from the Google Sheet, recalculated live. Edit any trade, add a row or change the BTC price, and the totals update.</p>
+    </div>
+    <div class="bar">
+      <label class="toggle"><input type="checkbox" id="showF"> Show formulas</label>
+      <button id="copyCsv" type="button">Copy as CSV</button>
+      <button id="reset" type="button">Reset to sheet data</button>
+    </div>
+  </header>
+
+  <section class="price" aria-label="Current BTC price">
+    <span class="lbl">Current BTC price</span>
+    <span class="cellref">E26</span>
+    <input id="price" class="num" type="text" inputmode="decimal" aria-label="Current BTC price in USD">
+    <button id="fetchPrice" type="button">Fetch live price</button>
+    <span class="status" id="priceStatus"></span>
+    <span class="f" data-f hidden>=GOOGLEFINANCE("CURRENCY:BTCUSD"), falls back to 81,340.52</span>
+  </section>
+
+  <section>
+    <h2>Summary</h2>
+    <div class="ledger" id="ledger"></div>
+    <p class="foot" id="j25note" hidden>J25 is a blank cell in the sheet, so it counts as 0 in Current net profit.</p>
+  </section>
+
+  <section>
+    <h2>Platform subtotals</h2>
+    <div class="plats" id="plats"></div>
+    <p class="foot">In the sheet, row 14 calculates these for NH Binance only (H14, M14, J14). The page applies the same formulas to every platform.</p>
+  </section>
+
+  <section>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:end;margin-bottom:10px">
+      <h2 style="margin:0">Trades</h2>
+      <button class="primary" id="addRow" type="button">+ Add trade</button>
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr id="thead"></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--buy)"></i>Buy (USDT → BTC)</span>
+      <span><i class="sw" style="background:var(--sell)"></i>Sell (BTC → USD)</span>
+      <span><i class="sw" style="background:var(--calc);border:1px solid var(--border)"></i>Calculated column</span>
+      <span><i>Italic</i> pre-balance: blank in the sheet, so it uses <span class="num">=O − F</span> (as in N22)</span>
+    </div>
+  </section>
+</div>
+<div class="toast" id="toast" hidden></div>
+
+<script>
+const SHEET = [{"date": "2026-08-21", "amount": 0.0, "from": "BTC", "to": "USD", "price": 75380.0, "theory": -0.023, "plat": -0.023, "fee": 0.0, "pre": 2.03256953, "post": 2.00956953, "platform": "NH Binance", "notes": "Successful\n0.023 BTC\nYou received\n1,726.71106 USDT\nRate\n1 USDT = 0.0000133201 BTC\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 USDT"}, {"date": "2026-08-20", "amount": 0.0, "from": "BTC", "to": "USD", "price": 69328.0, "theory": -0.0076, "plat": -0.0076, "fee": 0.0, "pre": 2.04016953, "post": 2.03256953, "platform": "NH Binance", "notes": "Successful\n0.0076 BTC\nYou received\n526.47421769 USDT\nRate\n1 USDT = 0.0000144357 BTC\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 USDT"}, {"date": "2026-07-22", "amount": 0.0, "from": "BTC", "to": "USD", "price": 65846.0, "theory": -0.015, "plat": -0.015, "fee": 0.0, "pre": 2.05516953, "post": 2.04016953, "platform": "NH Binance", "notes": "Successful\n0.015 BTC\nYou received\n986.4558145 USDT\nRate\n1 USDT = 0.000015206 BTC\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 USDT\n\nMoved to Longhua's CoinSpot and exchanged to AUD$1400.00 (2026-07-25)"}, {"date": "2026-06-30", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 58400.0, "theory": 0.017, "plat": 0.0169, "fee": 0.0, "pre": 2.03820096, "post": 2.05516953, "platform": "NH Binance", "notes": "Successful\n1,000 USDT\nYou received\n0.01696857 BTC\nRate\n1 BTC = 58,932.5 USDT\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 BTC"}, {"date": "2026-06-26", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 59337.0, "theory": 0.017, "plat": 0.01673132, "fee": 0.0, "pre": 2.02146964, "post": 2.03820096, "platform": "NH Binance", "notes": "Successful\n1,000 USDT\nYou received\n0.01673132 BTC\nRate\n1 BTC = 59,768.1 USDT\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 BTC"}, {"date": "2026-06-25", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 60859.0, "theory": 0.016, "plat": 0.01634081, "fee": 0.0, "pre": 2.00512883, "post": 2.02146964, "platform": "NH Binance", "notes": "Successful\n1,000 USDT\nYou received\n0.01634081 BTC\nRate\n1 BTC = 61,196.5 USDT\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 BTC"}, {"date": "2026-06-10", "amount": 1500.0, "from": "USDT", "to": "BTC", "price": 61450.0, "theory": 0.024, "plat": 0.02434094, "fee": 0.0, "pre": 1.98078789, "post": 2.00512883, "platform": "NH Binance", "notes": "1,500 USDT\nYou received\n0.02434094 BTC\nRate\n1 BTC = 61,624.5 USDT\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 BTC"}, {"date": "2026-06-07", "amount": 2000.0, "from": "USDT", "to": "BTC", "price": 62348.0, "theory": 0.032, "plat": 0.03193773, "fee": 0.0, "pre": 1.94885016, "post": 1.98078789, "platform": "NH Binance", "notes": "2,000 USDT\nYou received\n0.03193773 BTC\nRate\n1 BTC = 62,621.8 USDT\nPayment Method\nSpot wallet + Funding wallet\nTransaction Fees\n0 BTC"}, {"date": "2026-06-06", "amount": 3000.0, "from": "USDT", "to": "BTC", "price": 60723.0, "theory": 0.049, "plat": 0.04918776, "fee": 0.0, "pre": 1.8996624, "post": 1.94885016, "platform": "NH Binance", "notes": "3,000 USDT 0.04918776 BTC\n\n1 BTC = 60,990.8 USDT\n\n0.04720399 + 0.0318 + 0.04919 of total 1.94885016 BTC belongs to Longhua\nThe rest belongs to Nan Hua"}, {"date": "2026-06-05", "amount": 2000.0, "from": "USDT", "to": "BTC", "price": 62711.0, "theory": 0.032, "plat": 0.03179, "fee": 0.0, "pre": 1.86786834, "post": 1.8996624, "platform": "NH Binance", "notes": "Google price 62,711\n2,000 USDT 0.032 BTC\n\nBinance price 1 BTC = 62,899.4 USDT\n2,000 USDT 0.03179406 BTC\n\n0.04720399 + 0.0318 of total 1.8996624 BTC belongs to Longhua\nThe rest belongs to Nan Hua"}, {"date": "2026-06-04", "amount": 3000.0, "from": "USDT", "to": "BTC", "price": 63529.0, "theory": 0.047, "plat": 0.04720399, "fee": 0.0, "pre": 1.82066923, "post": 1.86786834, "platform": "NH Binance", "notes": "0.04720399 of 1.86786834 BTC belongs to Longhua\nThe rest belongs to Nan Hua"}, {"date": "2026-06-04", "amount": null, "from": null, "to": null, "price": null, "theory": null, "plat": null, "fee": null, "pre": "Total for above", "post": null, "platform": "", "notes": "转换金额\n2.97114 ETH\n利率\n1 ETH = 1,742.7883 USDT\nKraken手续费\n\n51.2681 USDT\n您收到\n5,126.8065 USDT\n\nShould get 5273 USDT at Google price\n\nSent all USDT 5120 from Kraken to CoinSpot\nSent all USDT 16218 from CoinSpot to Nan Hua Binance (all balance 16,223 USDT belongs to Longhua) to buy BTC for 0 fee"}, {"date": "2026-06-04", "amount": 3000.0, "from": "USDT", "to": "BTC", "price": 62416.0, "theory": 0.048, "plat": 0.0470151, "fee": 30.0, "pre": 2.99927439, "post": 3.04628949, "platform": "CoinSpot", "notes": "Google price 62,416\n\n3000 USDT\nUSDT@ 0.00001583 BTC per USDT\nCoinSpot Fee 0.00047490 BTC\nTotal 0.04701510 BTC"}, {"date": "2026-06-04", "amount": null, "from": null, "to": null, "price": null, "theory": null, "plat": null, "fee": null, "pre": null, "post": null, "platform": "", "notes": "Sold all ETH at Google price 1,754\n\n7.98758243 ETH\nETH@ 1724.33 USDT per ETH\nCoinSpot Fee 137.74814204 USDT\nTotal 13635.47986949 USDT"}, {"date": "2026-06-03", "amount": 1500.0, "from": "USDT", "to": "BTC", "price": 67273.0, "theory": 0.022, "plat": 0.0218295, "fee": 15.0, "pre": 2.97744489, "post": 2.99927439, "platform": "CoinSpot", "notes": "Google price 67,273.22\n\n1500 USDT\nUSDT@ 0.00001470 BTC per USDT\nCoinSpot Fee 0.00022050 BTC\nTotal 0.02182950 BTC\n\nBefore 2.97744489"}, {"date": "2026-05-13", "amount": 0.0, "from": "BTC", "to": "USD", "price": 81085.0, "theory": 0.0084, "plat": -0.0084, "fee": 10.0, "pre": 2.98584489, "post": 2.97744489, "platform": "CoinSpot", "notes": "Sold BTC 0.0084 for USD$680.00 (AUD$939 on Google)\n\nAUD$945 (on CoinSpot) = Fee 9.46 AUD + Actually got 936.12 AUD\n\nWithdrew AUD$936 to Nan Jiang's Westpac, and then sent AUD$468 (half) to Longhua's Westpac"}, {"date": "2026-04-02", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 65997.0, "theory": 0.015, "plat": 0.0148599, "fee": 30.0, "pre": 2.97098499, "post": 2.98584489, "platform": "CoinSpot", "notes": ""}, {"date": "2026-03-31", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 66720.0, "theory": 0.015, "plat": 0.0146718, "fee": 30.0, "pre": 2.95631319, "post": 2.97098499, "platform": "CoinSpot", "notes": "\"1000 USDT\nUSDT@ 0.00001482 BTC per USDT\nCoinSpot Fee 0.00014820 BTC\nTotal 0.01467180 BTC\""}, {"date": "2026-03-29", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 66740.0, "theory": 0.015, "plat": 0.0146, "fee": 30.0, "pre": 2.94164139, "post": 2.95631319, "platform": "CoinSpot", "notes": ""}, {"date": "2026-02-28", "amount": 1000.0, "from": "USDT", "to": "BTC", "price": 65015.0, "theory": 0.015, "plat": 0.015206, "fee": 25.0, "pre": null, "post": 2.94164139, "platform": "CoinSpot", "notes": ""}];
+const SHEET_PRICE = 81340.52;
+const KEY = 'btc-ledger-2026-v1';
+
+let rows, price;
+try { const s = JSON.parse(localStorage.getItem(KEY) || 'null'); if (s) { rows = s.rows; price = s.price; } } catch (e) {}
+if (!rows) rows = structuredClone(SHEET);
+if (price == null) price = SHEET_PRICE;
+function save() { try { localStorage.setItem(KEY, JSON.stringify({ rows, price })); } catch (e) {} }
+
+// ---------- number helpers ----------
+const n = v => { if (v === null || v === undefined || v === '') return null; const x = typeof v === 'number' ? v : parseFloat(String(v).replace(/[$,\s]/g, '')); return Number.isFinite(x) ? x : null; };
+const usd = v => v == null || !Number.isFinite(v) ? '—' : (v < 0 ? '-$' : '$') + Math.abs(v).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const btc = (v, d = 8) => v == null || !Number.isFinite(v) ? '—' : v.toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const sign = v => v > 0 ? 'pos' : v < 0 ? 'neg' : '';
+
+// ---------- the sheet's formulas ----------
+function calcRow(r) {
+  const B = n(r.amount), E = n(r.price), F = n(r.theory), G = n(r.plat), O = n(r.post);
+  let N = n(r.pre), derived = false;
+  if (N == null && O != null && F != null) { N = O - F; derived = true; }           // N22 =O22-F22
+  const I = (r.from || '').toUpperCase() === 'BTC' && G != null && E != null ? G * E : null; // I =G*E (sell rows)
+  const M = O != null && N != null ? O - N : null;                                   // M =O-N
+  return { B, E, F, G, L: n(r.fee), N, O, I, M, derived };
+}
+function calcAll() {
+  const c = rows.map(calcRow);
+  const sum = k => c.reduce((a, x) => a + (x[k] ?? 0), 0);
+  const B25 = sum('B');                                         // =SUM(B2:B22)
+  const G25 = sum('G');                                         // =SUM(G2:G22)
+  const G26 = c.reduce((a, x) => a + (x.G > 0 ? x.G : 0), 0);   // =SUMIF(G2:G22,">0")
+  const E25 = G26 ? B25 / G26 : null;                           // =B25/(G26)
+  const E26 = price;
+  const B26 = G25 * E26;                                        // =G25*E26
+  const L23 = sum('L');                                         // =SUM(L2:L22)
+  const I28 = sum('I');                                         // =SUM(I2:I22)
+  const J25 = 0;                                                // blank cell
+  const B28 = B26 - B25 - J25 - L23;                            // =B26-B25-J25-L23
+  const B27 = B26 + B28 - I28;                                  // =B26+B28-I28
+  const plats = {};
+  rows.forEach((r, i) => {
+    const p = (r.platform || '').trim(); if (!p) return;
+    const t = plats[p] ??= { cost: 0, net: 0, fees: 0, count: 0 };
+    t.cost += c[i].B ?? 0; t.net += c[i].M ?? 0; t.fees += c[i].L ?? 0; if (c[i].B != null || c[i].G != null) t.count++;
+  });
+  for (const t of Object.values(plats)) t.avg = t.net ? t.cost / t.net : null; // J14 =H14/M14
+  return { c, B25, G25, G26, E25, E26, B26, L23, I28, B28, B27, plats };
+}
+
+// ---------- summary ----------
+const TILES = [
+  ['B25', 'Original cost', 'B25', usd, '=SUM(B2:B22)'],
+  ['G26', 'Total BTC purchased', 'G26', btc, '=SUMIF(G2:G22, ">0")'],
+  ['E25', 'Avg purchase price', 'E25', usd, '=B25 / G26'],
+  ['G25', 'Current BTC balance', 'G25', btc, '=SUM(G2:G22)'],
+  ['B26', 'Current value', 'B26', usd, '=G25 × E26'],
+  ['L23', 'Total fees', 'L23', usd, '=SUM(L2:L22)'],
+  ['I28', 'Net profit taken', 'I28', usd, '=SUM(I2:I22)'],
+  ['B28', 'Current net profit', 'B28', usd, '=B26 − B25 − J25 − L23', true],
+  ['B27', 'Total value to date (incl. net profit taken)', 'B27', usd, '=B26 + B28 − I28', true],
+];
+function renderLedger() {
+  document.getElementById('ledger').innerHTML = TILES.map(([k, label, ref, , f, key]) =>
+    `<div class="tile${key ? ' key' : ''}"><div class="k"><span>${label}</span><span class="cellref">${ref}</span></div><div class="v" id="t-${k}"></div><div class="f" data-f hidden>${f}</div></div>`).join('');
+}
+
+// ---------- table ----------
+const COLS = [
+  { k: 'date', col: 'A', h: 'Date', w: 118, type: 'date' },
+  { k: 'amount', col: 'B', h: 'Amount', w: 104, num: 1 },
+  { k: 'from', col: 'C', h: 'From', w: 70 },
+  { k: 'to', col: 'D', h: 'To', w: 64 },
+  { k: 'price', col: 'E', h: 'At price', w: 110, num: 1 },
+  { k: 'theory', col: 'F', h: 'BTC in theory', w: 104, num: 1 },
+  { k: 'plat', col: 'G', h: 'BTC on platform', w: 112, num: 1 },
+  { fx: 'I', col: 'I', h: 'Profit taken', w: 112, f: '=G × E' },
+  { k: 'fee', col: 'L', h: 'Tx fee (USDT)', w: 92, num: 1 },
+  { fx: 'M', col: 'M', h: 'Balance change', w: 112, f: '=O − N' },
+  { k: 'pre', col: 'N', h: 'Pre-order BTC', w: 118, num: 1, fxN: 1 },
+  { k: 'post', col: 'O', h: 'Post-order BTC', w: 118, num: 1 },
+  { k: 'platform', col: 'P', h: 'Platform', w: 112 },
+  { k: 'notes', col: 'Q', h: 'Notes', w: 220 },
+];
+function renderHead() {
+  document.getElementById('thead').innerHTML = COLS.map(c =>
+    `<th class="${c.fx ? 'fx' : ''}" style="min-width:${c.w}px"><span class="col">${c.col}${c.fx ? ' · ƒ' : ''}</span>${c.h}${c.f ? `<span class="f" data-f hidden>${c.f}</span>` : ''}</th>`).join('') + '<th aria-label="Delete"></th>';
+}
+const esc = s => String(s ?? '').replace(/[&<>"]/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]));
+const fmtInput = (k, v) => v == null || v === '' ? '' : (k === 'amount' || k === 'price' || k === 'fee') ? Number(v).toLocaleString('en-US', { maximumFractionDigits: 2 }) : String(v);
+const open = new Set();
+function renderBody() {
+  const tb = document.getElementById('tbody');
+  tb.innerHTML = rows.map((r, i) => {
+    const cells = COLS.map(c => {
+      if (c.fx) return `<td class="fx"><span class="out" id="${c.fx}-${i}"></span></td>`;
+      if (c.k === 'notes') {
+        const first = (r.notes || '').split('\n').find(l => l.trim()) || 'Add note';
+        return `<td><button type="button" class="notebtn${r.notes ? '' : ' empty'}" data-note="${i}" aria-expanded="${open.has(i)}">${esc(first)}</button></td>`;
+      }
+      const ph = c.fxN ? ` placeholder="" id="N-${i}"` : '';
+      return `<td><input id="c-${i}-${c.k}" data-i="${i}" data-k="${c.k}" class="${c.num ? 'num' : ''}" type="${c.type || 'text'}" ${c.num ? 'inputmode="decimal"' : ''} value="${esc(fmtInput(c.k, r[c.k]))}" aria-label="${c.h}, row ${i + 1}"${ph}></td>`;
+    }).join('');
+    const side = (r.from || '').toUpperCase() === 'BTC' ? 'sell' : (r.to || '').toUpperCase() === 'BTC' ? 'buy' : '';
+    let html = `<tr class="${side}" id="row-${i}">${cells}<td><button type="button" class="del" data-del="${i}" aria-label="Delete row ${i + 1}">×</button></td></tr>`;
+    if (open.has(i)) html += `<tr class="noterow"><td colspan="${COLS.length + 1}"><textarea id="note-${i}" data-i="${i}" data-k="notes" aria-label="Notes, row ${i + 1}">${esc(r.notes)}</textarea></td></tr>`;
+    return html;
+  }).join('');
+}
+
+function update() {
+  const R = calcAll();
+  for (const [k, , , fmt] of TILES) {
+    const el = document.getElementById('t-' + k); const v = R[k];
+    el.textContent = fmt(v); el.className = 'v' + (['B28', 'I28'].includes(k) ? ' ' + sign(v) : '');
+  }
+  R.c.forEach((x, i) => {
+    const iEl = document.getElementById('I-' + i), mEl = document.getElementById('M-' + i), nEl = document.getElementById('N-' + i);
+    if (iEl) { iEl.textContent = x.I == null ? '' : usd(x.I); iEl.className = 'out ' + sign(x.I); }
+    if (mEl) { mEl.textContent = x.M == null ? '' : (x.M > 0 ? '+' : '') + btc(x.M); mEl.className = 'out ' + sign(x.M); }
+    if (nEl) nEl.placeholder = x.derived ? btc(x.N) : '';
+    if (nEl) nEl.classList.toggle('derived', x.derived);
+  });
+  document.getElementById('plats').innerHTML = Object.entries(R.plats).map(([p, t]) => `
+    <div class="plat"><h3><span>${esc(p)}</span>${p === 'NH Binance' ? '<span class="cellref">row 14</span>' : ''}</h3>
+      <dl>
+        <dt>Total cost <span class="f" data-f hidden>H14 =SUM(B)</span></dt><dd class="num">${usd(t.cost)}</dd>
+        <dt>Net BTC change <span class="f" data-f hidden>M14 =SUM(M)</span></dt><dd class="num ${sign(t.net)}">${btc(t.net)}</dd>
+        <dt>Avg purchase price <span class="f" data-f hidden>J14 =H14 / M14</span></dt><dd class="num">${usd(t.avg)}</dd>
+        <dt>Fees</dt><dd class="num">${usd(t.fees)}</dd>
+      </dl></div>`).join('');
+  applyF();
+}
+
+// ---------- formula toggle ----------
+function applyF() {
+  const on = document.getElementById('showF').checked;
+  document.querySelectorAll('[data-f]').forEach(el => el.hidden = !on);
+  document.getElementById('j25note').hidden = !on;
+}
+document.getElementById('showF').addEventListener('change', applyF);
+
+// ---------- events ----------
+const tbody = document.getElementById('tbody');
+tbody.addEventListener('input', e => {
+  const { i, k } = e.target.dataset; if (i == null) return;
+  const col = COLS.find(c => c.k === k);
+  rows[i][k] = col && col.num ? (e.target.value.trim() === '' ? null : n(e.target.value)) : e.target.value;
+  if (k === 'from' || k === 'to') {
+    const tr = document.getElementById('row-' + i), f = (rows[i].from || '').toUpperCase(), t = (rows[i].to || '').toUpperCase();
+    tr.className = f === 'BTC' ? 'sell' : t === 'BTC' ? 'buy' : '';
+  }
+  if (k === 'notes') { const b = tbody.querySelector(`[data-note="${i}"]`); if (b) b.textContent = (rows[i].notes || '').split('\n').find(l => l.trim()) || 'Add note'; }
+  save(); update();
+});
+tbody.addEventListener('click', e => {
+  const nb = e.target.closest('[data-note]');
+  if (nb) { const i = +nb.dataset.note; open.has(i) ? open.delete(i) : open.add(i); renderBody(); update(); if (open.has(i)) document.getElementById('note-' + i)?.focus(); return; }
+  const d = e.target.closest('[data-del]');
+  if (d) {
+    const i = +d.dataset.del;
+    if (d.dataset.armed) { rows.splice(i, 1); open.clear(); save(); renderBody(); update(); toast('Row deleted'); }
+    else { d.dataset.armed = '1'; d.textContent = 'Delete?'; d.style.color = 'var(--bad)'; setTimeout(() => { if (d.isConnected) { delete d.dataset.armed; d.textContent = '×'; d.style.color = ''; } }, 2500); }
+  }
+});
+document.getElementById('addRow').addEventListener('click', () => {
+  const last = rows.find(r => n(r.post) != null);
+  rows.unshift({ date: new Date().toISOString().slice(0, 10), amount: null, from: 'USDT', to: 'BTC', price: null, theory: null, plat: null, fee: 0, pre: last ? n(last.post) : null, post: null, platform: last ? last.platform : '', notes: '' });
+  open.clear(); save(); renderBody(); update();
+  document.getElementById('c-0-amount')?.focus();
+});
+let resetArmed = false;
+document.getElementById('reset').addEventListener('click', e => {
+  if (!resetArmed) { resetArmed = true; e.target.textContent = 'Click again to discard edits'; setTimeout(() => { resetArmed = false; e.target.textContent = 'Reset to sheet data'; }, 3000); return; }
+  resetArmed = false; e.target.textContent = 'Reset to sheet data';
+  rows = structuredClone(SHEET); price = SHEET_PRICE; open.clear();
+  try { localStorage.removeItem(KEY); } catch (err) {}
+  priceInput.value = fmtPrice(price); renderBody(); update(); toast('Restored the sheet data');
+});
+
+const priceInput = document.getElementById('price');
+const fmtPrice = v => v.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+priceInput.value = fmtPrice(price);
+priceInput.addEventListener('input', () => { const v = n(priceInput.value); if (v != null) { price = v; save(); update(); setStatus('Manual price'); } });
+priceInput.addEventListener('blur', () => { priceInput.value = fmtPrice(price); });
+const setStatus = s => document.getElementById('priceStatus').textContent = s;
+setStatus(price === SHEET_PRICE ? 'Last value cached in the sheet' : 'Saved price');
+document.getElementById('fetchPrice').addEventListener('click', async () => {
+  setStatus('Fetching…');
+  try {
+    const r = await fetch('https://api.coinbase.com/v2/prices/BTC-USD/spot');
+    const j = await r.json(); const v = n(j?.data?.amount); if (v == null) throw 0;
+    price = v; priceInput.value = fmtPrice(v); save(); update();
+    setStatus('Live from Coinbase · ' + new Date().toLocaleTimeString());
+  } catch (e) {
+    setStatus('Live price is unavailable here. Type the current price into the box instead.');
+  }
+});
+
+document.getElementById('copyCsv').addEventListener('click', () => {
+  const R = calcAll();
+  const head = ['Date', 'Amount', 'From', 'To', 'At price', 'BTC in theory', 'BTC on platform', 'Profit taken', 'Tx fee', 'Balance change', 'Pre-order BTC', 'Post-order BTC', 'Platform', 'Notes'];
+  const q = v => v == null ? '' : /[",\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v);
+  const lines = [head.join(',')].concat(rows.map((r, i) => { const x = R.c[i]; return [r.date, x.B, r.from, r.to, x.E, x.F, x.G, x.I, x.L, x.M, x.N, x.O, r.platform, r.notes].map(q).join(','); }));
+  const text = lines.join('\n');
+  navigator.clipboard.writeText(text).then(() => toast('Copied ' + rows.length + ' rows as CSV'), () => toast('Copy was blocked by the browser'));
+});
+function toast(msg) { const t = document.getElementById('toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast.h); toast.h = setTimeout(() => t.hidden = true, 2200); }
+
+renderLedger(); renderHead(); renderBody(); update();
+</script>

@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buy the Dip, Trim the Rip</title>
+<meta name="description" content="A simple, practical Bitcoin strategy shown through 18 real trades from 2026: buy in small tranches on dips, take small profits on rallies, keep fees near zero.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #fcfcfb;
+  --surface: #ffffff;
+  --surface-2: #f4f3f0;
+  --border: #e4e2dd;
+  --grid: #ecebe7;
+  --text: #0b0b0b;
+  --text-2: #52514e;
+  --text-3: #7a7974;
+  --accent: #f2a900;          /* bitcoin gold, decorative only */
+  --buy: #2a78d6;             /* categorical slot 1 */
+  --sell: #eb6834;            /* categorical slot 2 */
+  --ref: #7a7974;
+  --good: #1a7f37;
+  --bad: #c62828;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #131312;
+    --surface: #1a1a19;
+    --surface-2: #232321;
+    --border: #2f2f2c;
+    --grid: #2a2a28;
+    --text: #ffffff;
+    --text-2: #c3c2b7;
+    --text-3: #8f8e86;
+    --accent: #f7b733;
+    --buy: #3987e5;
+    --sell: #d95926;
+    --ref: #8f8e86;
+    --good: #4cc26b;
+    --bad: #ef6b6b;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #131312;
+  --surface: #1a1a19;
+  --surface-2: #232321;
+  --border: #2f2f2c;
+  --grid: #2a2a28;
+  --text: #ffffff;
+  --text-2: #c3c2b7;
+  --text-3: #8f8e86;
+  --accent: #f7b733;
+  --buy: #3987e5;
+  --sell: #d95926;
+  --ref: #8f8e86;
+  --good: #4cc26b;
+  --bad: #ef6b6b;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.6 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+.mono, .num { font-family: "JetBrains Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+header.hero { padding: 72px 0 40px; border-bottom: 1px solid var(--border); }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); display: flex; align-items: center; gap: 8px; }
+.eyebrow::before { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.05; letter-spacing: -.02em; margin: 16px 0 16px; font-weight: 700; }
+.lede { font-size: clamp(17px, 2.2vw, 20px); color: var(--text-2); max-width: 680px; margin: 0; }
+
+section { padding: 56px 0; border-bottom: 1px solid var(--border); }
+h2 { font-size: clamp(24px, 3.5vw, 32px); letter-spacing: -.01em; margin: 0 0 8px; line-height: 1.2; }
+.sub { color: var(--text-2); margin: 0 0 28px; max-width: 680px; }
+
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 36px; }
+.tile { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px 18px; }
+.tile .label { font-size: 13px; color: var(--text-3); }
+.tile .value { font-size: 26px; font-weight: 600; margin-top: 4px; letter-spacing: -.01em; }
+.tile .note { font-size: 13px; color: var(--text-2); margin-top: 2px; }
+.pos { color: var(--good); }
+.neg { color: var(--bad); }
+
+.rules { display: grid; gap: 14px; counter-reset: rule; }
+.rule { display: grid; grid-template-columns: 44px 1fr; gap: 16px; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.rule::before { counter-increment: rule; content: counter(rule); width: 36px; height: 36px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border); display: grid; place-items: center; font-weight: 600; }
+.rule h3 { margin: 4px 0 6px; font-size: 18px; }
+.rule p { margin: 0; color: var(--text-2); }
+.rule .evidence { margin-top: 10px; font-size: 14px; color: var(--text-2); background: var(--surface-2); border-radius: 8px; padding: 8px 12px; }
+.rule .evidence b { color: var(--text); font-weight: 600; }
+
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.chart-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px 20px; margin-bottom: 8px; }
+.chart-title { font-weight: 600; }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--text-2); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.sw.line { width: 16px; height: 0; border-top: 2px dashed var(--ref); border-radius: 0; }
+.chart { position: relative; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart text { fill: var(--text-3); font-size: 12px; font-family: Inter, system-ui, sans-serif; }
+.chart .gridline { stroke: var(--grid); stroke-width: 1; }
+.chart .avg { stroke: var(--ref); stroke-width: 2; stroke-dasharray: 5 4; }
+.chart .dot { stroke: var(--surface); stroke-width: 2; cursor: pointer; transition: opacity .15s; }
+.chart .dot.buy { fill: var(--buy); }
+.chart .dot.sell { fill: var(--sell); }
+.chart .hit { fill: transparent; cursor: pointer; }
+.chart.hovering .dot:not(.active) { opacity: .35; }
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,.12); white-space: nowrap; opacity: 0; transform: translate(-50%, calc(-100% - 12px)); transition: opacity .1s; z-index: 2; }
+.tip .t-date { color: var(--text-3); font-size: 12px; }
+.tip .t-row { display: flex; justify-content: space-between; gap: 16px; }
+.tip .t-row span:first-child { color: var(--text-2); }
+.caption { font-size: 14px; color: var(--text-2); margin: 12px 0 0; }
+
+.calc { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.slider-row { margin-bottom: 20px; }
+.slider-row label { display: flex; justify-content: space-between; align-items: baseline; font-size: 14px; color: var(--text-2); margin-bottom: 8px; }
+.slider-row label .num { font-size: 22px; color: var(--text); font-weight: 600; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.compare { width: 100%; border-collapse: collapse; font-size: 15px; }
+.compare th, .compare td { text-align: right; padding: 10px 8px; border-bottom: 1px solid var(--border); }
+.compare th:first-child, .compare td:first-child { text-align: left; }
+.compare th { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); }
+.compare tr:last-child td { border-bottom: 0; }
+
+.table-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--surface); }
+table.trades { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 620px; }
+table.trades th, table.trades td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+table.trades th:nth-child(-n+2), table.trades td:nth-child(-n+2) { text-align: left; }
+table.trades thead th { position: sticky; top: 0; background: var(--surface-2); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--text-3); }
+table.trades tbody tr:last-child td { border-bottom: 0; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-weight: 500; }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: currentColor; }
+.pill.buy::before { background: var(--buy); }
+.pill.sell::before { background: var(--sell); }
+
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.two .card h3 { margin: 0 0 8px; font-size: 17px; }
+.two .card p, .two .card li { color: var(--text-2); margin: 0; }
+.two .card ul { margin: 0; padding-left: 18px; }
+.two .card li + li { margin-top: 6px; }
+
+.disclaimer { font-size: 14px; color: var(--text-2); background: var(--surface-2); border-radius: 12px; padding: 20px; }
+.disclaimer strong { color: var(--text); }
+footer { padding: 32px 0 56px; font-size: 13px; color: var(--text-3); }
+
+.theme-toggle { position: absolute; top: 16px; right: 16px; background: var(--surface); border: 1px solid var(--border); color: var(--text-2); border-radius: 999px; padding: 6px 12px; font: inherit; font-size: 13px; cursor: pointer; }
+
+@media (max-width: 760px) {
+  header.hero { padding: 56px 0 32px; }
+  .tiles { grid-template-columns: repeat(2, 1fr); }
+  .calc, .two { grid-template-columns: 1fr; }
+  section { padding: 40px 0; }
+  .rule { grid-template-columns: 1fr; gap: 10px; }
+}
+</style>
+</head>
+<body>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle colour theme">Theme</button>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">A real 2026 trading log</div>
+    <h1>Buy the dip.<br>Trim the rip.</h1>
+    <p class="lede">A simple Bitcoin strategy anyone can follow without charts, bots or leverage: buy in small fixed amounts when the price falls, sell small slices when it rises, and keep fees close to zero. Below are all 18 trades from February to August 2026, with every number shown.</p>
+
+    <div class="tiles" id="tiles"></div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>The playbook in five rules</h2>
+    <p class="sub">Each rule comes straight from what the trading log actually did, not from a backtest.</p>
+    <div class="rules">
+      <div class="rule"><div>
+        <h3>Set a budget, then split it into small tranches</h3>
+        <p>Never go all-in at once. Decide your total budget up front and buy in pieces of roughly 5–15% of it. If the price keeps falling, you still have money left to buy lower.</p>
+        <div class="evidence">A <b>$23,000</b> budget was put in over <b>15 buys</b> of $1,000–$3,000 each, spread across four months.</div>
+      </div></div>
+      <div class="rule"><div>
+        <h3>Buy more when the price is lower</h3>
+        <p>Make your tranches bigger when Bitcoin drops and smaller when it's high. That pulls your average cost down without any need to time the exact bottom.</p>
+        <div class="evidence">Buys of <b>$1,000</b> near $65–67k. When it fell to $60–63k in June, buys grew to <b>$2,000–$3,000</b> a day. <b>$14,500</b> went in during the June dip alone.</div>
+      </div></div>
+      <div class="rule"><div>
+        <h3>Take small profits into strength</h3>
+        <p>When the price is well above your average cost, sell a small slice (a few percent of your stack). You lock in real gains and rebuild cash for the next dip, while keeping most of your Bitcoin.</p>
+        <div class="evidence">Four sells, most just <b>2–7%</b> of holdings, at $65.8k–$81.1k. Together they returned <b>$3,929</b> in cash and kept <b>85%</b> of the BTC bought.</div>
+      </div></div>
+      <div class="rule"><div>
+        <h3>Fees are a guaranteed loss, so cut them</h3>
+        <p>A 2–3% fee on every trade wipes out a big part of a short-term gain. Compare platforms and pay attention to the spread, not only the stated fee.</p>
+        <div class="evidence">The first <b>$8,500</b> went through a broker app and cost <b>$160 in fees (~1.9%)</b>. The next <b>$14,500</b> went through an exchange with zero-fee conversion and cost <b>$0</b>.</div>
+      </div></div>
+      <div class="rule"><div>
+        <h3>Write down every trade</h3>
+        <p>Date, amount, price, BTC received, fee. A simple spreadsheet keeps you honest, shows your real average cost, and stops emotion from making your decisions.</p>
+        <div class="evidence">This whole page is built from that one spreadsheet. See the <a href="#log">full log</a> below.</div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What it looks like on a chart</h2>
+    <p class="sub">Each dot is one trade, placed at its price. Bigger dots mean bigger dollar amounts. Notice how the biggest buys cluster at the lowest prices and every sell sits above the average cost line.</p>
+    <div class="card">
+      <div class="chart-head">
+        <div class="chart-title">Trade price, Feb–Aug 2026 (USD per BTC)</div>
+        <div class="legend">
+          <span><i class="sw" style="background:var(--buy)"></i>Buy</span>
+          <span><i class="sw" style="background:var(--sell)"></i>Sell</span>
+          <span><i class="sw line"></i>Average cost</span>
+        </div>
+      </div>
+      <div class="chart" id="chart"><div class="tip" id="tip"></div></div>
+      <p class="caption">Hover or tap a dot for details. Dot area is scaled to the trade's USD value.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Run the numbers yourself</h2>
+    <p class="sub">Returns depend on the price you value the Bitcoin at. Move the slider to see how this strategy compares with putting all $23,000 in on day one (Feb 28, at $65,015).</p>
+    <div class="card calc">
+      <div>
+        <div class="slider-row">
+          <label for="price">BTC price <span class="num" id="priceOut"></span></label>
+          <input type="range" id="price" min="40000" max="150000" step="1">
+        </div>
+        <p class="caption" style="margin-top:0">Default is <span class="num">$81,317</span>, the price when the log was last updated. Below about <span class="num" id="breakeven"></span> the strategy is at a loss overall.</p>
+      </div>
+      <table class="compare">
+        <thead><tr><th></th><th>This strategy</th><th>All-in day one</th></tr></thead>
+        <tbody>
+          <tr><td>BTC held</td><td class="num" id="cStratBtc"></td><td class="num" id="cLumpBtc"></td></tr>
+          <tr><td>Cash taken out</td><td class="num" id="cStratCash"></td><td class="num">$0</td></tr>
+          <tr><td>Total value</td><td class="num" id="cStratVal"></td><td class="num" id="cLumpVal"></td></tr>
+          <tr><td>Gain / loss</td><td class="num" id="cStratGain"></td><td class="num" id="cLumpGain"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="caption">The point isn't that the strategy always wins. When prices end very high, all-in wins. When they fall, all-in loses the most. The strategy trades a bit of that upside for less regret, cash in hand, and a lower average cost if the price dips.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Honest lessons</h2>
+    <p class="sub">What worked, and what could have gone better.</p>
+    <div class="two">
+      <div class="card">
+        <h3>What worked</h3>
+        <ul>
+          <li>Buying through the June dip ($58–63k) pulled the average cost down to <span class="num">$63,428</span>.</li>
+          <li>Small sells meant there was never a "sold everything too early" moment.</li>
+          <li>Switching platforms cut trading fees to zero for the rest of the year.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>What to improve</h3>
+        <ul>
+          <li>The July sell at <span class="num">$65,846</span> was only ~4% above average cost. A clear rule like "sell only at 15% or more above cost" is better.</li>
+          <li>The early broker-app buys lost ~1.9% to fees before the price had moved at all.</li>
+          <li>Buys in March–April at $66–67k were above the final average. Patience pays.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="log">
+  <div class="wrap">
+    <h2>The full trade log</h2>
+    <p class="sub">All 18 trades, oldest first. BTC amounts are what actually arrived after fees.</p>
+    <div class="table-wrap">
+      <table class="trades">
+        <thead><tr><th>Date</th><th>Side</th><th>USD</th><th>Price</th><th>BTC</th><th>Fee</th><th>Platform</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:0">
+  <div class="wrap">
+    <div class="disclaimer">
+      <strong>Not financial advice.</strong> This page is for education. It shows one person's real trades over about six months, and past results don't predict future returns. Bitcoin is volatile and can fall 50% or more. Only invest money you can afford to lose, and check the tax rules where you live, since every sell can be a taxable event.
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Data: personal trading log, 2026. Values are marked at the BTC price you choose above.</div></footer>
+
+<script>
+// Raw trade log (personal notes removed)
+const TRADES = [
+  ["2026-02-28","buy", 1000, 65015, 0.015206,   25, "Broker app"],
+  ["2026-03-29","buy", 1000, 66740, 0.0146,     30, "Broker app"],
+  ["2026-03-31","buy", 1000, 66720, 0.0146718,  30, "Broker app"],
+  ["2026-04-02","buy", 1000, 65997, 0.0148599,  30, "Broker app"],
+  ["2026-05-13","sell", 681.11, 81085, 0.0084,  10, "Broker app"],
+  ["2026-06-03","buy", 1500, 67273, 0.0218295,  15, "Broker app"],
+  ["2026-06-04","buy", 3000, 62416, 0.0470151,  30, "Broker app"],
+  ["2026-06-04","buy", 3000, 63529, 0.04720399,  0, "Exchange"],
+  ["2026-06-05","buy", 2000, 62711, 0.03179,     0, "Exchange"],
+  ["2026-06-06","buy", 3000, 60723, 0.04918776,  0, "Exchange"],
+  ["2026-06-07","buy", 2000, 62348, 0.03193773,  0, "Exchange"],
+  ["2026-06-10","buy", 1500, 61450, 0.02434094,  0, "Exchange"],
+  ["2026-06-25","buy", 1000, 60859, 0.01634081,  0, "Exchange"],
+  ["2026-06-26","buy", 1000, 59337, 0.01673132,  0, "Exchange"],
+  ["2026-06-30","buy", 1000, 58400, 0.0169,      0, "Exchange"],
+  ["2026-07-22","sell", 987.69, 65846, 0.015,    0, "Exchange"],
+  ["2026-08-20","sell", 526.89, 69328, 0.0076,   0, "Exchange"],
+  ["2026-08-21","sell",1733.74, 75380, 0.023,    0, "Exchange"],
+].map(([date, side, usd, price, btc, fee, platform]) => ({ date: new Date(date + "T00:00:00"), iso: date, side, usd, price, btc, fee, platform }));
+
+const SNAPSHOT_PRICE = 81316.87;
+const buys = TRADES.filter(t => t.side === "buy");
+const sells = TRADES.filter(t => t.side === "sell");
+const cost = buys.reduce((s, t) => s + t.usd, 0);
+const btcBought = buys.reduce((s, t) => s + t.btc, 0);
+const btcSold = sells.reduce((s, t) => s + t.btc, 0);
+const cashOut = sells.reduce((s, t) => s + t.usd, 0);
+const btcHeld = btcBought - btcSold;
+const avgCost = cost / btcBought;
+const lumpBtc = cost / TRADES[0].price;
+
+const usd0 = n => "$" + Math.round(n).toLocaleString("en-US");
+const signedUsd = n => (n >= 0 ? "+" : "−") + usd0(Math.abs(n));
+const pct = n => (n >= 0 ? "+" : "−") + Math.abs(n * 100).toFixed(1) + "%";
+const btcFmt = n => n.toFixed(4) + " BTC";
+const fmtDate = d => d.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+
+// Tiles
+(function tiles() {
+  const val = btcHeld * SNAPSHOT_PRICE + cashOut;
+  const gain = val - cost;
+  const items = [
+    ["Invested", usd0(cost), "15 buys, Feb–Jun"],
+    ["Average cost", usd0(avgCost), "per BTC"],
+    ["Cash taken out", usd0(cashOut), "4 small sells"],
+    ["Total gain", `<span class="pos">${pct(gain / cost)}</span>`, `${signedUsd(gain)} at $81,317`],
+  ];
+  document.getElementById("tiles").innerHTML = items.map(([l, v, n]) =>
+    `<div class="tile"><div class="label">${l}</div><div class="value num">${v}</div><div class="note">${n}</div></div>`).join("");
+})();
+
+// Table
+document.getElementById("rows").innerHTML = TRADES.map(t => `
+  <tr>
+    <td class="num">${t.iso}</td>
+    <td><span class="pill ${t.side}">${t.side === "buy" ? "Buy" : "Sell"}</span></td>
+    <td class="num">${t.side === "sell" ? "+" : ""}$${t.usd.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 2 })}</td>
+    <td class="num">${usd0(t.price)}</td>
+    <td class="num">${t.side === "sell" ? "−" : "+"}${t.btc.toFixed(5)}</td>
+    <td class="num">${t.fee ? "$" + t.fee : "$0"}</td>
+    <td>${t.platform}</td>
+  </tr>`).join("");
+
+// Chart
+(function chart() {
+  const host = document.getElementById("chart");
+  const tip = document.getElementById("tip");
+  const W = 880, H = 360, m = { t: 16, r: 16, b: 32, l: 56 };
+  const x0 = new Date("2026-02-20").getTime(), x1 = new Date("2026-08-31").getTime();
+  const y0 = 55000, y1 = 85000;
+  const x = d => m.l + (d.getTime() - x0) / (x1 - x0) * (W - m.l - m.r);
+  const y = p => m.t + (1 - (p - y0) / (y1 - y0)) * (H - m.t - m.b);
+  const maxUsd = Math.max(...TRADES.map(t => t.usd));
+  const r = usd => 5 + 8 * Math.sqrt(usd / maxUsd);
+
+  let s = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Scatter of buy and sell prices from February to August 2026, with average cost line at ${usd0(avgCost)}">`;
+  for (let p = y0; p <= y1; p += 5000) {
+    s += `<line class="gridline" x1="${m.l}" x2="${W - m.r}" y1="${y(p)}" y2="${y(p)}"/>`;
+    s += `<text x="${m.l - 8}" y="${y(p) + 4}" text-anchor="end">$${p / 1000}k</text>`;
+  }
+  ["2026-03-01","2026-04-01","2026-05-01","2026-06-01","2026-07-01","2026-08-01"].forEach(iso => {
+    const d = new Date(iso + "T00:00:00");
+    s += `<text x="${x(d)}" y="${H - 8}" text-anchor="middle">${d.toLocaleDateString("en-US", { month: "short" })}</text>`;
+  });
+  s += `<line class="avg" x1="${m.l}" x2="${W - m.r}" y1="${y(avgCost)}" y2="${y(avgCost)}"/>`;
+  s += `<text x="${W - m.r}" y="${y(avgCost) - 8}" text-anchor="end" style="fill:var(--text-2)">Avg cost ${usd0(avgCost)}</text>`;
+  // draw large first so small dots stay on top
+  const order = TRADES.map((t, i) => i).sort((a, b) => TRADES[b].usd - TRADES[a].usd);
+  order.forEach(i => {
+    const t = TRADES[i];
+    s += `<circle class="dot ${t.side}" data-i="${i}" cx="${x(t.date)}" cy="${y(t.price)}" r="${r(t.usd)}"/>`;
+  });
+  order.forEach(i => {
+    const t = TRADES[i];
+    s += `<circle class="hit" data-i="${i}" cx="${x(t.date)}" cy="${y(t.price)}" r="${Math.max(14, r(t.usd) + 4)}"/>`;
+  });
+  s += `</svg>`;
+  host.insertAdjacentHTML("beforeend", s);
+
+  const svg = host.querySelector("svg");
+  const show = (el) => {
+    const i = +el.dataset.i, t = TRADES[i];
+    host.classList.add("hovering");
+    host.querySelectorAll(".dot").forEach(d => d.classList.toggle("active", +d.dataset.i === i));
+    const rect = svg.getBoundingClientRect(), k = rect.width / W;
+    const vsAvg = (t.price - avgCost) / avgCost;
+    tip.innerHTML = `<div class="t-date">${fmtDate(t.date)} · <span class="pill ${t.side}">${t.side === "buy" ? "Buy" : "Sell"}</span></div>
+      <div class="t-row"><span>Price</span><b class="num">${usd0(t.price)}</b></div>
+      <div class="t-row"><span>Amount</span><b class="num">$${t.usd.toLocaleString("en-US", { maximumFractionDigits: 2 })}</b></div>
+      <div class="t-row"><span>BTC</span><b class="num">${t.btc.toFixed(5)}</b></div>
+      <div class="t-row"><span>vs avg cost</span><b class="num">${pct(vsAvg)}</b></div>`;
+    let left = +el.getAttribute("cx") * k;
+    left = Math.min(Math.max(left, 90), rect.width - 90);
+    tip.style.left = left + "px";
+    tip.style.top = (+el.getAttribute("cy") * k - +el.getAttribute("r") * k + 14) + "px";
+    tip.style.opacity = 1;
+  };
+  const hide = () => {
+    host.classList.remove("hovering");
+    host.querySelectorAll(".dot.active").forEach(d => d.classList.remove("active"));
+    tip.style.opacity = 0;
+  };
+  host.querySelectorAll(".hit").forEach(h => {
+    h.addEventListener("mouseenter", () => show(h));
+    h.addEventListener("click", () => show(h));
+  });
+  svg.addEventListener("mouseleave", hide);
+})();
+
+// Calculator
+(function calc() {
+  const slider = document.getElementById("price");
+  slider.value = Math.round(SNAPSHOT_PRICE);
+  // Break-even price: btcHeld * p + cashOut = cost
+  document.getElementById("breakeven").textContent = usd0((cost - cashOut) / btcHeld);
+  const set = (id, v) => (document.getElementById(id).innerHTML = v);
+  const gainCell = g => `<span class="${g >= 0 ? "pos" : "neg"}">${signedUsd(g)} (${pct(g / cost)})</span>`;
+  const update = () => {
+    const p = +slider.value;
+    const sv = btcHeld * p + cashOut, lv = lumpBtc * p;
+    set("priceOut", usd0(p));
+    set("cStratBtc", btcFmt(btcHeld));
+    set("cLumpBtc", btcFmt(lumpBtc));
+    set("cStratCash", usd0(cashOut));
+    set("cStratVal", usd0(sv));
+    set("cLumpVal", usd0(lv));
+    set("cStratGain", gainCell(sv - cost));
+    set("cLumpGain", gainCell(lv - cost));
+  };
+  slider.addEventListener("input", update);
+  update();
+})();
+
+// Theme toggle
+(function theme() {
+  const root = document.documentElement;
+  try { const saved = localStorage.getItem("theme"); if (saved) root.dataset.theme = saved; } catch (e) {}
+  document.getElementById("themeToggle").addEventListener("click", () => {
+    const dark = root.dataset.theme ? root.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
+    root.dataset.theme = dark ? "light" : "dark";
+    try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
+  });
+})();
+</script>
+</body>
+</html>
