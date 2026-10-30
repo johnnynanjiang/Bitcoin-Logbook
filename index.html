@@ -246,12 +246,15 @@
   query.addEventListener('input',update);
   document.querySelectorAll('.detail-toggle').forEach(function(button){button.addEventListener('click',function(){var detail=document.getElementById(button.dataset.target);var opening=detail.hidden;detail.hidden=!opening;button.setAttribute('aria-expanded',opening?'true':'false')})});
   var csvRows=[["2026-08-21", "Sell", 1726.71, 0.023, 75380, 0, "Binance", "Successful; 0.023 BTC sold; USDT proceeds 1,726.71106; sheet records no transaction fee."], ["2026-08-20", "Sell", 526.47, 0.0076, 69328, 0, "Binance", "Successful; 0.0076 BTC sold; USDT proceeds 526.47421769; sheet records no transaction fee."], ["2026-07-22", "Sell", 986.46, 0.015, 65846, 0, "Binance", "Successful; 0.015 BTC sold; USDT proceeds 986.4558145; sheet records no transaction fee."], ["2026-06-30", "Buy", 1000, 0.0169, 58400, 0, "Binance", "The displayed BTC quantity is 0.0169, while the transaction note says 0.01696857 BTC. Reconcile against exchange statement."], ["2026-06-26", "Buy", 1000, 0.01673132, 59337, 0, "Binance", "Sheet transaction note: 0.01673132 BTC received; zero fee recorded."], ["2026-06-25", "Buy", 1000, 0.01634081, 60859, 0, "Binance", "Sheet transaction note: 0.01634081 BTC received; zero fee recorded."], ["2026-06-10", "Buy", 1500, 0.02434094, 61450, 0, "Binance", "Sheet transaction note: 0.02434094 BTC received; zero fee recorded."], ["2026-06-07", "Buy", 2000, 0.03193773, 62348, 0, "Binance", "Sheet transaction note: 0.03193773 BTC received; zero fee recorded."], ["2026-06-06", "Buy", 3000, 0.04918776, 60723, 0, "Binance", "Sheet transaction note: 0.04918776 BTC received."], ["2026-06-05", "Buy", 2000, 0.03179, 62711, 0, "Binance", "The displayed BTC quantity is 0.03179; the note also mentions a more precise 0.03179406. Verify precision."], ["2026-06-04", "Buy", 3000, 0.04720399, 63529, 0, "Binance", "No descriptive receipt note in the published ledger row."], ["2026-06-04", "Buy", 3000, 0.0470151, 62416, 29.6413584, "CoinSpot", "Transaction note records 0.04701510 BTC after a 0.00047490 BTC fee."], ["2026-06-03", "Buy", 1500, 0.0218295, 67273, 14.8336965, "CoinSpot", "Transaction note records 0.02182950 BTC after a 0.00022050 BTC fee."], ["2026-05-13", "Sell", 680, 0.0084, 81085, 6.8112, "CoinSpot", "Sheet records 0.0084 BTC sold and a platform fee. AUD and USD settlement conversions are described in its note."], ["2026-04-02", "Buy", 1000, 0.0148599, 65997, 10, "CoinSpot", "Fee is estimated in the original ledger; no transaction record available."], ["2026-03-31", "Buy", 1000, 0.0146718, 66720, 9.887904, "CoinSpot", "Transaction note records 0.01467180 BTC after a 0.00014820 BTC fee."], ["2026-03-29", "Buy", 1000, 0.0146, 66740, 10, "CoinSpot", "Fee is estimated in the original ledger; no transaction record available."], ["2026-02-28", "Buy", 1000, 0.015206, 65015, 10, "CoinSpot", "Fee is estimated in the original ledger; no transaction record available."]];
-  document.getElementById('export-csv').addEventListener('click',function(){
+  var exportBtn=document.getElementById('export-csv');
+  if(exportBtn)exportBtn.addEventListener('click',function(){
     var lines=[['Date','Action','Amount USD/USDT','BTC quantity','BTC reference price USD','Fee USD equivalent','Platform','Public note']].concat(csvRows);
     var csv=lines.map(function(row){return row.map(function(x){var s=String(x);return '"'+s.replace(/"/g,'""')+'"'}).join(',')}).join('\r\n');
     var blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});var url=URL.createObjectURL(blob);var a=document.createElement('a');a.href=url;a.download='bitcoin_public_ledger_2026.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(url)},1000)
   });
 })();
+</script>
+<script>
 // "Get an email when I make my next trade." CTA
 (() => {
   const form = document.getElementById('notify-form');
@@ -296,6 +299,8 @@
         if (!ok || !j.success) {
           // Already on the list: nothing to send, just confirm.
           if (status === 409 || /already/i.test(j.message || '')) { track('already'); done('You’re already on the list. I’ll email you when I make my next trade.'); return; }
+          // Loops rejected the address itself: show its message rather than emailing a bad address.
+          if (status === 400 && j.message) { err.textContent = j.message; err.hidden = false; submitBtn.disabled = false; submitBtn.textContent = label; f.email.focus(); track('invalid'); return; }
           const e2 = new Error(j.message || ('HTTP ' + status)); e2.status = status; throw e2;
         }
         track('loops');
