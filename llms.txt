@@ -1,0 +1,68 @@
+# Bitcoin Logbook
+
+> Bitcoin Logbook (bitcoinlogbook.com) is an open, real-world Bitcoin investing journal. It publishes 18 real trades (14 buys, 4 sells, 28 Feb – 21 Aug 2026, no leverage), a reported net profit of +$4,629.81 (+20.05% ROI) on $23,000 of capital as of 30 Oct 2026, and a comparison against other common investments. It is educational, not financial advice.
+
+The strategy has three simple rules, with no leverage and no complex trading system:
+
+1. **Start with DCA**: build a position gradually instead of betting everything on one entry price.
+2. **Turn dips into decisions**: keep cash in reserve to buy more when prices fall, following a budget rather than emotion.
+3. **Take profits in stages**: sell part of the position when the plan calls for it, and keep the rest exposed to BTC.
+
+## Pages
+
+- [Home](https://bitcoinlogbook.com/): the whole site is one page with the sections below
+- [The results](https://bitcoinlogbook.com/#comparison): how the strategy compares with other investments
+- [The approach](https://bitcoinlogbook.com/#approach): the three rules of the strategy
+- [The evidence](https://bitcoinlogbook.com/#ledger): the full transaction ledger
+- [Get trade emails](https://bitcoinlogbook.com/#notify): one short email per new trade
+
+## Reported results (as of 30 Oct 2026, BTC $77,123.13)
+
+- Net profit: +$4,629.81 on $23,000 gross buys (including recorded fees)
+- ROI: +20.05%
+- Annualized return (APY): +31.44%
+- Sell proceeds: $3,919.64 from 4 sells
+- Recorded or estimated fees: $91.17
+
+## Comparison: the same $23,000 in other investments
+
+Each alternative is a lump sum of $23,000 invested on 28 Feb 2026 and valued on 30 Oct 2026. ETF results include dividends. APY is an annualized estimate, not extra cash profit.
+
+| Investment option | Net profit / loss (USD) | ROI | APY |
+|---|---|---|---|
+| My BTC Strategy | +$4,629.81 | +20.05% | +31.44% |
+| Bitcoin, buy & hold | +$4,283.43 | +18.62% | +29.11% |
+| US technology stocks (QQQ) | +$3,238.04 | +14.08% | +21.78% |
+| US top 500 stocks (SPY) | +$2,525.34 | +10.98% | +16.86% |
+| US Treasury bills (SGOV) | +$562.89 | +2.45% | +3.68% |
+| US bonds (BND) | −$503.33 | −2.19% | −3.26% |
+| Gold (GLD) | −$6,084.36 | −26.45% | −36.85% |
+
+## Transaction ledger
+
+BTC prices are the reference price recorded in the source ledger and may differ from the exact executed rate. Fees marked * are estimates.
+
+| Date | Action | USD | BTC | BTC price | Fee | Platform |
+|---|---|---|---|---|---|---|
+| 2026-08-21 | Sell | $1,726.71 | 0.02300000 | $75,380 | $0.00 | Binance |
+| 2026-08-20 | Sell | $526.47 | 0.00760000 | $69,328 | $0.00 | Binance |
+| 2026-07-22 | Sell | $986.46 | 0.01500000 | $65,846 | $0.00 | Binance |
+| 2026-06-30 | Buy | $1,000.00 | 0.01690000 | $58,400 | $0.00 | Binance |
+| 2026-06-26 | Buy | $1,000.00 | 0.01673132 | $59,337 | $0.00 | Binance |
+| 2026-06-25 | Buy | $1,000.00 | 0.01634081 | $60,859 | $0.00 | Binance |
+| 2026-06-10 | Buy | $1,500.00 | 0.02434094 | $61,450 | $0.00 | Binance |
+| 2026-06-07 | Buy | $2,000.00 | 0.03193773 | $62,348 | $0.00 | Binance |
+| 2026-06-06 | Buy | $3,000.00 | 0.04918776 | $60,723 | $0.00 | Binance |
+| 2026-06-05 | Buy | $2,000.00 | 0.03179000 | $62,711 | $0.00 | Binance |
+| 2026-06-04 | Buy | $3,000.00 | 0.04720399 | $63,529 | $0.00 | Binance |
+| 2026-06-04 | Buy | $3,000.00 | 0.04701510 | $62,416 | $29.64 | CoinSpot |
+| 2026-06-03 | Buy | $1,500.00 | 0.02182950 | $67,273 | $14.83 | CoinSpot |
+| 2026-05-13 | Sell | $680.00 | 0.00840000 | $81,085 | $6.81 | CoinSpot |
+| 2026-04-02 | Buy | $1,000.00 | 0.01485990 | $65,997 | $10.00* | CoinSpot |
+| 2026-03-31 | Buy | $1,000.00 | 0.01467180 | $66,720 | $9.89 | CoinSpot |
+| 2026-03-29 | Buy | $1,000.00 | 0.01460000 | $66,740 | $10.00* | CoinSpot |
+| 2026-02-28 | Buy | $1,000.00 | 0.01520600 | $65,015 | $10.00* | CoinSpot |
+
+## Disclaimer
+
+This is an educational journal, not financial advice. Bitcoin is volatile, and past results do not predict future returns. Dollar-cost averaging and taking profits in stages can help with discipline, but they do not guarantee lower risk or better returns. Using no leverage removes the risk of margin liquidation, not market risk. Taxes, spreads, exchange counterparty risk and loss of capital are still possible.
