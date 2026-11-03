@@ -10,11 +10,12 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 
 ## Pages
 
-- [Home](https://bitcoinlogbook.com/): the whole site is one page with the sections below
+- [Home](https://bitcoinlogbook.com/): the main page, with the sections below
 - [The results](https://bitcoinlogbook.com/#comparison): how the strategy compares with other investments
 - [The approach](https://bitcoinlogbook.com/#approach): the three rules of the strategy
 - [The evidence](https://bitcoinlogbook.com/#ledger): the full transaction ledger
 - [Get trade emails](https://bitcoinlogbook.com/#notify): one short email per new trade
+- [FAQ](https://bitcoinlogbook.com/faq): who the strategy is for, prerequisites, principles, and risks and caveats
 
 ## Reported results (as of 30 Oct 2026, BTC $77,123.13)
 
