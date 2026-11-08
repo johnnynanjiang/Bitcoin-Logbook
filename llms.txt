@@ -15,6 +15,9 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 - [The approach](https://bitcoinlogbook.com/#approach): the three rules of the strategy
 - [The evidence](https://bitcoinlogbook.com/#ledger): the full transaction ledger
 - [Get trade emails](https://bitcoinlogbook.com/#notify): one short email per new trade
+- [Blog](https://bitcoinlogbook.com/blog/): all articles, newest first
+- [Is Bitcoin a good investment right now?](https://bitcoinlogbook.com/blog/is-bitcoin-a-good-investment-right-now/): why being ready matters more than timing the market
+- [What is Bitcoin DCA?](https://bitcoinlogbook.com/blog/what-is-bitcoin-dca/): what Bitcoin is, what DCA (dollar cost averaging) is, and how Bitcoin DCA works
 - [FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, prerequisites, principles, and risks and caveats
 
 ## Reported results (as of 30 Oct 2026, BTC $77,123.13)
