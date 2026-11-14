@@ -7,6 +7,7 @@ const start=document.getElementById('calc-start');
 const end=document.getElementById('calc-end');
 const button=form.querySelector('button[type="submit"]');
 const buttonLabel=button.querySelector('.calc-button-label');
+const buttonSpinner=button.querySelector('.calc-button-spinner');
 const status=document.getElementById('calc-status');
 const money=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'});
 const signedMoney=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',signDisplay:'exceptZero'});
@@ -18,6 +19,12 @@ function setBusy(busy){
  button.disabled=busy;
  buttonLabel.textContent=busy?'Calculating…':'Compare the same budget →';
  status.hidden=!busy;
+ buttonSpinner.hidden=!busy;
+}
+function waitForLoadingEffect(startedAt){
+ // Keep the requested visual feedback perceptible even for cached local data.
+ const remaining=450-(performance.now()-startedAt);
+ return remaining>0?new Promise(resolve=>setTimeout(resolve,remaining)):Promise.resolve();
 }
 function clearResults(){
  generation++;
@@ -82,6 +89,7 @@ form.addEventListener('submit',async function(event){
  event.preventDefault();
  if(!form.reportValidity())return;
  const current=++generation;
+ const startedAt=performance.now();
  const input={source:source.value,start:start.value,end:end.value,amount:Number(document.getElementById('calc-amount').value),fee:Number(document.getElementById('calc-fee').value)};
  result.replaceChildren();result.hidden=true;setBusy(true);
  try{
@@ -90,8 +98,11 @@ form.addEventListener('submit',async function(event){
   const data=await loadPrices();
   if(current!==generation)return;
   const comparison=window.btcCompare(data[input.source].rows,input.amount,input.start,input.end,input.fee);
+  await waitForLoadingEffect(startedAt);
+  if(current!==generation)return;
   displayResults(data,input,comparison);
  }catch(error){
+  await waitForLoadingEffect(startedAt);
   if(current===generation){result.replaceChildren(node('p',error.message,'calc-error'));result.hidden=false;}
  }finally{
   if(current===generation)setBusy(false);
