@@ -18,6 +18,7 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 - [Blog](https://bitcoinlogbook.com/blog/): all articles, newest first
 - [Is Bitcoin a good investment right now?](https://bitcoinlogbook.com/blog/is-bitcoin-a-good-investment-right-now/): why being ready matters more than timing the market
 - [What is Bitcoin DCA?](https://bitcoinlogbook.com/blog/what-is-bitcoin-dca/): what Bitcoin is, what DCA (dollar cost averaging) is, and how Bitcoin DCA works
+- [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/): four $23,000 workbook buying models, 18 separate real trades, original-chart SVG redraws, model assumptions and hindsight caveats, a calculator, FAQs and downloadable data
 - [FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, prerequisites, principles, and risks and caveats
 
 ## Reported results (as of 30 Oct 2026, BTC $77,123.13)

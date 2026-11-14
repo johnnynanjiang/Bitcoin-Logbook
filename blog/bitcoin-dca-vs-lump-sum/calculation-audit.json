@@ -1,0 +1,47 @@
+{
+  "sourceSha256": "6c1f087c92fd5a857fb34cf6bffe4a10016b4ddc094fb50a34c2292771b67ac4",
+  "built": "2026-11-14",
+  "ledger": {
+    "trades": 18,
+    "buys": 14,
+    "sells": 4,
+    "grossBuys": 23000.0,
+    "fees": 91.17415890000001,
+    "sales": 3919.6400000000003,
+    "remainingBTC": 0.30861485,
+    "profitAtEndUnderReportingConvention": 3817.139725372502
+  },
+  "models": {
+    "endPrice": 74489.85,
+    "undatedCachedPrice": 66700.14,
+    "BTC": [
+      0.3500951802,
+      0.335778525462,
+      0.361271976515,
+      0.36420298493000003
+    ],
+    "profit": [
+      3078.5374588209743,
+      2012.0919948855626,
+      3911.0953398058737,
+      4129.425716987964
+    ],
+    "leadChangesLogbookVsLump": [
+      [
+        "2026-03-01",
+        -556.0242082278055
+      ],
+      [
+        "2026-06-04",
+        317.57499578045827
+      ]
+    ]
+  },
+  "limitations": [
+    "Workbook closes are supplied, not independently verified",
+    "Avoid-high model uses future median and count",
+    "Model totals exclude fees, sells and spreads",
+    "Ledger reporting convention may double-count embedded fees",
+    "Receipt quantities differ from some ledger cells"
+  ]
+}
