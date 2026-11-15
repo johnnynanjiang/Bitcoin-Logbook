@@ -21,6 +21,18 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 - [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/): four $23,000 workbook buying strategies, 18 separate real trades, original-chart SVG redraws, strategy assumptions and hindsight caveats, a calculator, FAQs and downloadable data
 - [FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, prerequisites, principles, and risks and caveats
 
+## Data and sources
+
+- Source workbook: [Bitcoin Investment Strategy Public.xlsx](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/source-workbook.xlsx) (XLSX). The 18-trade ledger is transcribed from its "My Own Strategy" tab; the DCA vs lump sum article uses the Strategies, chart and Comparison tabs.
+- Downloadable data (from the [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/#downloads) article):
+  - [trades.csv](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/trades.csv): the 18 real trades
+  - [strategy-daily.csv](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/strategy-daily.csv): 175-day strategy inputs
+  - [monthly-values.csv](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/monthly-values.csv): monthly strategy values
+  - [btc-usdt-2025.csv](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/btc-usdt-2025.csv): 2025 Binance daily closes
+  - [sensitivity-2025.csv](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/sensitivity-2025.csv): 2025 window tests, DCA vs lump sum
+  - [source-workbook.xlsx](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/source-workbook.xlsx): the source workbook
+- Workbook prices are not independently verified market data. Strategy outcomes are simulations, not audited investment returns.
+
 ## Reported results (as of 30 Oct 2026, BTC $77,123.13)
 
 - Net profit: +$4,629.81 on $23,000 gross buys (including recorded fees)
@@ -45,7 +57,7 @@ Each alternative is a lump sum of $23,000 invested on 28 Feb 2026 and valued on 
 
 ## Transaction ledger
 
-BTC prices are the reference price recorded in the source ledger and may differ from the exact executed rate. Fees marked * are estimates.
+Transcribed from the "My Own Strategy" tab of the source workbook. BTC prices are the workbook's "At price (USD)" reference column and may differ from the exact executed rate. Fees marked * are estimates.
 
 | Date | Action | USD | BTC | BTC price | Fee | Platform |
 |---|---|---|---|---|---|---|
