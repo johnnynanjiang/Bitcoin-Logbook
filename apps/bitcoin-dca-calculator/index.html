@@ -53,6 +53,39 @@ details{background:#fff;border:1px solid var(--line);border-radius:14px}summary{
 table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;text-align:right;font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);padding:12px 16px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0}td{padding:9px 16px;text-align:right;color:#43484f;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}
 .prose{max-width:760px;margin:72px auto 0}.prose h2{font-size:28px;letter-spacing:-.03em;margin:48px 0 14px}.prose p,.prose li{font-size:16px;line-height:1.75;color:#43484f}.prose strong{color:var(--ink)}
 .truth-wrap{background:#171b1e;color:#fff}.disclaimer{padding-top:40px;font-size:11px;color:#919da3;line-height:1.8}.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:28px;padding-top:26px;padding-bottom:28px;color:#929da3;border-top:1px solid #ffffff1b;font-size:12px}.footer strong{color:#e9e9e5}
+.status{margin:10px 0 0;font-size:13px;line-height:1.5;color:var(--brown);font-weight:600}.status:empty{display:none}
+.results.stale{opacity:.4;transition:opacity .15s}
+.history{margin-top:24px;padding:20px 20px 12px}
+.history-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:12px}
+.history-head h2{font-size:18px;letter-spacing:-.02em;margin:4px 0 0;white-space:nowrap}
+.history-head h2 span{color:var(--muted);font-weight:600;font-size:14px;margin-left:6px}
+.history-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn-sm{padding:8px 13px;font-size:13px}
+.history-empty{margin:4px 0 10px;font-size:14px;color:var(--muted);line-height:1.6}
+.history-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;max-height:520px}
+.history table{font-size:12px;width:100%}
+.history thead tr.groups th{position:sticky;top:0;z-index:2;font-size:10px;letter-spacing:.14em;text-align:center;border-bottom:1px solid var(--line);padding:7px 10px}
+.history thead tr.groups th.in{background:#f6f6f2;color:var(--muted)}.history thead tr.groups th.out{background:#fff5e4;color:#7a4705}
+.history thead tr.cols th{position:sticky;top:29px;z-index:2;padding:0;background:#fff}
+.history thead tr.cols th{text-align:left;letter-spacing:.04em}.history thead tr.cols th.num{text-align:right}
+.history thead tr.cols th button{all:unset;box-sizing:border-box;display:block;width:100%;padding:8px 5px;cursor:pointer;text-align:inherit;white-space:nowrap}
+.history thead tr.cols th button:hover{color:var(--ink)}.history thead tr.cols th button:focus-visible{outline:3px solid #ee9b2e;outline-offset:-3px}
+.history thead tr.cols th.sorted{color:var(--ink)}
+.history td{padding:7px 5px;white-space:nowrap}.history td.num{text-align:right}
+.history td:first-child,.history thead tr.cols th:first-child{position:sticky;left:0;z-index:1;background:#fff}.history thead tr.cols th:first-child{z-index:3}
+.history tr.current td:first-child{background:#fff8ed}
+.history td.in{color:#5c6168}.history td.out{color:var(--ink);font-weight:600}
+.history td.first-out,.history th.first-out{border-left:2px solid #ffe4b7}
+.history tr.current td{background:#fff8ed}.history tr.current td:first-child{box-shadow:inset 3px 0 0 var(--orange)}
+.history tr.flash td{animation:flash 1.2s ease}@keyframes flash{0%{background:#ffe4b7}100%{background:#fff8ed}}
+.history .best{color:var(--orange);margin-right:3px;font-size:12px}
+.history td.row-actions{white-space:nowrap;text-align:right;padding-left:2px;padding-right:4px}
+.history td.row-actions button{display:inline-block;font:inherit;font-size:11.5px;font-weight:650;border:1px solid var(--line);background:#fff;border-radius:7px;padding:3px 6px;cursor:pointer;color:var(--ink)}
+.history td.row-actions button:hover{border-color:#cfcfc8}
+.history td.row-actions button.icon{display:inline-flex;align-items:center;justify-content:center;width:28px;height:26px;padding:0;color:var(--brown)}
+.history td.row-actions button.icon:hover{color:var(--orange);border-color:var(--orange)}
+.history td.row-actions button.icon + button.icon{margin-left:4px}
+.history td.row-actions button.delete{color:var(--muted)}.history td.row-actions button.delete:hover{color:var(--loss);border-color:var(--loss)}
 @media(max-width:1020px){.app-grid{grid-template-columns:minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.container{padding-inline:20px}.site-header{padding-top:17px;padding-bottom:17px}.nav-toggle{display:grid}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 20px;background:var(--night);border-bottom:1px solid #ffffff1a}.site-header.nav-open .nav-links{display:flex}.nav-links a{padding:15px 0;font-size:15px;border-bottom:1px solid #ffffff14}.nav-links .outline-cta{margin-top:16px;text-align:center}.brand-copy strong{font-size:13px}.hero{padding-top:48px;padding-bottom:54px}.hero p{font-size:16px}.app{padding-top:28px}.panel{padding:18px}#chart{height:260px}.footer{flex-direction:column;align-items:start}}
 @media(max-width:420px){.metrics,.two{grid-template-columns:1fr}}
@@ -70,8 +103,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
   </header>
   <div class="hero container">
     <div class="section-kicker small-caps">Free tool · Historical simulation</div>
-    <h1>Bitcoin DCA Calculator: <span>every day since 2010.</span></h1>
-    <p>Choose an amount, how often you buy and any dates since 18 July 2010. See how much Bitcoin you would have accumulated, what it would be worth, and how that compares with buying once.</p>
+    <h1>Bitcoin DCA Calculator</h1>
+    <p>The best Bitcoin DCA calculator for historical simulation, strategy comparison, and investment planning, in 2026</p>
     <div class="hero-meta small-caps" id="hero-meta">Daily BTC/USD prices</div>
   </div>
 </div>
@@ -100,6 +133,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
         <span class="hint">Taken out of each purchase.</span>
       </label>
       <button class="btn btn-primary" type="submit" id="calc-btn">Calculate</button>
+      <p class="status" id="status" role="status"></p>
       <p class="error" id="error" role="alert" hidden></p>
       <p class="data-note" id="data-note">Loading daily prices…</p>
       <noscript><p class="error">This calculator needs JavaScript.</p></noscript>
@@ -128,7 +162,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       </div>
 
       <details>
-        <summary id="table-title">Every purchase</summary>
+        <summary id="table-title">Purchase details</summary>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Date</th><th>BTC price</th><th>BTC bought</th><th>Total BTC</th><th>Invested</th><th>Value</th></tr></thead>
@@ -138,6 +172,22 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       </details>
     </section>
   </div>
+
+  <section class="panel history" id="history" aria-labelledby="history-title">
+    <div class="history-head">
+      <div><div class="small-caps" style="color:var(--brown)">Compare</div><h2 id="history-title">Previous results<span id="history-count"></span></h2></div>
+      <div class="history-actions">
+        <button class="btn btn-secondary btn-sm" type="button" id="history-clear">Clear all</button>
+      </div>
+    </div>
+    <p class="history-empty" id="history-empty">Every calculation is added here with its inputs and results, so you can compare strategies, amounts, frequencies and dates. Click a column to sort; ★ marks the highest final value and return; the download icon saves every purchase of that row as a CSV file, and the bin icon deletes the row.</p>
+    <div class="history-wrap" id="history-wrap">
+      <table id="history-table">
+        <thead></thead>
+        <tbody id="history-rows"></tbody>
+      </table>
+    </div>
+  </section>
 
   <article class="prose">
     <h2>How it is calculated.</h2>
@@ -161,6 +211,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
 
 <!-- Shared core + one file per strategy (strategies/<id>/<id>-strategy.js). -->
 <script src="lib/core.js"></script>
+<script src="lib/results-history.js"></script>
 <script src="strategies/standard-dca/standard-dca-strategy.js"></script>
 <script src="strategies/lump-sum/lump-sum-strategy.js"></script>
 <!-- Same text as data/btc-usd-daily.csv, as a script so the page also works when opened from disk (file://). -->
@@ -184,6 +235,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
   var pct = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2, signDisplay: 'exceptZero' });
   var dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
   var nice = function (d) { return dateFmt.format(new Date(toMs(d))); };
+  var usd0 = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+  var shortDate = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: '2-digit', timeZone: 'UTC' });
   var money = function (v) { return v < 1 ? '$' + v.toFixed(4) : usd.format(v); };
   var tone = function (v) { return v > 0 ? 'gain' : v < 0 ? 'loss' : ''; };
 
@@ -212,6 +265,13 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
   var prices = {};      // 'YYYY-MM-DD' -> close
   var firstDate, lastDate, result;
 
+  // ---------- previous results (lib/results-history.js) ----------
+  var H = DCA.history;
+  var storage = (function () { try { return window.localStorage; } catch (e) { return null; } })();
+  var history = H.load(storage);
+  var currentId = null;
+  var sortState = { key: null, dir: 'desc' };   // null = newest first
+
   // ---------- rendering ----------
   function text(id, value, cls) { var el = $(id); el.textContent = value; el.className = cls || ''; }
 
@@ -236,7 +296,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       $('lump').append(strong, (Math.abs(diff) < 0.005 ? 'Same result as ' + r.strategy.name + '.' : (diff > 0 ? r.strategy.name : 'Lump sum') + ' finishes ' + usd.format(Math.abs(diff)) + ' higher.'));
     }
 
-    $('table-title').textContent = 'Every purchase (' + r.purchases.length + ')';
+    $('table-title').textContent = 'Purchase details (' + r.purchases.length + ')';
     var rows = r.purchases.map(function (p) {
       return '<tr><td>' + nice(p.date) + '</td><td>' + money(p.price) + '</td><td>' + p.btc.toFixed(8) + '</td><td>' +
         p.totalBtc.toFixed(8) + '</td><td>' + usd.format(p.invested) + '</td><td>' + usd.format(p.value) + '</td></tr>';
@@ -288,16 +348,153 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
     svg.innerHTML = out;
   }
 
+  // ---------- previous results ----------
+  var fmtCell = {
+    text: function (v) { return v; },
+    usd: function (v) { return v === Math.round(v) && v >= 1 ? usd0.format(v) : money(v); },
+    'usd-signed': function (v) { return usdSigned.format(v); },
+    int: function (v) { return v.toLocaleString('en-US'); },
+    btc: function (v) { return v.toFixed(8); },
+    pct: function (v) { return pct.format(v); },
+    'pct-plain': function (v) { return +v.toFixed(4) + '%'; },
+    date: function (v) { return shortDate.format(new Date(toMs(v))); }
+  };
+
+  function buildHistoryHead() {
+    var thead = document.querySelector('#history-table thead');
+    var nIn = H.COLUMNS.filter(function (c) { return c.group === 'input'; }).length;
+    var nOut = H.COLUMNS.length - nIn;
+    var groups = '<tr class="groups"><th class="in" colspan="' + nIn + '">INPUT</th><th class="out first-out" colspan="' + nOut + '">OUTPUT</th><th class="in"></th></tr>';
+    var cols = '<tr class="cols">' + H.COLUMNS.map(function (c, i) {
+      var first = c.group === 'output' && H.COLUMNS[i - 1].group === 'input' ? ' first-out' : '';
+      var num = c.type === 'text' || c.type === 'date' ? '' : ' num';
+      return '<th class="' + first + num + '" data-key="' + c.key + '"><button type="button" title="Sort by ' + c.label + '">' + c.label + '</button></th>';
+    }).join('') + '<th></th></tr>';
+    thead.innerHTML = groups + cols;
+    thead.querySelectorAll('tr.cols th[data-key] button').forEach(function (b) {
+      b.addEventListener('click', function () {
+        var key = b.parentNode.getAttribute('data-key');
+        sortState = sortState.key === key ? { key: key, dir: sortState.dir === 'desc' ? 'asc' : 'desc' } : { key: key, dir: 'desc' };
+        renderHistory();
+      });
+    });
+  }
+
+  function renderHistory(flashId) {
+    $('history-count').textContent = history.length ? '(' + history.length + ')' : '';
+    $('history-empty').style.display = history.length > 1 ? 'none' : '';
+    $('history-wrap').hidden = !history.length;
+    $('history-clear').disabled = !history.length;
+
+    document.querySelectorAll('#history-table tr.cols th[data-key]').forEach(function (th) {
+      var on = th.getAttribute('data-key') === sortState.key;
+      th.classList.toggle('sorted', on);
+      th.setAttribute('aria-sort', on ? (sortState.dir === 'asc' ? 'ascending' : 'descending') : 'none');
+      var label = H.COLUMNS.filter(function (c) { return c.key === th.getAttribute('data-key'); })[0].label;
+      th.firstChild.textContent = label + (on ? (sortState.dir === 'asc' ? ' ▲' : ' ▼') : '');
+    });
+
+    var rows = sortState.key ? H.sort(history, sortState.key, sortState.dir) : history;
+    var bestValue = H.best(history, 'value'), bestRoi = H.best(history, 'roi');
+    var tbody = $('history-rows');
+    tbody.innerHTML = '';
+    rows.forEach(function (e) {
+      var tr = document.createElement('tr');
+      if (e.id === currentId) tr.className = 'current' + (e.id === flashId ? ' flash' : '');
+      H.COLUMNS.forEach(function (c, i) {
+        var td = document.createElement('td');
+        var v = c.get(e);
+        td.textContent = typeof v === 'number' || c.type === 'date' ? fmtCell[c.type](v) : v;
+        td.className = c.group === 'input' ? 'in' : 'out';
+        if (c.group === 'output' && H.COLUMNS[i - 1].group === 'input') td.className += ' first-out';
+        if (c.type !== 'text' && c.type !== 'date') td.className += ' num';
+        if (c.key === 'profit' || c.key === 'roi') td.className += ' ' + tone(v);
+        if ((c.key === 'value' && e.id === bestValue) || (c.key === 'roi' && e.id === bestRoi)) {
+          var b = document.createElement('span'); b.className = 'best'; b.textContent = '★'; b.title = 'Highest ' + c.label.toLowerCase() + ' in the list';
+          td.insertBefore(b, td.firstChild);
+        }
+        tr.appendChild(td);
+      });
+      var act = document.createElement('td');
+      act.className = 'row-actions';
+      var dl = document.createElement('button');
+      dl.type = 'button'; dl.className = 'icon';
+      dl.title = 'Download every purchase of this row as a CSV file';
+      dl.setAttribute('aria-label', dl.title);
+      dl.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11"/><path d="M7 10l5 5 5-5"/><path d="M5 20h14"/></svg>';
+      dl.addEventListener('click', function () { downloadEntryCsv(e); });
+      var del = document.createElement('button');
+      del.type = 'button'; del.className = 'icon delete';
+      del.title = 'Delete this row';
+      del.setAttribute('aria-label', del.title);
+      del.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 13h10l1-13"/><path d="M9 7V4h6v3"/></svg>';
+      del.addEventListener('click', function () { deleteEntry(e); });
+      act.append(dl, del);
+      tr.appendChild(act);
+      tbody.appendChild(tr);
+    });
+  }
+
+  function addToHistory(strategy, input, r) {
+    var added = H.add(history, H.makeEntry(strategy, input, r));
+    history = added.list;
+    currentId = added.entry.id;
+    H.save(storage, history);
+    renderHistory(currentId);
+  }
+
+  function saveFile(name, text) {
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: 'text/csv' }));
+    a.download = name;
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  }
+
+  function deleteEntry(e) {
+    history = H.remove(history, e.id);
+    if (currentId === e.id) currentId = null;
+    H.save(storage, history);
+    renderHistory();
+  }
+
+  /** Every purchase of a previous row, rebuilt from its saved inputs. */
+  function downloadEntryCsv(e) {
+    try {
+      saveFile(H.fileName(e.input), H.purchasesCsv(H.rerun(e, prices)));
+    } catch (err) {
+      window.alert('Could not build this CSV: ' + err.message);
+    }
+  }
+
+
   // ---------- form ----------
-  function update() {
+  // Editing a field never calculates. Only clicking Calculate runs a strategy and adds a row
+  // to "Previous results"; until then the old results are dimmed and marked out of date.
+
+  /** Keep hints and the frequency field in step with the selected strategy (no calculation). */
+  function syncForm() {
+    var strategy = DCA.getStrategy($('strategy').value);
+    $('strategy-hint').textContent = strategy.description;
+    $('frequency').disabled = !strategy.usesFrequency;
+    $('frequency-hint').textContent = strategy.usesFrequency ? HINTS[$('frequency').value] : 'Not used: ' + strategy.name.toLowerCase() + ' buys once on the start date.';
+  }
+
+  function inputsChanged() {
+    syncForm();
+    $('error').hidden = true;
+    if (!prices[lastDate]) return; // still loading
+    document.querySelector('.results').classList.toggle('stale', !!result);
+    $('status').textContent = result ? 'Inputs changed. Click Calculate to update the results.' : 'Click Calculate to see the results.';
+  }
+
+  function calculate() {
     var strategy = DCA.getStrategy($('strategy').value);
     var amount = parseFloat($('amount').value);
     var frequency = $('frequency').value;
     var start = $('start').value, end = $('end').value;
     var feePct = parseFloat($('fee').value) || 0;
-    $('strategy-hint').textContent = strategy.description;
-    $('frequency').disabled = !strategy.usesFrequency;
-    $('frequency-hint').textContent = strategy.usesFrequency ? HINTS[frequency] : 'Not used: ' + strategy.name.toLowerCase() + ' buys once on the start date.';
+    syncForm();
 
     var problem =
       !(amount > 0) ? 'Enter an amount greater than $0.' :
@@ -307,7 +504,6 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       start > end ? 'The start date must be on or before the end date.' : '';
     $('error').textContent = problem;
     $('error').hidden = !problem;
-    document.querySelector('.results').style.opacity = problem ? '.35' : '';
     if (problem) return;
 
     try {
@@ -316,6 +512,9 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       result.feePct = feePct;
       result.label = strategy.id + (strategy.usesFrequency ? '-' + frequency : '') + '-' + start + '-to-' + end;
       render(result, amount, frequency, start, end);
+      addToHistory(strategy, { amount: amount, feePct: feePct, frequency: frequency, start: start, end: end }, result);
+      document.querySelector('.results').classList.remove('stale');
+      $('status').textContent = '';
     } catch (err) {
       $('error').textContent = err.message;
       $('error').hidden = false;
@@ -324,22 +523,30 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
 
   function downloadCsv() {
     if (!result) return;
-    var lines = ['date,btc_price_usd,btc_bought,total_btc,total_invested_usd,value_usd'].concat(result.purchases.map(function (p) {
-      return [p.date, p.price, p.btc.toFixed(8), p.totalBtc.toFixed(8), p.invested.toFixed(2), p.value.toFixed(2)].join(',');
-    }));
-    var a = document.createElement('a');
-    a.href = URL.createObjectURL(new Blob([lines.join('\n') + '\n'], { type: 'text/csv' }));
-    a.download = 'bitcoin-dca-' + result.label + '.csv';
-    a.click();
+    saveFile('bitcoin-dca-' + result.label + '.csv', H.purchasesCsv(result));
   }
 
   ['strategy', 'amount', 'frequency', 'start', 'end', 'fee'].forEach(function (id) {
-    $(id).addEventListener('input', update);
-    $(id).addEventListener('change', update);
+    $(id).addEventListener('input', inputsChanged);
+    $(id).addEventListener('change', inputsChanged);
+  });
+  // Pressing Enter in a field must not submit the form: only the Calculate button calculates.
+  $('form').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT') e.preventDefault();
+  });
+  buildHistoryHead();
+  renderHistory();
+  $('history-clear').addEventListener('click', function () {
+    if (!window.confirm('Remove all ' + history.length + ' previous results?')) return;
+    history = [];
+    currentId = null;
+    H.save(storage, history);
+    renderHistory();
   });
   $('form').addEventListener('submit', function (e) {
     e.preventDefault();
-    update();
+    if (e.submitter && e.submitter !== $('calc-btn')) return;
+    calculate();
     if (window.matchMedia('(max-width: 1020px)').matches) document.querySelector('.results').scrollIntoView({ behavior: 'smooth' });
   });
   $('csv-btn').addEventListener('click', downloadCsv);
@@ -368,7 +575,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       var count = data.count;
       $('data-note').textContent = count.toLocaleString('en-US') + ' daily closes, ' + nice(firstDate) + ' – ' + nice(lastDate) + ' (UTC). Source: Coin Metrics, CC BY-NC 4.0.';
       $('hero-meta').textContent = 'Prices ' + nice(firstDate) + ' – ' + nice(lastDate);
-      update();
+      inputsChanged();
     })
     .catch(function (err) {
       var msg = 'Could not load the price data (' + err.message + '). Make sure the data folder sits next to index.html.';

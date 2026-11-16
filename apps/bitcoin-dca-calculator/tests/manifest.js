@@ -11,6 +11,7 @@
     // calculator code (same files index.html loads), in load order
     sources: [
       'lib/core.js',
+      'lib/results-history.js',
       'strategies/standard-dca/standard-dca-strategy.js',
       'strategies/lump-sum/lump-sum-strategy.js'
     ],
@@ -25,6 +26,7 @@
       'tests/strategy-interface.test.js',
       'strategies/standard-dca/standard-dca-strategy.test.js',
       'strategies/lump-sum/lump-sum-strategy.test.js',
+      'tests/results-history.test.js',
       'tests/data.test.js',
       'tests/bitcoindata.test.js'
     ]
