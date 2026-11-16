@@ -37,10 +37,11 @@
   .detail h3{font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);margin:6px 0 6px}
   .detail pre{margin:0;background:#f6f6f2;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font:12px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;color:#30343a}
   .call{display:grid;gap:6px;margin-bottom:10px}.call .fn{font:600 12px ui-monospace,Menlo,monospace;color:var(--ink)}
-  .io{display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 10px;align-items:start}.io > span{font-size:12px;color:var(--muted);padding-top:9px}
+  .io{display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 10px;align-items:start}.io > span{font-size:12px;color:var(--muted);padding-top:9px;overflow-wrap:anywhere}
   .threw{color:var(--loss)}
   table.checks{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
   table.checks th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+  table.checks th:first-child{width:28px}table.checks th:nth-child(2){width:30%}
   table.checks td{padding:6px 8px;border-bottom:1px solid #efefea;vertical-align:top;font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
   table.checks td:first-child{font-family:inherit;width:24px;font-weight:800}
   table.checks tr.ok td:first-child{color:var(--gain)}table.checks tr.bad td:first-child{color:var(--loss)}table.checks tr.bad{background:#fdf1ef}

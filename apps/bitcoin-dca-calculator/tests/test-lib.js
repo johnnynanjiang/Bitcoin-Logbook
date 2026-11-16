@@ -87,7 +87,8 @@
       if (depth >= 3) return '{…}';
       var entries = Object.keys(v).map(function (k) { return k + ': ' + describe(v[k], depth + 1); });
       var one = '{ ' + entries.join(', ') + ' }';
-      if (one.length <= 100 && one.indexOf('\n') < 0) return one;
+      // Small records (e.g. one purchase) stay on one line; top-level objects list one field per line.
+      if (one.indexOf('\n') < 0 && (one.length <= 100 || (depth > 0 && one.length <= 170))) return one;
       return '{\n' + entries.map(function (s) { return pad(depth + 1) + s; }).join(',\n') + '\n' + pad(depth) + '}';
     }
     return String(v);
@@ -104,7 +105,8 @@
 
   /** Add context to the running test's details (e.g. reference values). */
   function note(label, value) {
-    if (active) active.notes.push({ label: label, value: describe(value) });
+    // Plain-text notes are shown in full; data is summarised like call inputs/outputs.
+    if (active) active.notes.push({ label: label, value: typeof value === 'string' ? value : describe(value) });
   }
 
   // Trace top-level calls into the calculator code while a test runs.
