@@ -1,0 +1,17 @@
+{
+  "file": "btc-usd-daily.csv",
+  "description": "BTC/USD daily close, one row per UTC day, from the first traded price.",
+  "source": "Coin Metrics Community Data (PriceUSD, daily UTC close)",
+  "sourceUrl": "https://coinmetrics.io/community-network-data/",
+  "license": "CC BY-NC 4.0",
+  "firstDate": "2010-07-18",
+  "lastDate": "2026-11-15",
+  "rows": 5965,
+  "lastClose": 65189.11071,
+  "generatedAt": "2026-11-16T11:06:38+00:00",
+  "sha256": "cf62c34fdc070b72e2b4947bebb4557b5de12bb324152bd16af6443da3cebb1f",
+  "crossCheck": {
+    "reference": "Coinbase Exchange BTC-USD daily close",
+    "maxDiffPct": 0.531
+  }
+}

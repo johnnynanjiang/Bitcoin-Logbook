@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#121419">
+<title>Bitcoin DCA Calculator: Every Day Since 2010 | Bitcoin Logbook</title>
+<meta name="description" content="Free Bitcoin dollar-cost averaging calculator. Daily, weekly, every-2-weeks or monthly buys over any dates since July 2010, with fees and a lump-sum comparison.">
+<link rel="canonical" href="https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Bitcoin Logbook">
+<meta property="og:url" content="https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/">
+<meta property="og:title" content="Bitcoin DCA Calculator: Every Day Since 2010">
+<meta property="og:description" content="Test daily, weekly, every-2-weeks or monthly Bitcoin buys over any dates since July 2010.">
+<meta property="og:image" content="https://bitcoinlogbook.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{--ink:#13161b;--muted:#666b73;--night:#101216;--paper:#f7f7f4;--line:#e5e6e2;--orange:#f4a437;--orange2:#ffc66e;--brown:#a96406;--gain:#216a3c;--loss:#a3362a;--max:1150px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{opacity:.86}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ee9b2e;outline-offset:3px}::selection{background:#f6bd59;color:#141414}.container{max-width:var(--max);margin:0 auto;padding-inline:26px}.small-caps{font-weight:750;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.section-kicker{color:var(--brown);display:flex;gap:10px;align-items:center}.section-kicker:before{content:'';width:18px;height:2px;background:currentColor}[hidden]{display:none!important}
+.hero-wrap{background:var(--night);color:#fff;position:relative;overflow:hidden}.hero-wrap:before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#62676e .65px,transparent .65px);background-size:25px 25px;mask-image:linear-gradient(100deg,transparent 15%,#000 100%)}.hero-wrap:after{content:'';position:absolute;pointer-events:none;width:570px;height:570px;border-radius:50%;right:-140px;top:0;background:radial-gradient(circle,#f49e2422,transparent 65%);filter:blur(15px)}
+.site-header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:22px;border-bottom:1px solid #ffffff1a}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:37px;height:37px;background:var(--orange);border-radius:11px;color:#21170b;display:grid;place-items:center;font-weight:900;font-size:25px;box-shadow:0 8px 28px #f4a43736}.brand-copy strong{font-size:15px;letter-spacing:-.025em}.nav-links{display:flex;align-items:center;gap:25px}.nav-links a{text-decoration:none;color:#b8bcc4;font-size:13px;font-weight:600}.nav-links a[aria-current]{color:#fff}.nav-links .outline-cta{border:1px solid #ffffff48;padding:11px 15px;border-radius:100px;color:#fff}
+.nav-toggle{display:none;flex-shrink:0;place-items:center;width:40px;height:40px;padding:0;border:1px solid #ffffff48;border-radius:100px;background:transparent;color:#fff;cursor:pointer}.nav-toggle-bar,.nav-toggle-bar:before,.nav-toggle-bar:after{display:block;width:16px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,background .2s}.nav-toggle-bar{position:relative}.nav-toggle-bar:before,.nav-toggle-bar:after{content:"";position:absolute;left:0}.nav-toggle-bar:before{top:-5px}.nav-toggle-bar:after{top:5px}.nav-open .nav-toggle-bar{background:transparent}.nav-open .nav-toggle-bar:before{transform:translateY(5px) rotate(45deg)}.nav-open .nav-toggle-bar:after{transform:translateY(-5px) rotate(-45deg)}
+.hero{position:relative;z-index:1;padding-top:64px;padding-bottom:72px;max-width:900px}.hero .section-kicker{color:#f7bf68}.hero h1{font-size:clamp(38px,4.8vw,60px);letter-spacing:-.03em;line-height:1.1;margin:20px 0 18px}.hero h1 span{color:var(--orange2)}.hero p{font-size:18px;line-height:1.7;color:#b7bbc3;margin:0}.hero-meta{margin-top:26px;color:#8d939b}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:inherit;font-size:14px;font-weight:720;border-radius:999px;padding:13px 18px;border:0;cursor:pointer;transition:transform .2s ease}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--orange);color:#1e170c}.btn-secondary{background:transparent;border:1px solid var(--ink);color:var(--ink)}
+.app{padding-top:48px;padding-bottom:88px}.app-grid{display:grid;grid-template-columns:320px minmax(0,1fr);gap:24px;align-items:start}
+.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 17px 50px #1d2c3508}
+form.panel{display:grid;gap:18px}
+.field{display:grid;gap:8px;font-size:13px;font-weight:650;white-space:nowrap}.field .hint{white-space:normal}
+.field select:disabled{background:#f1f1ed;color:var(--muted)}
+.field input,.field select{width:100%;min-width:0;border:1px solid #babec2;background:#fff;border-radius:8px;padding:11px;font:inherit;font-size:15px;color:var(--ink)}
+.hint{font-size:12px;font-weight:500;color:var(--muted);line-height:1.5}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.error{margin:0;font-size:13px;line-height:1.5;color:var(--loss);background:#fdf1ef;border:1px solid #f1cbc5;border-radius:10px;padding:10px 12px}
+.data-note{font-size:12px;line-height:1.55;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;margin:0}
+.results{display:grid;gap:18px;min-width:0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.metric{border:1px solid var(--line);background:#fff;border-radius:14px;padding:16px 18px;min-width:0}
+.metric span{display:block;color:var(--muted);margin-bottom:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.metric strong{display:block;font-size:clamp(18px,1.75vw,23px);line-height:1.25;letter-spacing:-.025em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.metric small{display:block;margin-top:8px;padding-top:8px;border-top:1px solid var(--line);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.metric.dark{background:var(--night);border-color:var(--night);color:#fff}.metric.dark span{color:#f7bf68}.metric.dark small{color:#b8bcc4;border-top-color:#ffffff1f}
+.gain{color:var(--gain)!important}.loss{color:var(--loss)!important}.metric.dark .gain{color:#5fd38d!important}.metric.dark .loss{color:#ff8a7a!important}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:10px}.chart-head h2{font-size:18px;letter-spacing:-.02em;margin:4px 0 0}
+.legend{display:flex;gap:16px;font-size:12px;color:#4c5158}.legend span{display:inline-flex;align-items:center;gap:6px;white-space:nowrap}.legend i{display:block;width:14px;height:3px;border-radius:2px}
+#chart{display:block;width:100%;height:320px}#chart text{font-size:11px;fill:#80858c}
+.note{background:#fff8ed;border:1px solid #ffe4b7;border-radius:14px;padding:16px 20px;font-size:15px;line-height:1.65;color:#43484f;margin:0}.note strong{color:var(--ink)}
+.actions{display:flex;gap:10px;flex-wrap:wrap}
+details{background:#fff;border:1px solid var(--line);border-radius:14px}summary{cursor:pointer;padding:16px 18px;font-weight:700;font-size:14px}
+.table-wrap{overflow:auto;max-height:420px;border-top:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;text-align:right;font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);padding:12px 16px;border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0}td{padding:9px 16px;text-align:right;color:#43484f;border-bottom:1px solid var(--line);white-space:nowrap;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}
+.prose{max-width:760px;margin:72px auto 0}.prose h2{font-size:28px;letter-spacing:-.03em;margin:48px 0 14px}.prose p,.prose li{font-size:16px;line-height:1.75;color:#43484f}.prose strong{color:var(--ink)}
+.truth-wrap{background:#171b1e;color:#fff}.disclaimer{padding-top:40px;font-size:11px;color:#919da3;line-height:1.8}.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:28px;padding-top:26px;padding-bottom:28px;color:#929da3;border-top:1px solid #ffffff1b;font-size:12px}.footer strong{color:#e9e9e5}
+@media(max-width:1020px){.app-grid{grid-template-columns:minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.container{padding-inline:20px}.site-header{padding-top:17px;padding-bottom:17px}.nav-toggle{display:grid}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 20px;background:var(--night);border-bottom:1px solid #ffffff1a}.site-header.nav-open .nav-links{display:flex}.nav-links a{padding:15px 0;font-size:15px;border-bottom:1px solid #ffffff14}.nav-links .outline-cta{margin-top:16px;text-align:center}.brand-copy strong{font-size:13px}.hero{padding-top:48px;padding-bottom:54px}.hero p{font-size:16px}.app{padding-top:28px}.panel{padding:18px}#chart{height:260px}.footer{flex-direction:column;align-items:start}}
+@media(max-width:420px){.metrics,.two{grid-template-columns:1fr}}
+</style>
+<script defer src="https://www.pvuv.ai/f.js" data-site="jTag7NqV" data-api="https://in.pvuv.ai"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JTGWTFHCEH"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-JTGWTFHCEH');</script>
+</head>
+<body>
+<div class="hero-wrap">
+  <header class="site-header container">
+    <a href="/" class="brand" aria-label="Bitcoin Logbook, home"><span class="brand-mark" aria-hidden="true">₿</span><span class="brand-copy"><strong>Bitcoin Logbook - A real Bitcoin investment journal.</strong></span></a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span class="nav-toggle-bar" aria-hidden="true"></span></button>
+    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="/#comparison">The results</a><a href="/#approach">The approach</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/#ledger" class="outline-cta">See every trade ↗</a></nav>
+  </header>
+  <div class="hero container">
+    <div class="section-kicker small-caps">Free tool · Historical simulation</div>
+    <h1>Bitcoin DCA Calculator: <span>every day since 2010.</span></h1>
+    <p>Choose an amount, how often you buy and any dates since 18 July 2010. See how much Bitcoin you would have accumulated, what it would be worth, and how that compares with buying once.</p>
+    <div class="hero-meta small-caps" id="hero-meta">Daily BTC/USD prices</div>
+  </div>
+</div>
+
+<main class="app container">
+  <div class="app-grid">
+    <form class="panel" id="form" novalidate>
+      <div class="small-caps" style="color:var(--brown)">Your strategy</div>
+      <label class="field">Strategy
+        <select id="strategy"></select>
+        <span class="hint" id="strategy-hint"></span>
+      </label>
+      <label class="field">Amount per purchase (USD)
+        <input id="amount" type="number" min="1" step="any" value="100" inputmode="decimal">
+      </label>
+      <label class="field">Frequency
+        <select id="frequency"></select>
+        <span class="hint" id="frequency-hint"></span>
+      </label>
+      <div class="two">
+        <label class="field">Start date<input id="start" type="date"></label>
+        <label class="field">End date<input id="end" type="date"></label>
+      </div>
+      <label class="field">Fee per purchase (%)
+        <input id="fee" type="number" min="0" max="99" step="any" value="0" inputmode="decimal">
+        <span class="hint">Taken out of each purchase.</span>
+      </label>
+      <button class="btn btn-primary" type="submit" id="calc-btn">Calculate</button>
+      <p class="error" id="error" role="alert" hidden></p>
+      <p class="data-note" id="data-note">Loading daily prices…</p>
+      <noscript><p class="error">This calculator needs JavaScript.</p></noscript>
+    </form>
+
+    <section class="results" aria-live="polite">
+      <div class="metrics">
+        <div class="metric"><span class="small-caps">Invested</span><strong id="r-invested">—</strong><small id="r-buys">&nbsp;</small></div>
+        <div class="metric dark"><span class="small-caps">Final value</span><strong id="r-value">—</strong><small id="r-profit">&nbsp;</small></div>
+        <div class="metric"><span class="small-caps">BTC</span><strong id="r-btc">—</strong><small id="r-avg">&nbsp;</small></div>
+        <div class="metric"><span class="small-caps">Return</span><strong id="r-roi">—</strong><small id="r-price">&nbsp;</small></div>
+      </div>
+
+      <div class="panel">
+        <div class="chart-head">
+          <div><div class="small-caps" style="color:var(--brown)">Over time</div><h2>Invested vs. value</h2></div>
+          <div class="legend"><span><i style="background:#8a8f96"></i>Invested</span><span><i style="background:var(--orange)"></i>Value</span></div>
+        </div>
+        <svg id="chart" role="img" aria-label="Total invested and portfolio value over time"></svg>
+      </div>
+
+      <p class="note" id="lump"></p>
+
+      <div class="actions">
+        <button class="btn btn-secondary" type="button" id="csv-btn">Download purchases (CSV)</button>
+      </div>
+
+      <details>
+        <summary id="table-title">Every purchase</summary>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Date</th><th>BTC price</th><th>BTC bought</th><th>Total BTC</th><th>Invested</th><th>Value</th></tr></thead>
+            <tbody id="rows"></tbody>
+          </table>
+        </div>
+      </details>
+    </section>
+  </div>
+
+  <article class="prose">
+    <h2>How it is calculated.</h2>
+    <ul>
+      <li><strong>Each purchase</strong> buys (amount − fee) ÷ the BTC/USD close of that UTC day.</li>
+      <li><strong>Standard DCA</strong> buys the amount per purchase on a schedule counted from the start date: weekly = every 7 days, fortnightly = every 14 days, monthly = same day each month (the last day for shorter months).</li>
+      <li><strong>Lump sum</strong> buys the amount per purchase once, on the start date, and holds.</li>
+      <li><strong>Final value</strong> = total BTC × the close on the end date. Invested includes fees.</li>
+      <li><strong>Comparison</strong>: the note under the chart shows a lump sum of the same total on the start date, with the same fee rate.</li>
+      <li>No spread, tax, selling costs or interest on uninvested cash.</li>
+    </ul>
+    <h2>Price data.</h2>
+    <p>One file, <a href="data/btc-usd-daily.csv" download>btc-usd-daily.csv</a>: the BTC/USD close for every UTC day from 18 July 2010. Source: Coin Metrics Community Data (PriceUSD), licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="license noopener">CC BY-NC 4.0</a>. Updated daily.</p>
+  </article>
+</main>
+
+<footer class="truth-wrap"><div class="container">
+  <div class="disclaimer">For educational purposes only. Historical simulations are not investment, tax or legal advice and are not a forecast. Bitcoin is volatile and can suffer permanent loss of value. Dollar cost averaging does not guarantee a profit or protect against losses in a falling market. Price data: Coin Metrics Community Data, CC BY-NC 4.0.</div>
+  <div class="footer"><span><strong>₿ Bitcoin, with a plan.</strong> Real records, no AI slop. Clear assumptions. No promises.</span><span><a href="/">Back to the logbook</a> · <a href="https://x.com/BitcoinLogbook" target="_blank" rel="noopener noreferrer me">X (Twitter)</a></span></div>
+</div></footer>
+
+<!-- Shared core + one file per strategy (strategies/<id>/<id>-strategy.js). -->
+<script src="lib/core.js"></script>
+<script src="strategies/standard-dca/standard-dca-strategy.js"></script>
+<script src="strategies/lump-sum/lump-sum-strategy.js"></script>
+<!-- Same text as data/btc-usd-daily.csv, as a script so the page also works when opened from disk (file://). -->
+<script src="data/btc-usd-daily.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // ---------- menu (same as the rest of the site) ----------
+  var header = document.querySelector('.site-header'), toggle = header.querySelector('.nav-toggle');
+  function setOpen(open) { header.classList.toggle('nav-open', open); toggle.setAttribute('aria-expanded', open); }
+  toggle.addEventListener('click', function () { setOpen(!header.classList.contains('nav-open')); });
+
+  // ---------- helpers ----------
+  var DAY = 86400000;
+  var $ = function (id) { return document.getElementById(id); };
+  var toMs = function (d) { return Date.parse(d + 'T00:00:00Z'); };
+  var toDate = function (ms) { return new Date(ms).toISOString().slice(0, 10); };
+  var usd = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  var usdSigned = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', signDisplay: 'exceptZero' });
+  var pct = new Intl.NumberFormat('en-US', { style: 'percent', minimumFractionDigits: 2, maximumFractionDigits: 2, signDisplay: 'exceptZero' });
+  var dateFmt = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' });
+  var nice = function (d) { return dateFmt.format(new Date(toMs(d))); };
+  var money = function (v) { return v < 1 ? '$' + v.toFixed(4) : usd.format(v); };
+  var tone = function (v) { return v > 0 ? 'gain' : v < 0 ? 'loss' : ''; };
+
+  var HINTS = {
+    daily: 'Every day.',
+    weekly: 'Every 7 days from the start date.',
+    fortnightly: 'Every 14 days from the start date.',
+    monthly: 'Same day each month; the 29th–31st use the last day of shorter months.'
+  };
+
+  // ---------- data + calculation: lib/core.js and strategies/ ----------
+  var DCA = window.BitcoinDCA;
+
+  // Fill the strategy and frequency lists from the code, so new strategies appear automatically.
+  DCA.listStrategies().forEach(function (s) {
+    var o = document.createElement('option');
+    o.value = s.id; o.textContent = s.name;
+    $('strategy').appendChild(o);
+  });
+  Object.keys(DCA.FREQUENCIES).forEach(function (k) {
+    var o = document.createElement('option');
+    o.value = k; o.textContent = DCA.FREQUENCIES[k];
+    if (k === 'weekly') o.selected = true;
+    $('frequency').appendChild(o);
+  });
+  var prices = {};      // 'YYYY-MM-DD' -> close
+  var firstDate, lastDate, result;
+
+  // ---------- rendering ----------
+  function text(id, value, cls) { var el = $(id); el.textContent = value; el.className = cls || ''; }
+
+  function render(r, amount, frequency, start, end) {
+    text('r-invested', usd.format(r.invested));
+    text('r-buys', r.purchases.length + (r.purchases.length === 1 ? ' purchase' : ' purchases') + (r.fees > 0 ? ' · fees ' + usd.format(r.fees) : ''));
+    text('r-value', usd.format(r.value));
+    text('r-profit', usdSigned.format(r.profit) + (r.profit >= 0 ? ' profit' : ' loss'), tone(r.profit));
+    text('r-btc', r.btc.toFixed(8));
+    text('r-avg', 'Avg cost ' + money(r.avgCost));
+    text('r-roi', pct.format(r.roi), tone(r.roi));
+    text('r-price', 'End price ' + money(r.endPrice));
+
+    // Compare with a lump sum of the same total, using the lump-sum strategy itself.
+    $('lump').innerHTML = '';
+    $('lump').hidden = r.strategy.id === 'lump-sum';
+    if (!$('lump').hidden) {
+      var lump = DCA.getStrategy('lump-sum').run({ prices: prices, amount: r.invested, feePct: r.feePct, start: start, end: end });
+      var diff = r.value - lump.value;
+      var strong = document.createElement('strong');
+      strong.textContent = 'Lump sum: ' + usd.format(r.invested) + ' on ' + nice(start) + ' → ' + lump.btc.toFixed(8) + ' BTC, worth ' + usd.format(lump.value) + '. ';
+      $('lump').append(strong, (Math.abs(diff) < 0.005 ? 'Same result as ' + r.strategy.name + '.' : (diff > 0 ? r.strategy.name : 'Lump sum') + ' finishes ' + usd.format(Math.abs(diff)) + ' higher.'));
+    }
+
+    $('table-title').textContent = 'Every purchase (' + r.purchases.length + ')';
+    var rows = r.purchases.map(function (p) {
+      return '<tr><td>' + nice(p.date) + '</td><td>' + money(p.price) + '</td><td>' + p.btc.toFixed(8) + '</td><td>' +
+        p.totalBtc.toFixed(8) + '</td><td>' + usd.format(p.invested) + '</td><td>' + usd.format(p.value) + '</td></tr>';
+    });
+    $('rows').innerHTML = rows.join('');
+    drawChart(r.timeline);
+  }
+
+  function drawChart(points) {
+    var svg = $('chart');
+    var W = svg.clientWidth || 700, H = svg.clientHeight || 320;
+    var L = 64, R = 12, T = 10, B = 28, iw = W - L - R, ih = H - T - B;
+    var max = 0;
+    points.forEach(function (p) { max = Math.max(max, p.value, p.invested); });
+    var mag = Math.pow(10, Math.floor(Math.log10(max / 4))), steps = [1, 2, 5, 10];
+    var step = mag * steps.find(function (s) { return max / (mag * s) <= 5; });
+    var top = Math.ceil(max / step) * step || 1;
+    var n = points.length;
+    var x = function (i) { return L + (n > 1 ? i / (n - 1) : 0.5) * iw; };
+    var y = function (v) { return T + ih - v / top * ih; };
+    var every = Math.max(1, Math.floor(n / iw));
+    var invested = '', value = '';
+    for (var i = 0; i < n; i += every) {
+      invested += (i ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(points[i].invested).toFixed(1);
+      value += (i ? 'L' : 'M') + x(i).toFixed(1) + ',' + y(points[i].value).toFixed(1);
+    }
+    invested += 'L' + x(n - 1).toFixed(1) + ',' + y(points[n - 1].invested).toFixed(1);
+    value += 'L' + x(n - 1).toFixed(1) + ',' + y(points[n - 1].value).toFixed(1);
+
+    var short = function (v) { return v >= 1e6 ? '$' + +(v / 1e6).toFixed(1) + 'M' : v >= 1e3 ? '$' + +(v / 1e3).toFixed(1) + 'k' : '$' + v; };
+    var out = '<defs><linearGradient id="fill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4a437" stop-opacity=".3"/><stop offset="1" stop-color="#f4a437" stop-opacity="0"/></linearGradient></defs>';
+    for (var v = 0; v <= top + step / 2; v += step) {
+      out += '<line x1="' + L + '" x2="' + (W - R) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#e9e9e4"/>' +
+        '<text x="' + (L - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + short(v) + '</text>';
+    }
+    var years = toMs(points[n - 1].date) - toMs(points[0].date) > 2 * 365 * DAY;
+    var lastX = -999;
+    points.forEach(function (p, i) {
+      var mark = years ? p.date.slice(5) === '01-01' : p.date.slice(8) === '01';
+      if (mark && x(i) - lastX > 60) {
+        out += '<text x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + (years ? p.date.slice(0, 4) : p.date.slice(0, 7)) + '</text>';
+        lastX = x(i);
+      }
+    });
+    out += '<path d="' + value + 'L' + x(n - 1) + ',' + y(0) + 'L' + x(0) + ',' + y(0) + 'Z" fill="url(#fill)"/>';
+    out += '<path d="' + invested + '" fill="none" stroke="#8a8f96" stroke-width="2" stroke-dasharray="5 4"/>';
+    out += '<path d="' + value + '" fill="none" stroke="#f4a437" stroke-width="2.4"/>';
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.innerHTML = out;
+  }
+
+  // ---------- form ----------
+  function update() {
+    var strategy = DCA.getStrategy($('strategy').value);
+    var amount = parseFloat($('amount').value);
+    var frequency = $('frequency').value;
+    var start = $('start').value, end = $('end').value;
+    var feePct = parseFloat($('fee').value) || 0;
+    $('strategy-hint').textContent = strategy.description;
+    $('frequency').disabled = !strategy.usesFrequency;
+    $('frequency-hint').textContent = strategy.usesFrequency ? HINTS[frequency] : 'Not used: ' + strategy.name.toLowerCase() + ' buys once on the start date.';
+
+    var problem =
+      !(amount > 0) ? 'Enter an amount greater than $0.' :
+      feePct < 0 || feePct >= 100 ? 'Enter a fee between 0% and 99%.' :
+      !prices[start] ? 'Choose a start date between ' + nice(firstDate) + ' and ' + nice(lastDate) + '.' :
+      !prices[end] ? 'Choose an end date between ' + nice(firstDate) + ' and ' + nice(lastDate) + '.' :
+      start > end ? 'The start date must be on or before the end date.' : '';
+    $('error').textContent = problem;
+    $('error').hidden = !problem;
+    document.querySelector('.results').style.opacity = problem ? '.35' : '';
+    if (problem) return;
+
+    try {
+      result = strategy.run({ prices: prices, amount: amount, feePct: feePct, frequency: frequency, start: start, end: end });
+      result.strategy = strategy;
+      result.feePct = feePct;
+      result.label = strategy.id + (strategy.usesFrequency ? '-' + frequency : '') + '-' + start + '-to-' + end;
+      render(result, amount, frequency, start, end);
+    } catch (err) {
+      $('error').textContent = err.message;
+      $('error').hidden = false;
+    }
+  }
+
+  function downloadCsv() {
+    if (!result) return;
+    var lines = ['date,btc_price_usd,btc_bought,total_btc,total_invested_usd,value_usd'].concat(result.purchases.map(function (p) {
+      return [p.date, p.price, p.btc.toFixed(8), p.totalBtc.toFixed(8), p.invested.toFixed(2), p.value.toFixed(2)].join(',');
+    }));
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([lines.join('\n') + '\n'], { type: 'text/csv' }));
+    a.download = 'bitcoin-dca-' + result.label + '.csv';
+    a.click();
+  }
+
+  ['strategy', 'amount', 'frequency', 'start', 'end', 'fee'].forEach(function (id) {
+    $(id).addEventListener('input', update);
+    $(id).addEventListener('change', update);
+  });
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    update();
+    if (window.matchMedia('(max-width: 1020px)').matches) document.querySelector('.results').scrollIntoView({ behavior: 'smooth' });
+  });
+  $('csv-btn').addEventListener('click', downloadCsv);
+  window.addEventListener('resize', function () { if (result) drawChart(result.timeline); });
+
+  // Prices: data/btc-usd-daily.js (loaded above, works from disk); fall back to fetching the .csv.
+  function loadCsvText() {
+    if (window.BTC_USD_DAILY && window.BTC_USD_DAILY.csv) return Promise.resolve(window.BTC_USD_DAILY.csv);
+    return fetch('data/btc-usd-daily.csv').then(function (res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      return res.text();
+    });
+  }
+
+  loadCsvText()
+    .then(function (csv) {
+      var data = DCA.parseCsv(csv);
+      prices = data.prices;
+      firstDate = data.firstDate;
+      lastDate = data.lastDate;
+      ['start', 'end'].forEach(function (id) { $(id).min = firstDate; $(id).max = lastDate; });
+      var start = new Date(toMs(lastDate));
+      start.setUTCFullYear(start.getUTCFullYear() - 3);
+      $('start').value = toDate(start.getTime());
+      $('end').value = lastDate;
+      var count = data.count;
+      $('data-note').textContent = count.toLocaleString('en-US') + ' daily closes, ' + nice(firstDate) + ' – ' + nice(lastDate) + ' (UTC). Source: Coin Metrics, CC BY-NC 4.0.';
+      $('hero-meta').textContent = 'Prices ' + nice(firstDate) + ' – ' + nice(lastDate);
+      update();
+    })
+    .catch(function (err) {
+      var msg = 'Could not load the price data (' + err.message + '). Make sure the data folder sits next to index.html.';
+      $('data-note').textContent = msg;
+      $('error').textContent = msg;
+      $('error').hidden = false;
+    });
+})();
+</script>
+</body>
+</html>

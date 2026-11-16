@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tests · Bitcoin DCA Calculator</title>
+<style>
+  :root{--ink:#13161b;--muted:#666b73;--line:#e5e6e2;--paper:#f7f7f4;--brown:#a96406;--gain:#216a3c;--loss:#a3362a}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+  main{max-width:900px;margin:0 auto;padding:40px 24px 80px}
+  h1{font-size:28px;letter-spacing:-.02em;margin:0 0 6px}
+  .intro{color:var(--muted);margin:0 0 24px;line-height:1.6}
+  #summary{font-weight:750;font-size:18px;padding:16px 20px;border-radius:12px;background:#fff;border:1px solid var(--line);margin-bottom:12px}
+  #summary.pass{background:#eaf6ee;border-color:#bfe3cb;color:var(--gain)}#summary.fail{background:#fdf1ef;border-color:#f1cbc5;color:var(--loss)}
+  nav{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 28px}
+  nav a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-size:13px;font-weight:650;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;white-space:nowrap}
+  nav a b{font-variant-numeric:tabular-nums}nav a.pass b{color:var(--gain)}nav a.fail{border-color:#f1cbc5;background:#fdf1ef}nav a.fail b{color:var(--loss)}
+  section{margin:0 0 28px;scroll-margin-top:16px}
+  section header{display:flex;align-items:baseline;justify-content:space-between;gap:16px;border-bottom:2px solid var(--ink);padding-bottom:8px}
+  section h2{font-size:19px;letter-spacing:-.02em;margin:0;white-space:nowrap}
+  section header code{font-size:12px;color:var(--muted);margin-left:10px;font-weight:500}
+  .count{font-size:13px;font-weight:750;white-space:nowrap;font-variant-numeric:tabular-nums}.count.pass{color:var(--gain)}.count.fail{color:var(--loss)}
+  ol{list-style:none;margin:0;padding:0;background:#fff;border:1px solid var(--line);border-top:0;border-radius:0 0 12px 12px}
+  li{border-bottom:1px solid var(--line);font-size:14px;line-height:1.5}li:last-child{border-bottom:0}
+  li.fail{background:#fffafa}
+  li > details > summary{list-style:none;cursor:pointer;padding:9px 16px 9px 34px;position:relative}
+  li > details > summary::-webkit-details-marker{display:none}
+  li > details > summary:before{content:'▸';position:absolute;left:14px;color:#a7abb1;transition:transform .15s}
+  li > details[open] > summary:before{transform:rotate(90deg)}
+  li > details > summary:hover{background:#fafaf7}
+  .mark{font-weight:800;margin-right:4px}li.ok .mark{color:var(--gain)}li.fail .mark{color:var(--loss)}
+  li small.err{display:block;color:var(--loss);font-family:ui-monospace,Menlo,monospace;font-size:12px;margin-top:4px;white-space:pre-wrap}
+  li .ms{color:#999;font-size:12px;margin-left:6px}
+  li .tag{color:var(--brown);font-size:11px;font-weight:750;letter-spacing:.06em;text-transform:uppercase;margin-right:6px}
+  .detail{padding:4px 16px 16px 34px;display:grid;gap:14px}
+  .detail h3{font-size:11px;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:var(--brown);margin:6px 0 6px}
+  .detail pre{margin:0;background:#f6f6f2;border:1px solid var(--line);border-radius:8px;padding:9px 11px;font:12px/1.55 ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word;color:#30343a}
+  .call{display:grid;gap:6px;margin-bottom:10px}.call .fn{font:600 12px ui-monospace,Menlo,monospace;color:var(--ink)}
+  .io{display:grid;grid-template-columns:72px minmax(0,1fr);gap:6px 10px;align-items:start}.io > span{font-size:12px;color:var(--muted);padding-top:9px}
+  .threw{color:var(--loss)}
+  table.checks{width:100%;border-collapse:collapse;font-size:12px;table-layout:fixed}
+  table.checks th{text-align:left;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}
+  table.checks td{padding:6px 8px;border-bottom:1px solid #efefea;vertical-align:top;font-family:ui-monospace,Menlo,monospace;white-space:pre-wrap;word-break:break-word}
+  table.checks td:first-child{font-family:inherit;width:24px;font-weight:800}
+  table.checks tr.ok td:first-child{color:var(--gain)}table.checks tr.bad td:first-child{color:var(--loss)}table.checks tr.bad{background:#fdf1ef}
+  table.checks td.label{font-family:inherit;color:var(--ink)}
+  .more{font-size:12px;color:var(--muted)}
+  .toolbar{display:flex;gap:8px;margin:0 0 18px}.toolbar button{font:inherit;font-size:13px;font-weight:650;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+</style>
+</head>
+<body>
+<main>
+  <h1>Bitcoin DCA Calculator · tests</h1>
+  <p class="intro">Open this file directly in a browser; no server needed. Click a test to see its input, output and every check (expected vs actual). The same tests run on the command line with <code>node tests/run.js</code> (add <code>--verbose</code> for the details). Files are listed in <code>tests/manifest.js</code>.</p>
+  <div id="summary">Running…</div>
+  <nav id="nav" aria-label="Test sections"></nav>
+  <div class="toolbar"><button type="button" id="expand-all">Expand all</button><button type="button" id="collapse-all">Collapse all</button><button type="button" id="expand-failed">Expand failed</button></div>
+  <div id="sections"></div>
+</main>
+<script src="manifest.js"></script>
+<script src="test-lib.js"></script>
+<script>
+  // Load every file listed in tests/manifest.js, in order (classic scripts work from file://).
+  TEST_MANIFEST.sources.concat(TEST_MANIFEST.browserData, TEST_MANIFEST.tests).forEach(function (f) {
+    document.write('<script src="../' + f + '"><\/script>');
+  });
+</script>
+<script>
+  (function () {
+    var els = {};   // section title -> { list, count, link, passed, total }
+    var slug = function (s) { return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); };
+
+    // One block per section, in the order the sections were declared.
+    T.sections.forEach(function (s) {
+      var id = slug(s.title);
+      var sec = document.createElement('section');
+      sec.id = id;
+      var header = document.createElement('header');
+      var h2 = document.createElement('h2');
+      h2.textContent = s.title;
+      if (s.path) { var code = document.createElement('code'); code.textContent = s.path; h2.appendChild(code); }
+      var count = document.createElement('span');
+      count.className = 'count';
+      header.append(h2, count);
+      var list = document.createElement('ol');
+      sec.append(header, list);
+      document.getElementById('sections').appendChild(sec);
+
+      var link = document.createElement('a');
+      link.href = '#' + id;
+      var label = document.createElement('span'); label.textContent = s.title;
+      var score = document.createElement('b');
+      link.append(label, score);
+      document.getElementById('nav').appendChild(link);
+
+      els[s.title] = { list: list, count: count, link: link, score: score, passed: 0, total: 0 };
+    });
+
+    function refresh(e) {
+      var ok = e.passed === e.total;
+      e.count.textContent = e.passed + '/' + e.total + ' passed';
+      e.count.className = 'count ' + (ok ? 'pass' : 'fail');
+      e.score.textContent = e.passed + '/' + e.total;
+      e.link.className = ok ? 'pass' : 'fail';
+    }
+
+    function el(tag, text, cls) {
+      var n = document.createElement(tag);
+      if (text != null) n.textContent = text;
+      if (cls) n.className = cls;
+      return n;
+    }
+
+    /** Expandable body: notes, calls (input -> output) and checks (expected vs actual). */
+    function detailBody(d) {
+      var box = el('div', null, 'detail');
+      if (d.notes.length) {
+        var notes = el('div'); notes.appendChild(el('h3', 'Notes'));
+        d.notes.forEach(function (n) {
+          var io = el('div', null, 'io'); io.append(el('span', n.label), el('pre', n.value));
+          notes.appendChild(io);
+        });
+        box.appendChild(notes);
+      }
+      if (d.calls.length) {
+        var calls = el('div'); calls.appendChild(el('h3', 'Calls · input → output'));
+        d.calls.forEach(function (c) {
+          var call = el('div', null, 'call');
+          call.appendChild(el('div', c.fn + '(…)', 'fn'));
+          var io = el('div', null, 'io');
+          io.append(el('span', 'Input'), el('pre', c.input));
+          if (c.threw) io.append(el('span', 'Threw'), el('pre', 'Error: ' + c.threw, 'threw'));
+          else io.append(el('span', 'Output'), el('pre', c.output));
+          call.appendChild(io);
+          calls.appendChild(call);
+        });
+        if (d.hiddenCalls) calls.appendChild(el('div', '… and ' + d.hiddenCalls + ' more calls', 'more'));
+        box.appendChild(calls);
+      }
+      var checks = el('div'); checks.appendChild(el('h3', 'Checks · expected vs actual (' + d.checkCount + ')'));
+      var table = el('table', null, 'checks');
+      var head = el('tr');
+      ['', 'Check', 'Expected', 'Actual'].forEach(function (h) { head.appendChild(el('th', h)); });
+      table.appendChild(el('thead')).appendChild(head);
+      var body = el('tbody');
+      d.checks.forEach(function (c) {
+        var tr = el('tr', null, c.ok ? 'ok' : 'bad');
+        tr.append(el('td', c.ok ? '✓' : '✗'), el('td', c.label, 'label'),
+          el('td', c.expected + (c.tolerance != null ? '\n± ' + c.tolerance : '')),
+          el('td', c.actual + (c.diff != null ? '\ndiff ' + c.diff : '')));
+        body.appendChild(tr);
+      });
+      table.appendChild(body);
+      checks.appendChild(table);
+      if (d.hiddenChecks) checks.appendChild(el('div', '… and ' + d.hiddenChecks.toLocaleString('en-US') + ' more checks, all passed', 'more'));
+      box.appendChild(checks);
+      return box;
+    }
+
+    T.run(function (r) {
+      var e = els[r.section];
+      var li = el('li', null, r.ok ? 'ok' : 'fail');
+      var det = el('details');
+      det.open = !r.ok;
+      var sum = el('summary');
+      sum.appendChild(el('span', r.ok ? '✓' : '✗', 'mark'));
+      var name = r.name, m = /^common interface: (.*)$/.exec(name);
+      if (m) { sum.appendChild(el('span', 'Common interface', 'tag')); name = m[1]; }
+      sum.appendChild(document.createTextNode(name));
+      sum.appendChild(el('span', r.ms + ' ms', 'ms'));
+      if (!r.ok) sum.appendChild(el('small', r.error, 'err'));
+      det.append(sum, detailBody(r.details));
+      li.appendChild(det);
+      e.list.appendChild(li);
+      e.total++; if (r.ok) e.passed++;
+      refresh(e);
+    }).then(function (results) {
+      var failed = results.filter(function (r) { return !r.ok; }).length;
+      var s = document.getElementById('summary');
+      s.textContent = (results.length - failed) + ' passed, ' + failed + ' failed';
+      s.className = failed ? 'fail' : 'pass';
+      document.title = (failed ? '✗ ' : '✓ ') + document.title;
+    });
+
+    function setOpen(selector, open) {
+      document.querySelectorAll(selector).forEach(function (d) { d.open = open; });
+    }
+    document.getElementById('expand-all').onclick = function () { setOpen('#sections li > details', true); };
+    document.getElementById('collapse-all').onclick = function () { setOpen('#sections li > details', false); };
+    document.getElementById('expand-failed').onclick = function () { setOpen('#sections li > details', false); setOpen('#sections li.fail > details', true); };
+  })();
+</script>
+</body>
+</html>

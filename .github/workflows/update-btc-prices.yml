@@ -1,0 +1,86 @@
+# Daily BTC price refresh for /apps/bitcoin-dca-calculator/ + GitHub Pages deploy.
+# No Node.js: the updater is .github/scripts/update_btc_prices.py (Python standard library).
+#
+# ONE-TIME SETUP: Settings → Pages → Build and deployment → Source: "GitHub Actions".
+#
+# Runs daily at 00:17 UTC (plus a 06:17 catch-up), on every push to main (deploy only),
+# or manually: Actions → "BTC prices: update & deploy site" → Run workflow.
+name: "BTC prices: update & deploy site"
+
+on:
+  schedule:
+    - cron: "17 0 * * *"
+    - cron: "17 6 * * *"
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      full_rebuild:
+        description: "Rebuild the whole price history from 2010-07-18"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update BTC daily prices
+        id: prices
+        if: github.event_name != 'push'
+        run: |
+          if [ "${{ inputs.full_rebuild }}" = "true" ]; then
+            python3 .github/scripts/update_btc_prices.py --full
+          else
+            python3 .github/scripts/update_btc_prices.py
+          fi
+
+      # Calculator + price-file tests (Node is preinstalled on GitHub runners; nothing to install).
+      # Runs before the commit/deploy, so a bad price file or a broken calculator is never published.
+      - name: Run calculator tests
+        run: node apps/bitcoin-dca-calculator/tests/run.js
+
+      - name: Commit price data
+        if: steps.prices.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add apps/bitcoin-dca-calculator/data/
+          git commit -m "data: BTC daily close through ${{ steps.prices.outputs.last_date }}"
+          git pull --rebase origin main
+          git push origin HEAD:main
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          rsync -a ./ _site/ --exclude '.git' --exclude '.github' --exclude '_site' --exclude '.DS_Store'
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
+
+      # After deploying: the site still ships, but the run turns red (and GitHub
+      # emails you) if the price data is more than 3 days old.
+      - name: Fail if price data is stale
+        if: github.event_name != 'push'
+        run: python3 .github/scripts/update_btc_prices.py --max-age-days=3
