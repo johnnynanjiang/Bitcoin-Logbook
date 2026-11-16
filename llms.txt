@@ -18,7 +18,8 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 - [Blog](https://bitcoinlogbook.com/blog/): all articles, newest first
 - [Is Bitcoin a good investment right now?](https://bitcoinlogbook.com/blog/is-bitcoin-a-good-investment-right-now/): why being ready matters more than timing the market
 - [What is Bitcoin DCA?](https://bitcoinlogbook.com/blog/what-is-bitcoin-dca/): what Bitcoin is, what DCA (dollar cost averaging) is, and how Bitcoin DCA works
-- [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/): four $23,000 workbook buying strategies, 18 separate real trades, original-chart SVG redraws, strategy assumptions and hindsight caveats, a calculator, FAQs and downloadable data
+- [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/): four $23,000 workbook buying strategies, 18 separate real trades, original-chart SVG redraws, strategy assumptions and hindsight caveats, FAQs and downloadable data
+- [Bitcoin DCA calculator](https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/): free in-browser Bitcoin DCA calculator; daily, weekly, fortnightly or monthly buys over any dates since 18 July 2010, percentage fees, lump-sum comparison, CSV export; prefilled with $100 a week from 1 Aug 2025 to 1 Aug 2026, plus $100-a-month results from 2015, 2018 and 2021 and a fee comparison
 - [FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, prerequisites, principles, and risks and caveats
 
 ## Data and sources

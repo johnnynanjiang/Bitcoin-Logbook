@@ -6,7 +6,7 @@
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#121419">
 <title>Bitcoin DCA Calculator: Every Day Since 2010 | Bitcoin Logbook</title>
-<meta name="description" content="Free Bitcoin dollar-cost averaging calculator. Daily, weekly, every-2-weeks or monthly buys over any dates since July 2010, with fees and a lump-sum comparison.">
+<meta name="description" content="Free Bitcoin DCA calculator. Daily, weekly, fortnightly or monthly buys over any dates since July 2010, with fees, a lump-sum comparison and historical results.">
 <link rel="canonical" href="https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -14,14 +14,15 @@
 <meta property="og:site_name" content="Bitcoin Logbook">
 <meta property="og:url" content="https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/">
 <meta property="og:title" content="Bitcoin DCA Calculator: Every Day Since 2010">
-<meta property="og:description" content="Test daily, weekly, every-2-weeks or monthly Bitcoin buys over any dates since July 2010.">
+<meta property="og:description" content="Test daily, weekly, fortnightly or monthly Bitcoin buys over any dates since July 2010.">
 <meta property="og:image" content="https://bitcoinlogbook.com/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "SoftwareApplication", "@id": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/#app", "name": "Bitcoin DCA Calculator", "url": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/", "description": "Free Bitcoin dollar-cost averaging calculator. Daily, weekly, fortnightly or monthly buys over any dates since 18 July 2010, with a percentage fee and a lump-sum comparison.", "applicationCategory": "FinanceApplication", "operatingSystem": "Any (web browser)", "browserRequirements": "Requires JavaScript", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "Bitcoin Logbook", "url": "https://bitcoinlogbook.com/"}, "featureList": ["Standard DCA and lump sum", "Daily, weekly, fortnightly or monthly buys", "BTC/USD daily closes since 18 July 2010", "Percentage fee per purchase", "Lump-sum comparison for the same total", "Purchase details as CSV", "Previous results comparison"]}, {"@type": "BreadcrumbList", "@id": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Bitcoin Logbook", "item": "https://bitcoinlogbook.com/"}, {"@type": "ListItem", "position": 2, "name": "Bitcoin DCA Calculator", "item": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/"}]}, {"@type": "FAQPage", "@id": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/#faq", "mainEntity": [{"@type": "Question", "name": "Can I see how Bitcoin DCA would have done in the past?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. That is what this calculator does. Pick any start and end date since 18 July 2010. It buys at each day's actual close and values your BTC at the end date's close. The results are past performance, not a prediction."}}, {"@type": "Question", "name": "Is there a Bitcoin DCA calculator in Excel?", "acceptedAnswer": {"@type": "Answer", "text": "You don't need one. Click “Download purchases (CSV)” and open the file in Excel or Google Sheets: one row per buy, with date, BTC price, BTC bought, total BTC, invested and value. To build your own sheet, download btc-usd-daily.csv and use BTC bought = (amount − fee) ÷ close, then add up the column."}}, {"@type": "Question", "name": "Is there a Bitcoin DCA calculator app?", "acceptedAnswer": {"@type": "Answer", "text": "This page works like one. It runs in any phone or desktop browser, with nothing to install and no account. On a phone, use Add to Home Screen to open it like an app. Your previous results stay saved in that browser."}}, {"@type": "Question", "name": "Is this Bitcoin DCA calculator free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. No sign-up, no paywall, no limit on runs. The calculations run in your browser, on a price file that loads with the page."}}, {"@type": "Question", "name": "Is it better to buy Bitcoin daily or weekly?", "acceptedAnswer": {"@type": "Answer", "text": "Without fees, it barely matters. About $100 a month from 1 January 2021 to 15 November 2026 returned +51.05% bought daily, +51.24% weekly and +51.24% monthly. From 1 January 2018: +298.93%, +299.15% and +297.99%. With a flat fee per buy, fewer and larger buys win clearly (see the fee table). Pick the schedule you can keep up."}}, {"@type": "Question", "name": "Does the Bitcoin DCA calculator include fees?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, as a percentage taken out of each purchase. To model a flat fee, divide it by the amount per purchase. It does not include spreads, withdrawal fees, tax or interest on cash you have not invested yet."}}, {"@type": "Question", "name": "Is DCA better than a lump sum for Bitcoin?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. A lump sum beat $100-a-month DCA from 2015, 2018 and 2021, because Bitcoin rose. From August 2025 to August 2026, DCA lost less. Every run here shows the lump-sum result for the same total under the chart. For four strategies tested on the same budget, read Bitcoin DCA vs lump sum."}}, {"@type": "Question", "name": "Why are my numbers different from another Bitcoin DCA calculator?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the price data or the buying rules. This calculator uses Coin Metrics' daily UTC close, values at the end date's close rather than today's price, and counts weekly and monthly buys from your start date. Another tool may use a different exchange, a different time of day, or always buy on a Monday or the 1st."}}]}]}</script>
 <style>
 :root{--ink:#13161b;--muted:#666b73;--night:#101216;--paper:#f7f7f4;--line:#e5e6e2;--orange:#f4a437;--orange2:#ffc66e;--brown:#a96406;--gain:#216a3c;--loss:#a3362a;--max:1150px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit}a:hover{opacity:.86}a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #ee9b2e;outline-offset:3px}::selection{background:#f6bd59;color:#141414}.container{max-width:var(--max);margin:0 auto;padding-inline:26px}.small-caps{font-weight:750;font-size:11px;letter-spacing:.16em;text-transform:uppercase}.section-kicker{color:var(--brown);display:flex;gap:10px;align-items:center}.section-kicker:before{content:'';width:18px;height:2px;background:currentColor}[hidden]{display:none!important}
 .hero-wrap{background:var(--night);color:#fff;position:relative;overflow:hidden}.hero-wrap:before{content:'';position:absolute;inset:0;pointer-events:none;opacity:.35;background-image:radial-gradient(#62676e .65px,transparent .65px);background-size:25px 25px;mask-image:linear-gradient(100deg,transparent 15%,#000 100%)}.hero-wrap:after{content:'';position:absolute;pointer-events:none;width:570px;height:570px;border-radius:50%;right:-140px;top:0;background:radial-gradient(circle,#f49e2422,transparent 65%);filter:blur(15px)}
-.site-header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:22px;border-bottom:1px solid #ffffff1a}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:37px;height:37px;background:var(--orange);border-radius:11px;color:#21170b;display:grid;place-items:center;font-weight:900;font-size:25px;box-shadow:0 8px 28px #f4a43736}.brand-copy strong{font-size:15px;letter-spacing:-.025em}.nav-links{display:flex;align-items:center;gap:25px}.nav-links a{text-decoration:none;color:#b8bcc4;font-size:13px;font-weight:600}.nav-links a[aria-current]{color:#fff}.nav-links .outline-cta{border:1px solid #ffffff48;padding:11px 15px;border-radius:100px;color:#fff}
+.site-header{position:relative;z-index:2;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:24px;padding-bottom:22px;border-bottom:1px solid #ffffff1a}.brand{display:flex;align-items:center;gap:12px;text-decoration:none}.brand-mark{width:37px;height:37px;background:var(--orange);border-radius:11px;color:#21170b;display:grid;place-items:center;font-weight:900;font-size:25px;box-shadow:0 8px 28px #f4a43736}.brand-copy strong{font-size:15px;letter-spacing:-.025em}.nav-links{display:flex;align-items:center;gap:25px}.nav-links a{text-decoration:none;color:#b8bcc4;font-size:13px;font-weight:600}.nav-links a[aria-current]{color:#fff}.nav-links .outline-cta{border:1px solid #ffffff48;padding:11px 15px;border-radius:100px;color:#fff}.nav-links a{white-space:nowrap}@media(max-width:1100px){.nav-links{gap:18px}}
 .nav-toggle{display:none;flex-shrink:0;place-items:center;width:40px;height:40px;padding:0;border:1px solid #ffffff48;border-radius:100px;background:transparent;color:#fff;cursor:pointer}.nav-toggle-bar,.nav-toggle-bar:before,.nav-toggle-bar:after{display:block;width:16px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,background .2s}.nav-toggle-bar{position:relative}.nav-toggle-bar:before,.nav-toggle-bar:after{content:"";position:absolute;left:0}.nav-toggle-bar:before{top:-5px}.nav-toggle-bar:after{top:5px}.nav-open .nav-toggle-bar{background:transparent}.nav-open .nav-toggle-bar:before{transform:translateY(5px) rotate(45deg)}.nav-open .nav-toggle-bar:after{transform:translateY(-5px) rotate(-45deg)}
 .hero{position:relative;z-index:1;padding-top:64px;padding-bottom:72px;max-width:900px}.hero .section-kicker{color:#f7bf68}.hero h1{font-size:clamp(38px,4.8vw,60px);letter-spacing:-.03em;line-height:1.1;margin:20px 0 18px}.hero h1 span{color:var(--orange2)}.hero p{font-size:18px;line-height:1.7;color:#b7bbc3;margin:0}.hero-meta{margin-top:26px;color:#8d939b}
 .btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font:inherit;font-size:14px;font-weight:720;border-radius:999px;padding:13px 18px;border:0;cursor:pointer;transition:transform .2s ease}.btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--orange);color:#1e170c}.btn-secondary{background:transparent;border:1px solid var(--ink);color:var(--ink)}
@@ -86,6 +87,12 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
 .history td.row-actions button.icon:hover{color:var(--orange);border-color:var(--orange)}
 .history td.row-actions button.icon + button.icon{margin-left:4px}
 .history td.row-actions button.delete{color:var(--muted)}.history td.row-actions button.delete:hover{color:var(--loss);border-color:var(--loss)}
+.crumbs{font-size:12px;color:#8d939b;margin-bottom:18px}.crumbs a{color:#b8bcc4;text-decoration:none}.crumbs span{margin:0 7px}
+.prose a{color:var(--brown)}.prose h3{font-size:18px;letter-spacing:-.02em;margin:28px 0 8px}
+.guide-table-wrap{overflow:auto;border:1px solid var(--line);border-radius:12px;background:#fff;margin:18px 0 8px}
+.guide-table{font-size:13px}.guide-table caption{caption-side:bottom;text-align:left;font-size:12px;line-height:1.6;color:var(--muted);padding:10px 14px}
+.guide-table th{position:static}.guide-table th,.guide-table td{padding:10px 9px}.guide-table th{letter-spacing:.08em}
+.guide-faq{border-top:1px solid var(--line)}.guide-faq h3{margin-top:22px}
 @media(max-width:1020px){.app-grid{grid-template-columns:minmax(0,1fr)}.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.container{padding-inline:20px}.site-header{padding-top:17px;padding-bottom:17px}.nav-toggle{display:grid}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:6px 20px 20px;background:var(--night);border-bottom:1px solid #ffffff1a}.site-header.nav-open .nav-links{display:flex}.nav-links a{padding:15px 0;font-size:15px;border-bottom:1px solid #ffffff14}.nav-links .outline-cta{margin-top:16px;text-align:center}.brand-copy strong{font-size:13px}.hero{padding-top:48px;padding-bottom:54px}.hero p{font-size:16px}.app{padding-top:28px}.panel{padding:18px}#chart{height:260px}.footer{flex-direction:column;align-items:start}}
 @media(max-width:420px){.metrics,.two{grid-template-columns:1fr}}
@@ -99,9 +106,10 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
   <header class="site-header container">
     <a href="/" class="brand" aria-label="Bitcoin Logbook, home"><span class="brand-mark" aria-hidden="true">₿</span><span class="brand-copy"><strong>Bitcoin Logbook - A real Bitcoin investment journal.</strong></span></a>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav"><span class="nav-toggle-bar" aria-hidden="true"></span></button>
-    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="/#comparison">The results</a><a href="/#approach">The approach</a><a href="/blog/">Blog</a><a href="/faq/">FAQ</a><a href="/#ledger" class="outline-cta">See every trade ↗</a></nav>
+    <nav class="nav-links" id="main-nav" aria-label="Main navigation"><a href="/#comparison" target="_blank" rel="noopener noreferrer">The results</a><a href="/#approach" target="_blank" rel="noopener noreferrer">The approach</a><a href="/apps/bitcoin-dca-calculator/" aria-current="page">Calculator</a><a href="/blog/" target="_blank" rel="noopener noreferrer">Blog</a><a href="/faq/" target="_blank" rel="noopener noreferrer">FAQ</a><a href="/#ledger" class="outline-cta" target="_blank" rel="noopener noreferrer">See every trade ↗</a></nav>
   </header>
   <div class="hero container">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/" target="_blank" rel="noopener noreferrer">Bitcoin Logbook</a><span aria-hidden="true">›</span><span aria-current="page" style="margin:0">Bitcoin DCA Calculator</span></nav>
     <div class="section-kicker small-caps">Free tool · Historical simulation</div>
     <h1>Bitcoin DCA Calculator</h1>
     <p>The best Bitcoin DCA calculator for historical simulation, strategy comparison, and investment planning, in 2026</p>
@@ -125,8 +133,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
         <span class="hint" id="frequency-hint"></span>
       </label>
       <div class="two">
-        <label class="field">Start date<input id="start" type="date"></label>
-        <label class="field">End date<input id="end" type="date"></label>
+        <label class="field">Start date<input id="start" type="date" value="2025-08-01"></label>
+        <label class="field">End date<input id="end" type="date" value="2026-08-01"></label>
       </div>
       <label class="field">Fee per purchase (%)
         <input id="fee" type="number" min="0" max="99" step="any" value="0" inputmode="decimal">
@@ -141,28 +149,28 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
 
     <section class="results" aria-live="polite">
       <div class="metrics">
-        <div class="metric"><span class="small-caps">Invested</span><strong id="r-invested">—</strong><small id="r-buys">&nbsp;</small></div>
-        <div class="metric dark"><span class="small-caps">Final value</span><strong id="r-value">—</strong><small id="r-profit">&nbsp;</small></div>
-        <div class="metric"><span class="small-caps">BTC</span><strong id="r-btc">—</strong><small id="r-avg">&nbsp;</small></div>
-        <div class="metric"><span class="small-caps">Return</span><strong id="r-roi">—</strong><small id="r-price">&nbsp;</small></div>
+        <div class="metric"><span class="small-caps">Invested</span><strong id="r-invested">$5,300.00</strong><small id="r-buys">53 purchases</small></div>
+        <div class="metric dark"><span class="small-caps">Final value</span><strong id="r-value">$4,058.14</strong><small id="r-profit" class="loss">-$1,241.86 loss</small></div>
+        <div class="metric"><span class="small-caps">BTC</span><strong id="r-btc">0.06466960</strong><small id="r-avg">Avg cost $81,955.05</small></div>
+        <div class="metric"><span class="small-caps">Return</span><strong id="r-roi" class="loss">-23.43%</strong><small id="r-price">End price $62,751.88</small></div>
       </div>
 
       <div class="panel">
         <div class="chart-head">
-          <div><div class="small-caps" style="color:var(--brown)">Over time</div><h2>Invested vs. value</h2></div>
+          <div><div class="small-caps" style="color:var(--brown)">Over time</div><h2>Bitcoin DCA: invested vs. value</h2></div>
           <div class="legend"><span><i style="background:#8a8f96"></i>Invested</span><span><i style="background:var(--orange)"></i>Value</span></div>
         </div>
         <svg id="chart" role="img" aria-label="Total invested and portfolio value over time"></svg>
       </div>
 
-      <p class="note" id="lump"></p>
+      <p class="note" id="lump"><strong>Lump sum: $5,300.00 on 1 Aug 2025 → 0.04678584 BTC, worth $2,935.90. </strong>Standard DCA finishes $1,122.24 higher.</p>
 
       <div class="actions">
         <button class="btn btn-secondary" type="button" id="csv-btn">Download purchases (CSV)</button>
       </div>
 
       <details>
-        <summary id="table-title">Purchase details</summary>
+        <summary id="table-title">Purchase details (53)</summary>
         <div class="table-wrap">
           <table>
             <thead><tr><th>Date</th><th>BTC price</th><th>BTC bought</th><th>Total BTC</th><th>Invested</th><th>Value</th></tr></thead>
@@ -189,8 +197,60 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
     </div>
   </section>
 
-  <article class="prose">
-    <h2>How it is calculated.</h2>
+  <article class="prose" id="guide">
+    <h2 id="what-is-bitcoin-dca">What is Bitcoin DCA?</h2>
+    <p>Bitcoin DCA (dollar cost averaging) means buying a fixed dollar amount of Bitcoin on a fixed schedule, whatever the price is doing. $100 every Monday. $500 on the 1st of every month. When the price is low, the same $100 buys more BTC. When it is high, it buys less. Over time you pay an average price instead of betting everything on one day.</p>
+    <p>The real benefit is the behaviour. A schedule decides when you buy, not your mood on a red day. It does not guarantee a profit: DCA into an asset that keeps falling is still a loss, and in a market that mostly rises, a lump sum on day one usually ends up ahead. The longer version, with my own trades as the example, is in <a href="/blog/what-is-bitcoin-dca/" target="_blank" rel="noopener noreferrer">What is Bitcoin DCA?</a></p>
+
+    <h2 id="how-to-use">How to use this Bitcoin DCA calculator.</h2>
+    <ol>
+      <li><strong>Pick a strategy.</strong> Standard DCA buys on a schedule. Lump sum buys once, on the start date.</li>
+      <li><strong>Set the amount per purchase</strong> and how often to buy: daily, weekly, fortnightly or monthly.</li>
+      <li><strong>Choose a start and end date</strong>, anywhere from 18 July 2010 to the last finished UTC day.</li>
+      <li><strong>Add a fee</strong> as a percentage of each purchase, if your exchange charges one.</li>
+      <li><strong>Click Calculate.</strong> Each run is added to Previous results, so you can compare amounts, schedules and dates side by side.</li>
+    </ol>
+    <p>The page opens with one example already calculated: $100 a week from 1 August 2025 to 1 August 2026. That is 53 buys and $5,300 invested. It ends with 0.06466960 BTC, worth $4,058.14 at the 1 August 2026 close of $62,751.88. A −23.43% return. Not a good year to start.</p>
+    <p>A lump sum of the same $5,300 on 1 August 2025 did worse: $2,935.90, or −44.61%. In a falling year, DCA lost less. That is what it is for.</p>
+
+    <h2 id="history">Bitcoin DCA results: $100 a month since 2015, 2018 and 2021.</h2>
+    <p>Same plan, three start dates: $100 on the 1st of every month, no fees, valued at the 15 November 2026 close of $65,189.11. Every number comes from the same daily price file this calculator runs on.</p>
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <caption>Standard DCA, $100 monthly from the start date to 15 November 2026, 0% fee. Value = BTC × the 15 November 2026 close ($65,189.11). Lump sum = the same total invested in one purchase on the start date. Coin Metrics daily UTC closes; no spread, tax or selling costs.</caption>
+        <thead><tr><th scope="col">Start</th><th scope="col">Buys</th><th scope="col">Invested</th><th scope="col">BTC</th><th scope="col">Avg cost</th><th scope="col">Value</th><th scope="col">Return</th><th scope="col">Lump sum</th></tr></thead>
+        <tbody>
+          <tr><td>1 Jan 2015</td><td>143</td><td>$14,300</td><td>8.18359919</td><td>$1,747.40</td><td>$533,481.55</td><td class="gain">+3,630.64%</td><td>$2,961,480.18</td></tr>
+          <tr><td>1 Jan 2018</td><td>107</td><td>$10,700</td><td>0.65324985</td><td>$16,379.64</td><td>$42,584.78</td><td class="gain">+297.99%</td><td>$51,804.04</td></tr>
+          <tr><td>1 Jan 2021</td><td>71</td><td>$7,100</td><td>0.16472225</td><td>$43,102.86</td><td>$10,738.10</td><td class="gain">+51.24%</td><td>$15,753.29</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <ul>
+      <li><strong>The start date matters most.</strong> The 2015 plan put in twice the money of the 2021 plan and ended with almost 50 times the value.</li>
+      <li><strong>The 2021 plan bought through the 2021 top and the 2022 crash.</strong> Its average cost, $43,102.86, is still below the 15 November close, so it is up 51.24%.</li>
+      <li><strong>A lump sum won all three.</strong> Money invested on day one had longer to grow while Bitcoin rose. DCA comes out ahead in windows that end lower than they start, like the August 2025 example above. For four strategies on the same $23,000 budget, read <a href="/blog/bitcoin-dca-vs-lump-sum/" target="_blank" rel="noopener noreferrer">Bitcoin DCA vs lump sum</a>.</li>
+    </ul>
+    <p>These are past results. They are not a forecast. Run your own dates above.</p>
+
+    <h2 id="fees">Bitcoin DCA fees: why small, frequent buys cost more.</h2>
+    <p>A percentage fee costs the same share whether you buy daily or monthly. A flat fee does not. The smaller the purchase, the bigger the bite.</p>
+    <p>Take a flat fee of $0.99 per buy (an example, not any particular exchange) and about $100 a month from 1 January 2021 to 15 November 2026:</p>
+    <div class="guide-table-wrap">
+      <table class="guide-table">
+        <caption>Standard DCA from 1 January 2021 to 15 November 2026, valued at the 15 November 2026 close ($65,189.11). The $0.99 flat fee is entered as a percentage of each purchase (0.99 ÷ amount). Fees are taken out of each purchase and included in the amount invested.</caption>
+        <thead><tr><th scope="col">Schedule</th><th scope="col">Per buy</th><th scope="col">Fee</th><th scope="col">Buys</th><th scope="col">Fees paid</th><th scope="col">Value</th><th scope="col">Return</th><th scope="col">No fee</th></tr></thead>
+        <tbody>
+          <tr><td>Monthly</td><td>$100</td><td>0.99%</td><td>71</td><td>$70.29</td><td>$10,631.79</td><td class="gain">+49.74%</td><td>+51.24%</td></tr>
+          <tr><td>Weekly</td><td>$23</td><td>4.30%</td><td>307</td><td>$303.93</td><td>$10,219.38</td><td class="gain">+44.73%</td><td>+51.24%</td></tr>
+          <tr><td>Daily</td><td>$3.30</td><td>30.00%</td><td>2,145</td><td>$2,123.55</td><td>$7,484.49</td><td class="gain">+5.74%</td><td>+51.05%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Same Bitcoin, same years, about the same money. The daily plan paid $2,123.55 in fees and kept a +5.74% return. Without the fee it would have made +51.05%.</p>
+    <p>The calculator takes the fee as a percentage. To model a flat fee, divide it by the amount per purchase: $0.99 on a $23 buy is 0.99 ÷ 23 = 4.30%. Check the spread too. Many “zero-fee” recurring buys charge it in the price instead.</p>
+
+    <h2 id="method">How the Bitcoin DCA calculator works.</h2>
     <ul>
       <li><strong>Each purchase</strong> buys (amount − fee) ÷ the BTC/USD close of that UTC day.</li>
       <li><strong>Standard DCA</strong> buys the amount per purchase on a schedule counted from the start date: weekly = every 7 days, fortnightly = every 14 days, monthly = same day each month (the last day for shorter months).</li>
@@ -199,8 +259,28 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       <li><strong>Comparison</strong>: the note under the chart shows a lump sum of the same total on the start date, with the same fee rate.</li>
       <li>No spread, tax, selling costs or interest on uninvested cash.</li>
     </ul>
-    <h2>Price data.</h2>
+    <h2 id="data">Bitcoin DCA price data.</h2>
     <p>One file, <a href="data/btc-usd-daily.csv" download>btc-usd-daily.csv</a>: the BTC/USD close for every UTC day from 18 July 2010. Source: Coin Metrics Community Data (PriceUSD), licensed <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="license noopener">CC BY-NC 4.0</a>. Updated daily.</p>
+
+    <section class="guide-faq" aria-labelledby="faq">
+      <h2 id="faq">Bitcoin DCA calculator FAQ.</h2>
+      <h3 id="faq-1">Can I see how Bitcoin DCA would have done in the past?</h3>
+      <p>Yes. That is what this calculator does. Pick any start and end date since 18 July 2010. It buys at each day's actual close and values your BTC at the end date's close. The results are past performance, not a prediction.</p>
+      <h3 id="faq-2">Is there a Bitcoin DCA calculator in Excel?</h3>
+      <p>You don't need one. Click “Download purchases (CSV)” and open the file in Excel or Google Sheets: one row per buy, with date, BTC price, BTC bought, total BTC, invested and value. To build your own sheet, download <a href="data/btc-usd-daily.csv" download>btc-usd-daily.csv</a> and use BTC bought = (amount − fee) ÷ close, then add up the column.</p>
+      <h3 id="faq-3">Is there a Bitcoin DCA calculator app?</h3>
+      <p>This page works like one. It runs in any phone or desktop browser, with nothing to install and no account. On a phone, use Add to Home Screen to open it like an app. Your previous results stay saved in that browser.</p>
+      <h3 id="faq-4">Is this Bitcoin DCA calculator free?</h3>
+      <p>Yes. No sign-up, no paywall, no limit on runs. The calculations run in your browser, on a price file that loads with the page.</p>
+      <h3 id="faq-5">Is it better to buy Bitcoin daily or weekly?</h3>
+      <p>Without fees, it barely matters. About $100 a month from 1 January 2021 to 15 November 2026 returned +51.05% bought daily, +51.24% weekly and +51.24% monthly. From 1 January 2018: +298.93%, +299.15% and +297.99%. With a flat fee per buy, fewer and larger buys win clearly (see <a href="#fees">the fee table</a>). Pick the schedule you can keep up.</p>
+      <h3 id="faq-6">Does the Bitcoin DCA calculator include fees?</h3>
+      <p>Yes, as a percentage taken out of each purchase. To model a flat fee, divide it by the amount per purchase. It does not include spreads, withdrawal fees, tax or interest on cash you have not invested yet.</p>
+      <h3 id="faq-7">Is DCA better than a lump sum for Bitcoin?</h3>
+      <p>Not always. A lump sum beat $100-a-month DCA from 2015, 2018 and 2021, because Bitcoin rose. From August 2025 to August 2026, DCA lost less. Every run here shows the lump-sum result for the same total under the chart. For four strategies tested on the same budget, read <a href="/blog/bitcoin-dca-vs-lump-sum/" target="_blank" rel="noopener noreferrer">Bitcoin DCA vs lump sum</a>.</p>
+      <h3 id="faq-8">Why are my numbers different from another Bitcoin DCA calculator?</h3>
+      <p>Usually the price data or the buying rules. This calculator uses Coin Metrics' daily UTC close, values at the end date's close rather than today's price, and counts weekly and monthly buys from your start date. Another tool may use a different exchange, a different time of day, or always buy on a Monday or the 1st.</p>
+    </section>
   </article>
 </main>
 
@@ -336,7 +416,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
     var lastX = -999;
     points.forEach(function (p, i) {
       var mark = years ? p.date.slice(5) === '01-01' : p.date.slice(8) === '01';
-      if (mark && x(i) - lastX > 60) {
+      if (mark && x(i) - lastX > 60 && x(i) < W - R - 22) { // skip a label that would be clipped at the right edge
         out += '<text x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + (years ? p.date.slice(0, 4) : p.date.slice(0, 7)) + '</text>';
         lastX = x(i);
       }
@@ -469,8 +549,11 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
 
 
   // ---------- form ----------
-  // Editing a field never calculates. Only clicking Calculate runs a strategy and adds a row
-  // to "Previous results"; until then the old results are dimmed and marked out of date.
+  // The page opens with DEFAULTS already calculated (shown, not added to "Previous results").
+  // After that, editing a field never calculates. Only clicking Calculate runs a strategy and adds
+  // a row to "Previous results"; until then the old results are dimmed and marked out of date.
+  // The static numbers in the HTML above are the same DEFAULTS run, for first paint and no-JS readers.
+  var DEFAULTS = { start: '2025-08-01', end: '2026-08-01' };
 
   /** Keep hints and the frequency field in step with the selected strategy (no calculation). */
   function syncForm() {
@@ -488,7 +571,8 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
     $('status').textContent = result ? 'Inputs changed. Click Calculate to update the results.' : 'Click Calculate to see the results.';
   }
 
-  function calculate() {
+  function calculate(options) {
+    var auto = !!(options && options.auto);
     var strategy = DCA.getStrategy($('strategy').value);
     var amount = parseFloat($('amount').value);
     var frequency = $('frequency').value;
@@ -512,7 +596,7 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       result.feePct = feePct;
       result.label = strategy.id + (strategy.usesFrequency ? '-' + frequency : '') + '-' + start + '-to-' + end;
       render(result, amount, frequency, start, end);
-      addToHistory(strategy, { amount: amount, feePct: feePct, frequency: frequency, start: start, end: end }, result);
+      if (!auto) addToHistory(strategy, { amount: amount, feePct: feePct, frequency: frequency, start: start, end: end }, result);
       document.querySelector('.results').classList.remove('stale');
       $('status').textContent = '';
     } catch (err) {
@@ -568,14 +652,19 @@ table{width:100%;border-collapse:collapse;font-size:14px}th{white-space:nowrap;t
       firstDate = data.firstDate;
       lastDate = data.lastDate;
       ['start', 'end'].forEach(function (id) { $(id).min = firstDate; $(id).max = lastDate; });
-      var start = new Date(toMs(lastDate));
-      start.setUTCFullYear(start.getUTCFullYear() - 3);
-      $('start').value = toDate(start.getTime());
-      $('end').value = lastDate;
+      if (prices[DEFAULTS.start] && prices[DEFAULTS.end]) {
+        $('start').value = DEFAULTS.start;
+        $('end').value = DEFAULTS.end;
+      } else { // price file does not cover the defaults: fall back to the last 3 years
+        var start = new Date(toMs(lastDate));
+        start.setUTCFullYear(start.getUTCFullYear() - 3);
+        $('start').value = toDate(start.getTime());
+        $('end').value = lastDate;
+      }
       var count = data.count;
       $('data-note').textContent = count.toLocaleString('en-US') + ' daily closes, ' + nice(firstDate) + ' – ' + nice(lastDate) + ' (UTC). Source: Coin Metrics, CC BY-NC 4.0.';
       $('hero-meta').textContent = 'Prices ' + nice(firstDate) + ' – ' + nice(lastDate);
-      inputsChanged();
+      calculate({ auto: true }); // prefilled example: results and chart on first view, no click needed
     })
     .catch(function (err) {
       var msg = 'Could not load the price data (' + err.message + '). Make sure the data folder sits next to index.html.';

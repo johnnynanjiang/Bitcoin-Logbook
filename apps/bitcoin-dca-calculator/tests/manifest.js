@@ -28,6 +28,7 @@
       'strategies/lump-sum/lump-sum-strategy.test.js',
       'tests/results-history.test.js',
       'tests/data.test.js',
+      'tests/page-figures.test.js',
       'tests/bitcoindata.test.js'
     ]
   };
