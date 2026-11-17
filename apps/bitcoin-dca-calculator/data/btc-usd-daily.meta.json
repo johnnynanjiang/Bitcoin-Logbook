@@ -5,11 +5,11 @@
   "sourceUrl": "https://coinmetrics.io/community-network-data/",
   "license": "CC BY-NC 4.0",
   "firstDate": "2010-07-18",
-  "lastDate": "2026-11-15",
-  "rows": 5965,
-  "lastClose": 65189.11071,
-  "generatedAt": "2026-11-16T11:06:38+00:00",
-  "sha256": "cf62c34fdc070b72e2b4947bebb4557b5de12bb324152bd16af6443da3cebb1f",
+  "lastDate": "2026-11-16",
+  "rows": 5966,
+  "lastClose": 64942.51035,
+  "generatedAt": "2026-11-17T06:04:51+00:00",
+  "sha256": "4c3b378cae17360292fc6514694676aab46ab11f859e0ade406e1d4150fd3431",
   "crossCheck": {
     "reference": "Coinbase Exchange BTC-USD daily close",
     "maxDiffPct": 0.531
