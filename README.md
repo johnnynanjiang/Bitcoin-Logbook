@@ -70,6 +70,10 @@ Every trade is listed with its date, amount, BTC, price, fee and exchange in the
 - [Is Bitcoin a good investment right now?](https://bitcoinlogbook.com/blog/is-bitcoin-a-good-investment-right-now/): why being ready matters more than timing the market
 - [Bitcoin DCA FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, principles, risks and caveats
 
+## Comparison and alternatives
+
+Want to compare other Bitcoin DCA calculators side by side? See [Best Bitcoin DCA Calculators 2026](https://github.com/johnnynanjiang/best-bitcoin-dca-calculators), a comparison of 12 tools by price history, custom end date, fees, lump-sum comparison, CSV export and last commit.
+
 ## Data sources
 
 - **Calculator prices:** [Coin Metrics Community Data](https://coinmetrics.io/community-network-data/), metric `PriceUSD`, one BTC/USD close per UTC day from 18 July 2010, licensed CC BY-NC 4.0. File: [`apps/bitcoin-dca-calculator/data/btc-usd-daily.csv`](apps/bitcoin-dca-calculator/data/btc-usd-daily.csv).
@@ -110,7 +114,13 @@ llms.txt                       summary of the site for AI assistants
 .github/workflows/             daily price update, tests and GitHub Pages deploy
 ```
 
-No build step and no Node.js are needed to use or deploy the site: open any `index.html` in a browser. Calculator tests: `node apps/bitcoin-dca-calculator/tests/run.js`, or open `apps/bitcoin-dca-calculator/tests/index.html`.
+No build step and no Node.js are needed to use or deploy the site: open any `index.html` in a browser. Calculator tests: `node apps/bitcoin-dca-calculator/tests/run.js`, or open `apps/bitcoin-dca-calculator/tests/index.html`. More on how the site is built: [bitcoinlogbook.com/open-source](https://bitcoinlogbook.com/open-source/).
+
+## Licence
+
+- **Code** (HTML, CSS, JavaScript, Python, workflows): [MIT](LICENSE).
+- **Price data** in `apps/bitcoin-dca-calculator/data/`: [Coin Metrics Community Data](https://coinmetrics.io/community-network-data/), [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+- **Articles, the trade journal, trade data and images**: © Bitcoin Logbook, all rights reserved. Quoting with a link to [bitcoinlogbook.com](https://bitcoinlogbook.com/) is welcome.
 
 ---
 

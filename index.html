@@ -32,11 +32,25 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://bitcoinlogbook.com/#organization",
+        "name": "Bitcoin Logbook",
+        "url": "https://bitcoinlogbook.com/",
+        "logo": "https://bitcoinlogbook.com/icon-512.png",
+        "sameAs": [
+          "https://github.com/johnnynanjiang",
+          "https://github.com/johnnynanjiang/Bitcoin-Logbook",
+          "https://github.com/johnnynanjiang/best-bitcoin-dca-calculators",
+          "https://x.com/BitcoinLogbook"
+        ]
+      },
+      {
         "@type": "WebSite",
         "@id": "https://bitcoinlogbook.com/#website",
         "url": "https://bitcoinlogbook.com/",
         "name": "Bitcoin Logbook",
         "alternateName": "Bitcoin, with a plan.",
+        "publisher": {"@id": "https://bitcoinlogbook.com/#organization"},
         "inLanguage": "en"
       },
       {
@@ -235,7 +249,7 @@
   </div>
   </div>  
   <div class="disclaimer">Educational journal, not financial advice. Bitcoin is volatile. Dollar-cost averaging and partial profit-taking can help enforce discipline but do not guarantee lower risk, sustainable profits or better returns. No leverage removes margin-liquidation risk, not market risk. Taxes, spreads, exchange counterparty risk and capital loss are still possible.</div>
-  </div></div><div class="footer"><span><strong>₿ Bitcoin, with a plan.</strong> Real records. Clear assumptions. No promises.</span><span><a href="/blog/" target="_blank" rel="noopener noreferrer">Blog</a> · <a href="/faq/" target="_blank" rel="noopener noreferrer">FAQ</a> · <a href="https://x.com/BitcoinLogbook" target="_blank" rel="noopener noreferrer me" aria-label="Bitcoin Logbook on X (Twitter)">X (Twitter)</a></span><span>Historical comparison: 28 Feb – 21 Aug 2026 · Updated for publication review</span></div></div></section>
+  </div></div><div class="footer"><span><strong>₿ Bitcoin, with a plan.</strong> Real records. Clear assumptions. No promises.</span><span><a href="/blog/" target="_blank" rel="noopener noreferrer">Blog</a> · <a href="/faq/" target="_blank" rel="noopener noreferrer">FAQ</a> · <a href="/open-source/">How this site is built</a> · <a href="https://x.com/BitcoinLogbook" target="_blank" rel="noopener noreferrer me" aria-label="Bitcoin Logbook on X (Twitter)">X (Twitter)</a></span><span>Historical comparison: 28 Feb – 21 Aug 2026 · Updated for publication review</span></div></div></section>
 </main>
 <script>
 (function(){

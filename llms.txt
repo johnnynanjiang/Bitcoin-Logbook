@@ -21,6 +21,16 @@ The strategy has three simple rules, with no leverage and no complex trading sys
 - [Bitcoin DCA vs lump sum](https://bitcoinlogbook.com/blog/bitcoin-dca-vs-lump-sum/): four $23,000 workbook buying strategies, 18 separate real trades, original-chart SVG redraws, strategy assumptions and hindsight caveats, FAQs and downloadable data
 - [Bitcoin DCA calculator](https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/): free in-browser Bitcoin DCA calculator; daily, weekly, fortnightly or monthly buys over any dates since 18 July 2010, percentage fees, lump-sum comparison, CSV export; prefilled with $100 a week from 1 Aug 2025 to 1 Aug 2026, plus $100-a-month results from 2015, 2018 and 2021 and a fee comparison
 - [FAQ](https://bitcoinlogbook.com/faq/): who the strategy is for, prerequisites, principles, and risks and caveats
+- [Open source](https://bitcoinlogbook.com/open-source/): the two GitHub repositories, how to run the code, data sources and licences
+
+## Open source
+
+- [johnnynanjiang/Bitcoin-Logbook](https://github.com/johnnynanjiang/Bitcoin-Logbook): the full source of bitcoinlogbook.com, including the Bitcoin DCA calculator's formulas and tests, the daily BTC/USD price file since 18 July 2010 and its daily update workflow (code MIT; price data Coin Metrics CC BY-NC 4.0)
+- [johnnynanjiang/best-bitcoin-dca-calculators](https://github.com/johnnynanjiang/best-bitcoin-dca-calculators): Best Bitcoin DCA Calculators 2026, a curated list (CC0)
+
+## Comparison
+
+- [Best Bitcoin DCA Calculators 2026](https://github.com/johnnynanjiang/best-bitcoin-dca-calculators): a side-by-side comparison of 12 Bitcoin DCA calculators (price history, custom end date, fees, DCA vs lump sum, CSV export, last commit), with Bitcoin Logbook first
 
 ## Data and sources
 
