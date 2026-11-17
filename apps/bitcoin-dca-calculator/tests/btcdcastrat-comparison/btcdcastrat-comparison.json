@@ -1,0 +1,5011 @@
+{
+ "capturedAt": "2026-11-17",
+ "A": "https://bitcoinlogbook.com/apps/bitcoin-dca-calculator/",
+ "B": "https://btcdcastrat.vercel.app/",
+ "cases": [
+  {
+   "amount": 100,
+   "frequency": "weekly",
+   "start": "2025-08-01",
+   "end": "2026-08-01",
+   "fee": 0,
+   "id": 1
+  },
+  {
+   "amount": 100,
+   "frequency": "weekly",
+   "start": "2025-11-16",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 2
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2015-01-01",
+   "end": "2026-11-15",
+   "fee": 0,
+   "id": 3
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2018-01-01",
+   "end": "2026-11-15",
+   "fee": 0,
+   "id": 4
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2021-01-01",
+   "end": "2026-11-15",
+   "fee": 0,
+   "id": 5
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2021-01-31",
+   "end": "2022-12-31",
+   "fee": 0,
+   "id": 6
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2020-01-30",
+   "end": "2021-03-30",
+   "fee": 0,
+   "id": 7
+  },
+  {
+   "amount": 50,
+   "frequency": "monthly",
+   "start": "2012-02-29",
+   "end": "2016-03-01",
+   "fee": 0,
+   "id": 8
+  },
+  {
+   "amount": 10,
+   "frequency": "daily",
+   "start": "2010-07-18",
+   "end": "2010-12-31",
+   "fee": 0,
+   "id": 9
+  },
+  {
+   "amount": 10,
+   "frequency": "daily",
+   "start": "2010-07-18",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 10
+  },
+  {
+   "amount": 100,
+   "frequency": "weekly",
+   "start": "2026-11-16",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 11
+  },
+  {
+   "amount": 100,
+   "frequency": "fortnightly",
+   "start": "2017-12-17",
+   "end": "2018-12-15",
+   "fee": 1,
+   "id": 12
+  },
+  {
+   "amount": 1000,
+   "frequency": "monthly",
+   "start": "2021-11-10",
+   "end": "2022-11-21",
+   "fee": 0.5,
+   "id": 13
+  },
+  {
+   "amount": 25,
+   "frequency": "daily",
+   "start": "2024-01-01",
+   "end": "2024-12-31",
+   "fee": 0.1,
+   "id": 14
+  },
+  {
+   "amount": 3.3,
+   "frequency": "daily",
+   "start": "2021-01-01",
+   "end": "2026-11-15",
+   "fee": 30,
+   "id": 15
+  },
+  {
+   "amount": 23,
+   "frequency": "weekly",
+   "start": "2021-01-01",
+   "end": "2026-11-15",
+   "fee": 4.304348,
+   "id": 16
+  },
+  {
+   "amount": 25,
+   "frequency": "weekly",
+   "start": "2013-10-23",
+   "end": "2013-10-25",
+   "fee": 0,
+   "id": 17
+  },
+  {
+   "amount": 707.86,
+   "frequency": "daily",
+   "start": "2018-04-10",
+   "end": "2018-12-15",
+   "fee": 0.1,
+   "id": 18
+  },
+  {
+   "amount": 10,
+   "frequency": "monthly",
+   "start": "2021-05-06",
+   "end": "2021-06-05",
+   "fee": 0.1,
+   "id": 19
+  },
+  {
+   "amount": 10000,
+   "frequency": "weekly",
+   "start": "2025-04-10",
+   "end": "2026-11-16",
+   "fee": 1.49,
+   "id": 20
+  },
+  {
+   "amount": 200,
+   "frequency": "daily",
+   "start": "2014-04-02",
+   "end": "2014-08-17",
+   "fee": 0,
+   "id": 21
+  },
+  {
+   "amount": 1997.6,
+   "frequency": "weekly",
+   "start": "2012-07-03",
+   "end": "2012-07-08",
+   "fee": 0.1,
+   "id": 22
+  },
+  {
+   "amount": 5,
+   "frequency": "weekly",
+   "start": "2026-08-08",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 23
+  },
+  {
+   "amount": 100,
+   "frequency": "fortnightly",
+   "start": "2023-04-13",
+   "end": "2023-05-28",
+   "fee": 0.5,
+   "id": 24
+  },
+  {
+   "amount": 50,
+   "frequency": "fortnightly",
+   "start": "2013-02-02",
+   "end": "2013-03-25",
+   "fee": 1.49,
+   "id": 25
+  },
+  {
+   "amount": 1000,
+   "frequency": "monthly",
+   "start": "2023-04-03",
+   "end": "2023-04-10",
+   "fee": 0.5,
+   "id": 26
+  },
+  {
+   "amount": 25,
+   "frequency": "daily",
+   "start": "2018-07-04",
+   "end": "2021-01-10",
+   "fee": 0.1,
+   "id": 27
+  },
+  {
+   "amount": 243.36,
+   "frequency": "weekly",
+   "start": "2026-04-20",
+   "end": "2026-07-02",
+   "fee": 0.1,
+   "id": 28
+  },
+  {
+   "amount": 500,
+   "frequency": "fortnightly",
+   "start": "2014-07-26",
+   "end": "2014-09-12",
+   "fee": 0,
+   "id": 29
+  },
+  {
+   "amount": 150,
+   "frequency": "fortnightly",
+   "start": "2014-10-15",
+   "end": "2016-02-28",
+   "fee": 0,
+   "id": 30
+  },
+  {
+   "amount": 1000,
+   "frequency": "weekly",
+   "start": "2019-12-16",
+   "end": "2020-05-30",
+   "fee": 2.5,
+   "id": 31
+  },
+  {
+   "amount": 20,
+   "frequency": "weekly",
+   "start": "2021-07-28",
+   "end": "2021-08-13",
+   "fee": 0,
+   "id": 32
+  },
+  {
+   "amount": 150,
+   "frequency": "monthly",
+   "start": "2024-10-03",
+   "end": "2026-11-16",
+   "fee": 0.1,
+   "id": 33
+  },
+  {
+   "amount": 250,
+   "frequency": "monthly",
+   "start": "2011-04-01",
+   "end": "2011-06-23",
+   "fee": 0,
+   "id": 34
+  },
+  {
+   "amount": 622.41,
+   "frequency": "daily",
+   "start": "2013-01-19",
+   "end": "2013-01-21",
+   "fee": 1,
+   "id": 35
+  },
+  {
+   "amount": 2500,
+   "frequency": "monthly",
+   "start": "2017-12-31",
+   "end": "2018-01-04",
+   "fee": 0.5,
+   "id": 36
+  },
+  {
+   "amount": 2500,
+   "frequency": "monthly",
+   "start": "2018-12-29",
+   "end": "2023-04-11",
+   "fee": 5,
+   "id": 37
+  },
+  {
+   "amount": 50,
+   "frequency": "daily",
+   "start": "2014-12-28",
+   "end": "2020-10-15",
+   "fee": 5,
+   "id": 38
+  },
+  {
+   "amount": 200,
+   "frequency": "weekly",
+   "start": "2023-04-29",
+   "end": "2023-06-01",
+   "fee": 1.49,
+   "id": 39
+  },
+  {
+   "amount": 200,
+   "frequency": "daily",
+   "start": "2015-04-22",
+   "end": "2016-12-29",
+   "fee": 0.5,
+   "id": 40
+  },
+  {
+   "amount": 1170.72,
+   "frequency": "monthly",
+   "start": "2019-11-17",
+   "end": "2019-12-04",
+   "fee": 1,
+   "id": 41
+  },
+  {
+   "amount": 1,
+   "frequency": "weekly",
+   "start": "2017-05-13",
+   "end": "2019-02-13",
+   "fee": 2.5,
+   "id": 42
+  },
+  {
+   "amount": 25,
+   "frequency": "fortnightly",
+   "start": "2018-09-15",
+   "end": "2018-09-21",
+   "fee": 0.1,
+   "id": 43
+  },
+  {
+   "amount": 150,
+   "frequency": "weekly",
+   "start": "2022-06-09",
+   "end": "2023-01-12",
+   "fee": 2.5,
+   "id": 44
+  },
+  {
+   "amount": 200,
+   "frequency": "weekly",
+   "start": "2019-06-14",
+   "end": "2019-06-15",
+   "fee": 0,
+   "id": 45
+  },
+  {
+   "amount": 25,
+   "frequency": "weekly",
+   "start": "2020-02-11",
+   "end": "2020-05-27",
+   "fee": 0.1,
+   "id": 46
+  },
+  {
+   "amount": 200,
+   "frequency": "fortnightly",
+   "start": "2016-06-07",
+   "end": "2017-04-12",
+   "fee": 0.25,
+   "id": 47
+  },
+  {
+   "amount": 10000,
+   "frequency": "monthly",
+   "start": "2022-06-25",
+   "end": "2026-01-15",
+   "fee": 0,
+   "id": 48
+  },
+  {
+   "amount": 250,
+   "frequency": "fortnightly",
+   "start": "2017-08-28",
+   "end": "2020-10-14",
+   "fee": 0.25,
+   "id": 49
+  },
+  {
+   "amount": 150,
+   "frequency": "fortnightly",
+   "start": "2011-08-02",
+   "end": "2014-02-10",
+   "fee": 0,
+   "id": 50
+  },
+  {
+   "amount": 500,
+   "frequency": "fortnightly",
+   "start": "2014-08-01",
+   "end": "2015-07-31",
+   "fee": 0.5,
+   "id": 51
+  },
+  {
+   "amount": 10000,
+   "frequency": "daily",
+   "start": "2021-07-03",
+   "end": "2021-07-29",
+   "fee": 0.5,
+   "id": 52
+  },
+  {
+   "amount": 150,
+   "frequency": "daily",
+   "start": "2023-05-01",
+   "end": "2024-11-22",
+   "fee": 0.5,
+   "id": 53
+  },
+  {
+   "amount": 50,
+   "frequency": "fortnightly",
+   "start": "2012-05-17",
+   "end": "2014-02-16",
+   "fee": 1.49,
+   "id": 54
+  },
+  {
+   "amount": 14.59,
+   "frequency": "daily",
+   "start": "2021-08-30",
+   "end": "2021-11-09",
+   "fee": 2.5,
+   "id": 55
+  },
+  {
+   "amount": 2500,
+   "frequency": "weekly",
+   "start": "2022-07-28",
+   "end": "2022-10-07",
+   "fee": 0,
+   "id": 56
+  },
+  {
+   "amount": 100,
+   "frequency": "weekly",
+   "start": "2016-08-22",
+   "end": "2016-08-27",
+   "fee": 0,
+   "id": 57
+  },
+  {
+   "amount": 50,
+   "frequency": "daily",
+   "start": "2016-12-30",
+   "end": "2022-06-18",
+   "fee": 0.1,
+   "id": 58
+  },
+  {
+   "amount": 2500,
+   "frequency": "daily",
+   "start": "2013-12-20",
+   "end": "2014-01-17",
+   "fee": 0,
+   "id": 59
+  },
+  {
+   "amount": 1000,
+   "frequency": "fortnightly",
+   "start": "2014-04-25",
+   "end": "2019-12-22",
+   "fee": 0,
+   "id": 60
+  },
+  {
+   "amount": 2500,
+   "frequency": "daily",
+   "start": "2016-06-29",
+   "end": "2017-03-05",
+   "fee": 2.5,
+   "id": 61
+  },
+  {
+   "amount": 1711.73,
+   "frequency": "weekly",
+   "start": "2015-02-07",
+   "end": "2015-07-23",
+   "fee": 0.5,
+   "id": 62
+  },
+  {
+   "amount": 10000,
+   "frequency": "fortnightly",
+   "start": "2021-08-21",
+   "end": "2021-09-14",
+   "fee": 0,
+   "id": 63
+  },
+  {
+   "amount": 1,
+   "frequency": "fortnightly",
+   "start": "2021-06-26",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 64
+  },
+  {
+   "amount": 250,
+   "frequency": "monthly",
+   "start": "2020-01-27",
+   "end": "2022-11-04",
+   "fee": 0,
+   "id": 65
+  },
+  {
+   "amount": 10,
+   "frequency": "monthly",
+   "start": "2020-06-20",
+   "end": "2021-02-13",
+   "fee": 0.25,
+   "id": 66
+  },
+  {
+   "amount": 814.02,
+   "frequency": "monthly",
+   "start": "2021-10-17",
+   "end": "2026-11-16",
+   "fee": 0,
+   "id": 67
+  },
+  {
+   "amount": 2500,
+   "frequency": "daily",
+   "start": "2026-01-01",
+   "end": "2026-09-27",
+   "fee": 0,
+   "id": 68
+  },
+  {
+   "amount": 5,
+   "frequency": "fortnightly",
+   "start": "2019-01-18",
+   "end": "2019-05-10",
+   "fee": 0,
+   "id": 69
+  },
+  {
+   "amount": 318.82,
+   "frequency": "monthly",
+   "start": "2013-10-08",
+   "end": "2014-08-04",
+   "fee": 0,
+   "id": 70
+  },
+  {
+   "amount": 1,
+   "frequency": "monthly",
+   "start": "2011-11-07",
+   "end": "2012-01-03",
+   "fee": 0.1,
+   "id": 71
+  },
+  {
+   "amount": 10,
+   "frequency": "fortnightly",
+   "start": "2026-07-08",
+   "end": "2026-11-16",
+   "fee": 2.5,
+   "id": 72
+  },
+  {
+   "amount": 35.63,
+   "frequency": "fortnightly",
+   "start": "2012-10-31",
+   "end": "2016-07-17",
+   "fee": 0,
+   "id": 73
+  },
+  {
+   "amount": 200,
+   "frequency": "fortnightly",
+   "start": "2011-10-02",
+   "end": "2011-10-15",
+   "fee": 0.1,
+   "id": 74
+  },
+  {
+   "amount": 10000,
+   "frequency": "weekly",
+   "start": "2020-04-03",
+   "end": "2023-09-08",
+   "fee": 0,
+   "id": 75
+  },
+  {
+   "amount": 150,
+   "frequency": "monthly",
+   "start": "2022-01-10",
+   "end": "2022-01-11",
+   "fee": 0,
+   "id": 76
+  },
+  {
+   "amount": 871.28,
+   "frequency": "weekly",
+   "start": "2012-10-05",
+   "end": "2014-09-01",
+   "fee": 0.1,
+   "id": 77
+  },
+  {
+   "amount": 941.77,
+   "frequency": "monthly",
+   "start": "2013-10-09",
+   "end": "2014-02-25",
+   "fee": 5,
+   "id": 78
+  },
+  {
+   "amount": 701.35,
+   "frequency": "monthly",
+   "start": "2017-06-28",
+   "end": "2017-06-30",
+   "fee": 0,
+   "id": 79
+  },
+  {
+   "amount": 1000,
+   "frequency": "fortnightly",
+   "start": "2012-07-15",
+   "end": "2013-02-20",
+   "fee": 0.25,
+   "id": 80
+  },
+  {
+   "amount": 744.64,
+   "frequency": "weekly",
+   "start": "2019-09-17",
+   "end": "2019-10-14",
+   "fee": 2.5,
+   "id": 81
+  },
+  {
+   "amount": 75,
+   "frequency": "weekly",
+   "start": "2019-11-20",
+   "end": "2019-11-25",
+   "fee": 2.5,
+   "id": 82
+  },
+  {
+   "amount": 100,
+   "frequency": "monthly",
+   "start": "2017-07-24",
+   "end": "2023-05-18",
+   "fee": 5,
+   "id": 83
+  },
+  {
+   "amount": 1079.16,
+   "frequency": "monthly",
+   "start": "2023-08-05",
+   "end": "2024-05-06",
+   "fee": 0.1,
+   "id": 84
+  },
+  {
+   "amount": 1000,
+   "frequency": "fortnightly",
+   "start": "2024-07-21",
+   "end": "2024-07-24",
+   "fee": 0,
+   "id": 85
+  },
+  {
+   "amount": 150,
+   "frequency": "fortnightly",
+   "start": "2020-09-19",
+   "end": "2020-12-24",
+   "fee": 0.5,
+   "id": 86
+  },
+  {
+   "amount": 20,
+   "frequency": "monthly",
+   "start": "2013-10-03",
+   "end": "2013-11-22",
+   "fee": 0,
+   "id": 87
+  },
+  {
+   "amount": 25,
+   "frequency": "weekly",
+   "start": "2010-11-12",
+   "end": "2010-11-14",
+   "fee": 0.25,
+   "id": 88
+  },
+  {
+   "amount": 50,
+   "frequency": "monthly",
+   "start": "2025-10-25",
+   "end": "2025-10-29",
+   "fee": 1,
+   "id": 89
+  },
+  {
+   "amount": 200,
+   "frequency": "monthly",
+   "start": "2016-11-03",
+   "end": "2021-05-30",
+   "fee": 0,
+   "id": 90
+  },
+  {
+   "amount": 2500,
+   "frequency": "weekly",
+   "start": "2013-02-16",
+   "end": "2013-03-27",
+   "fee": 0,
+   "id": 91
+  },
+  {
+   "amount": 10,
+   "frequency": "fortnightly",
+   "start": "2011-12-14",
+   "end": "2013-09-14",
+   "fee": 0,
+   "id": 92
+  },
+  {
+   "amount": 25,
+   "frequency": "fortnightly",
+   "start": "2016-04-15",
+   "end": "2016-04-17",
+   "fee": 5,
+   "id": 93
+  },
+  {
+   "amount": 2500,
+   "frequency": "daily",
+   "start": "2015-09-29",
+   "end": "2018-04-17",
+   "fee": 0,
+   "id": 94
+  },
+  {
+   "amount": 253.98,
+   "frequency": "monthly",
+   "start": "2022-06-27",
+   "end": "2022-12-17",
+   "fee": 0,
+   "id": 95
+  },
+  {
+   "amount": 1051.38,
+   "frequency": "fortnightly",
+   "start": "2013-12-21",
+   "end": "2014-08-22",
+   "fee": 0,
+   "id": 96
+  },
+  {
+   "amount": 5,
+   "frequency": "fortnightly",
+   "start": "2021-01-26",
+   "end": "2021-01-28",
+   "fee": 1,
+   "id": 97
+  },
+  {
+   "amount": 150,
+   "frequency": "fortnightly",
+   "start": "2013-08-10",
+   "end": "2013-09-30",
+   "fee": 0.5,
+   "id": 98
+  },
+  {
+   "amount": 150,
+   "frequency": "fortnightly",
+   "start": "2024-10-01",
+   "end": "2025-03-29",
+   "fee": 5,
+   "id": 99
+  },
+  {
+   "amount": 741.03,
+   "frequency": "fortnightly",
+   "start": "2020-06-23",
+   "end": "2020-06-24",
+   "fee": 0.5,
+   "id": 100
+  }
+ ],
+ "outputA": [
+  {
+   "id": 1,
+   "dca": {
+    "invested": "$5,300.00",
+    "buys": "53 purchases",
+    "value": "$4,058.14",
+    "profit": "-$1,241.86 loss",
+    "btc": "0.06466960",
+    "avg": "Avg cost $81,955.05",
+    "roi": "-23.43%",
+    "price": "End price $62,751.88",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$5,300.00",
+    "buys": "1 purchase",
+    "value": "$2,935.90",
+    "profit": "-$2,364.10 loss",
+    "btc": "0.04678584",
+    "avg": "Avg cost $113,282.14",
+    "roi": "-44.61%",
+    "price": "End price $62,751.88",
+    "error": ""
+   }
+  },
+  {
+   "id": 2,
+   "dca": {
+    "invested": "$5,300.00",
+    "buys": "53 purchases",
+    "value": "$4,612.53",
+    "profit": "-$687.47 loss",
+    "btc": "0.07102488",
+    "avg": "Avg cost $74,621.74",
+    "roi": "-12.97%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$5,300.00",
+    "buys": "1 purchase",
+    "value": "$3,654.56",
+    "profit": "-$1,645.44 loss",
+    "btc": "0.05627384",
+    "avg": "Avg cost $94,182.31",
+    "roi": "-31.05%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 3,
+   "dca": {
+    "invested": "$14,300.00",
+    "buys": "143 purchases",
+    "value": "$533,481.55",
+    "profit": "+$519,181.55 profit",
+    "btc": "8.18359919",
+    "avg": "Avg cost $1,747.40",
+    "roi": "+3,630.64%",
+    "price": "End price $65,189.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$14,300.00",
+    "buys": "1 purchase",
+    "value": "$2,961,480.18",
+    "profit": "+$2,947,180.18 profit",
+    "btc": "45.42906245",
+    "avg": "Avg cost $314.78",
+    "roi": "+20,609.65%",
+    "price": "End price $65,189.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 4,
+   "dca": {
+    "invested": "$10,700.00",
+    "buys": "107 purchases",
+    "value": "$42,584.78",
+    "profit": "+$31,884.78 profit",
+    "btc": "0.65324985",
+    "avg": "Avg cost $16,379.64",
+    "roi": "+297.99%",
+    "price": "End price $65,189.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$10,700.00",
+    "buys": "1 purchase",
+    "value": "$51,804.04",
+    "profit": "+$41,104.04 profit",
+    "btc": "0.79467325",
+    "avg": "Avg cost $13,464.65",
+    "roi": "+384.15%",
+    "price": "End price $65,189.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 5,
+   "dca": {
+    "invested": "$7,100.00",
+    "buys": "71 purchases",
+    "value": "$10,738.10",
+    "profit": "+$3,638.10 profit",
+    "btc": "0.16472225",
+    "avg": "Avg cost $43,102.86",
+    "roi": "+51.24%",
+    "price": "End price $65,189.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$7,100.00",
+    "buys": "1 purchase",
+    "value": "$15,753.29",
+    "profit": "+$8,653.29 profit",
+    "btc": "0.24165529",
+    "avg": "Avg cost $29,380.69",
+    "roi": "+121.88%",
+    "price": "End price $65,189.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 6,
+   "dca": {
+    "invested": "$2,400.00",
+    "buys": "24 purchases",
+    "value": "$1,251.99",
+    "profit": "-$1,148.01 loss",
+    "btc": "0.07576677",
+    "avg": "Avg cost $31,676.15",
+    "roi": "-47.83%",
+    "price": "End price $16,524.22",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,400.00",
+    "buys": "1 purchase",
+    "value": "$1,196.04",
+    "profit": "-$1,203.96 loss",
+    "btc": "0.07238109",
+    "avg": "Avg cost $33,157.83",
+    "roi": "-50.16%",
+    "price": "End price $16,524.22",
+    "error": ""
+   }
+  },
+  {
+   "id": 7,
+   "dca": {
+    "invested": "$1,500.00",
+    "buys": "15 purchases",
+    "value": "$7,045.09",
+    "profit": "+$5,545.09 profit",
+    "btc": "0.12005015",
+    "avg": "Avg cost $12,494.78",
+    "roi": "+369.67%",
+    "price": "End price $58,684.55",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,500.00",
+    "buys": "1 purchase",
+    "value": "$9,257.29",
+    "profit": "+$7,757.29 profit",
+    "btc": "0.15774661",
+    "avg": "Avg cost $9,508.92",
+    "roi": "+517.15%",
+    "price": "End price $58,684.55",
+    "error": ""
+   }
+  },
+  {
+   "id": 8,
+   "dca": {
+    "invested": "$2,450.00",
+    "buys": "49 purchases",
+    "value": "$37,358.42",
+    "profit": "+$34,908.42 profit",
+    "btc": "86.31639746",
+    "avg": "Avg cost $28.38",
+    "roi": "+1,424.83%",
+    "price": "End price $432.81",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,450.00",
+    "buys": "1 purchase",
+    "value": "$217,614.19",
+    "profit": "+$215,164.19 profit",
+    "btc": "502.79629069",
+    "avg": "Avg cost $4.87",
+    "roi": "+8,782.21%",
+    "price": "End price $432.81",
+    "error": ""
+   }
+  },
+  {
+   "id": 9,
+   "dca": {
+    "invested": "$1,670.00",
+    "buys": "167 purchases",
+    "value": "$5,265.06",
+    "profit": "+$3,595.06 profit",
+    "btc": "17550.20720714",
+    "avg": "Avg cost $0.0952",
+    "roi": "+215.27%",
+    "price": "End price $0.3000",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,670.00",
+    "buys": "1 purchase",
+    "value": "$5,836.44",
+    "profit": "+$4,166.44 profit",
+    "btc": "19454.79962721",
+    "avg": "Avg cost $0.0858",
+    "roi": "+249.49%",
+    "price": "End price $0.3000",
+    "error": ""
+   }
+  },
+  {
+   "id": 10,
+   "dca": {
+    "invested": "$59,660.00",
+    "buys": "5966 purchases",
+    "value": "$1,328,339,665.20",
+    "profit": "+$1,328,280,005.20 profit",
+    "btc": "20454.08559107",
+    "avg": "Avg cost $2.92",
+    "roi": "+2,226,416.37%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$59,660.00",
+    "buys": "1 purchase",
+    "value": "$45,135,952,556.86",
+    "profit": "+$45,135,892,896.86 profit",
+    "btc": "695013.97949674",
+    "avg": "Avg cost $0.0858",
+    "roi": "+75,655,200.97%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 11,
+   "dca": {
+    "invested": "$100.00",
+    "buys": "1 purchase",
+    "value": "$100.00",
+    "profit": "$0.00 profit",
+    "btc": "0.00153982",
+    "avg": "Avg cost $64,942.51",
+    "roi": "0.00%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$100.00",
+    "buys": "1 purchase",
+    "value": "$100.00",
+    "profit": "$0.00 profit",
+    "btc": "0.00153982",
+    "avg": "Avg cost $64,942.51",
+    "roi": "0.00%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 12,
+   "dca": {
+    "invested": "$2,600.00",
+    "buys": "26 purchases · fees $26.00",
+    "value": "$1,084.16",
+    "profit": "-$1,515.84 loss",
+    "btc": "0.34038856",
+    "avg": "Avg cost $7,638.33",
+    "roi": "-58.30%",
+    "price": "End price $3,185.07",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,600.00",
+    "buys": "1 purchase · fees $26.00",
+    "value": "$425.88",
+    "profit": "-$2,174.12 loss",
+    "btc": "0.13371104",
+    "avg": "Avg cost $19,444.92",
+    "roi": "-83.62%",
+    "price": "End price $3,185.07",
+    "error": ""
+   }
+  },
+  {
+   "id": 13,
+   "dca": {
+    "invested": "$13,000.00",
+    "buys": "13 purchases · fees $65.00",
+    "value": "$6,971.85",
+    "profit": "-$6,028.15 loss",
+    "btc": "0.44187079",
+    "avg": "Avg cost $29,420.37",
+    "roi": "-46.37%",
+    "price": "End price $15,778.02",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$13,000.00",
+    "buys": "1 purchase · fees $65.00",
+    "value": "$3,151.65",
+    "profit": "-$9,848.35 loss",
+    "btc": "0.19974959",
+    "avg": "Avg cost $65,081.49",
+    "roi": "-75.76%",
+    "price": "End price $15,778.02",
+    "error": ""
+   }
+  },
+  {
+   "id": 14,
+   "dca": {
+    "invested": "$9,150.00",
+    "buys": "366 purchases · fees $9.15",
+    "value": "$13,558.93",
+    "profit": "+$4,408.93 profit",
+    "btc": "0.14518654",
+    "avg": "Avg cost $63,022.37",
+    "roi": "+48.19%",
+    "price": "End price $93,389.73",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$9,150.00",
+    "buys": "1 purchase · fees $9.15",
+    "value": "$19,379.61",
+    "profit": "+$10,229.61 profit",
+    "btc": "0.20751326",
+    "avg": "Avg cost $44,093.57",
+    "roi": "+111.80%",
+    "price": "End price $93,389.73",
+    "error": ""
+   }
+  },
+  {
+   "id": 15,
+   "dca": {
+    "invested": "$7,078.50",
+    "buys": "2145 purchases · fees $2,123.55",
+    "value": "$7,484.49",
+    "profit": "+$405.99 profit",
+    "btc": "0.11481204",
+    "avg": "Avg cost $61,652.94",
+    "roi": "+5.74%",
+    "price": "End price $65,189.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$7,078.50",
+    "buys": "1 purchase · fees $2,123.55",
+    "value": "$10,993.91",
+    "profit": "+$3,915.41 profit",
+    "btc": "0.16864646",
+    "avg": "Avg cost $41,972.42",
+    "roi": "+55.31%",
+    "price": "End price $65,189.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 16,
+   "dca": {
+    "invested": "$7,061.00",
+    "buys": "307 purchases · fees $303.93",
+    "value": "$10,219.38",
+    "profit": "+$3,158.38 profit",
+    "btc": "0.15676520",
+    "avg": "Avg cost $45,041.88",
+    "roi": "+44.73%",
+    "price": "End price $65,189.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$7,061.00",
+    "buys": "1 purchase · fees $303.93",
+    "value": "$14,992.41",
+    "profit": "+$7,931.41 profit",
+    "btc": "0.22998334",
+    "avg": "Avg cost $30,702.22",
+    "roi": "+112.33%",
+    "price": "End price $65,189.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 17,
+   "dca": {
+    "invested": "$25.00",
+    "buys": "1 purchase",
+    "value": "$22.68",
+    "profit": "-$2.32 loss",
+    "btc": "0.12218943",
+    "avg": "Avg cost $204.60",
+    "roi": "-9.27%",
+    "price": "End price $185.64",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$25.00",
+    "buys": "1 purchase",
+    "value": "$22.68",
+    "profit": "-$2.32 loss",
+    "btc": "0.12218943",
+    "avg": "Avg cost $204.60",
+    "roi": "-9.27%",
+    "price": "End price $185.64",
+    "error": ""
+   }
+  },
+  {
+   "id": 18,
+   "dca": {
+    "invested": "$176,965.00",
+    "buys": "250 purchases · fees $176.97",
+    "value": "$88,329.60",
+    "profit": "-$88,635.40 loss",
+    "btc": "27.73235465",
+    "avg": "Avg cost $6,381.17",
+    "roi": "-50.09%",
+    "price": "End price $3,185.07",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$176,965.00",
+    "buys": "1 purchase · fees $176.97",
+    "value": "$82,603.23",
+    "profit": "-$94,361.77 loss",
+    "btc": "25.93447742",
+    "avg": "Avg cost $6,823.54",
+    "roi": "-53.32%",
+    "price": "End price $3,185.07",
+    "error": ""
+   }
+  },
+  {
+   "id": 19,
+   "dca": {
+    "invested": "$10.00",
+    "buys": "1 purchase · fees $0.01",
+    "value": "$6.26",
+    "profit": "-$3.74 loss",
+    "btc": "0.00017673",
+    "avg": "Avg cost $56,583.94",
+    "roi": "-37.42%",
+    "price": "End price $35,409.57",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$10.00",
+    "buys": "1 purchase · fees $0.01",
+    "value": "$6.26",
+    "profit": "-$3.74 loss",
+    "btc": "0.00017673",
+    "avg": "Avg cost $56,583.94",
+    "roi": "-37.42%",
+    "price": "End price $35,409.57",
+    "error": ""
+   }
+  },
+  {
+   "id": 20,
+   "dca": {
+    "invested": "$840,000.00",
+    "buys": "84 purchases · fees $12,516.00",
+    "value": "$638,268.31",
+    "profit": "-$201,731.69 loss",
+    "btc": "9.82820502",
+    "avg": "Avg cost $85,468.30",
+    "roi": "-24.02%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$840,000.00",
+    "buys": "1 purchase · fees $12,516.00",
+    "value": "$675,459.95",
+    "profit": "-$164,540.05 loss",
+    "btc": "10.40089065",
+    "avg": "Avg cost $80,762.31",
+    "roi": "-19.59%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 21,
+   "dca": {
+    "invested": "$27,600.00",
+    "buys": "138 purchases",
+    "value": "$25,563.96",
+    "profit": "-$2,036.04 loss",
+    "btc": "51.35753261",
+    "avg": "Avg cost $537.41",
+    "roi": "-7.38%",
+    "price": "End price $497.76",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$27,600.00",
+    "buys": "1 purchase",
+    "value": "$31,293.72",
+    "profit": "+$3,693.72 profit",
+    "btc": "62.86851363",
+    "avg": "Avg cost $439.01",
+    "roi": "+13.38%",
+    "price": "End price $497.76",
+    "error": ""
+   }
+  },
+  {
+   "id": 22,
+   "dca": {
+    "invested": "$1,997.60",
+    "buys": "1 purchase · fees $2.00",
+    "value": "$2,102.75",
+    "profit": "+$105.15 profit",
+    "btc": "309.39608535",
+    "avg": "Avg cost $6.46",
+    "roi": "+5.26%",
+    "price": "End price $6.80",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,997.60",
+    "buys": "1 purchase · fees $2.00",
+    "value": "$2,102.75",
+    "profit": "+$105.15 profit",
+    "btc": "309.39608535",
+    "avg": "Avg cost $6.46",
+    "roi": "+5.26%",
+    "price": "End price $6.80",
+    "error": ""
+   }
+  },
+  {
+   "id": 23,
+   "dca": {
+    "invested": "$75.00",
+    "buys": "15 purchases",
+    "value": "$63.97",
+    "profit": "-$11.03 loss",
+    "btc": "0.00098505",
+    "avg": "Avg cost $76,138.46",
+    "roi": "-14.70%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$75.00",
+    "buys": "1 purchase",
+    "value": "$75.04",
+    "profit": "+$0.04 profit",
+    "btc": "0.00115550",
+    "avg": "Avg cost $64,906.96",
+    "roi": "+0.05%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 24,
+   "dca": {
+    "invested": "$400.00",
+    "buys": "4 purchases · fees $2.00",
+    "value": "$396.09",
+    "profit": "-$3.91 loss",
+    "btc": "0.01409692",
+    "avg": "Avg cost $28,374.99",
+    "roi": "-0.98%",
+    "price": "End price $28,097.52",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$400.00",
+    "buys": "1 purchase · fees $2.00",
+    "value": "$368.21",
+    "profit": "-$31.79 loss",
+    "btc": "0.01310468",
+    "avg": "Avg cost $30,523.44",
+    "roi": "-7.95%",
+    "price": "End price $28,097.52",
+    "error": ""
+   }
+  },
+  {
+   "id": 25,
+   "dca": {
+    "invested": "$200.00",
+    "buys": "4 purchases · fees $2.98",
+    "value": "$505.09",
+    "profit": "+$305.09 profit",
+    "btc": "6.79665878",
+    "avg": "Avg cost $29.43",
+    "roi": "+152.54%",
+    "price": "End price $74.31",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$200.00",
+    "buys": "1 purchase · fees $2.98",
+    "value": "$745.64",
+    "profit": "+$545.64 profit",
+    "btc": "10.03366196",
+    "avg": "Avg cost $19.93",
+    "roi": "+272.82%",
+    "price": "End price $74.31",
+    "error": ""
+   }
+  },
+  {
+   "id": 26,
+   "dca": {
+    "invested": "$1,000.00",
+    "buys": "1 purchase · fees $5.00",
+    "value": "$1,060.61",
+    "profit": "+$60.61 profit",
+    "btc": "0.03572585",
+    "avg": "Avg cost $27,990.93",
+    "roi": "+6.06%",
+    "price": "End price $29,687.57",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,000.00",
+    "buys": "1 purchase · fees $5.00",
+    "value": "$1,060.61",
+    "profit": "+$60.61 profit",
+    "btc": "0.03572585",
+    "avg": "Avg cost $27,990.93",
+    "roi": "+6.06%",
+    "price": "End price $29,687.57",
+    "error": ""
+   }
+  },
+  {
+   "id": 27,
+   "dca": {
+    "invested": "$23,050.00",
+    "buys": "922 purchases · fees $23.05",
+    "value": "$122,029.21",
+    "profit": "+$98,979.21 profit",
+    "btc": "3.18370232",
+    "avg": "Avg cost $7,240.00",
+    "roi": "+429.41%",
+    "price": "End price $38,329.34",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$23,050.00",
+    "buys": "1 purchase · fees $23.05",
+    "value": "$134,148.51",
+    "profit": "+$111,098.51 profit",
+    "btc": "3.49989105",
+    "avg": "Avg cost $6,585.92",
+    "roi": "+481.99%",
+    "price": "End price $38,329.34",
+    "error": ""
+   }
+  },
+  {
+   "id": 28,
+   "dca": {
+    "invested": "$2,676.96",
+    "buys": "11 purchases · fees $2.68",
+    "value": "$2,301.19",
+    "profit": "-$375.77 loss",
+    "btc": "0.03745536",
+    "avg": "Avg cost $71,470.67",
+    "roi": "-14.04%",
+    "price": "End price $61,438.19",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,676.96",
+    "buys": "1 purchase · fees $2.68",
+    "value": "$2,167.18",
+    "profit": "-$509.78 loss",
+    "btc": "0.03527420",
+    "avg": "Avg cost $75,890.04",
+    "roi": "-19.04%",
+    "price": "End price $61,438.19",
+    "error": ""
+   }
+  },
+  {
+   "id": 29,
+   "dca": {
+    "invested": "$2,000.00",
+    "buys": "4 purchases",
+    "value": "$1,770.73",
+    "profit": "-$229.27 loss",
+    "btc": "3.73573970",
+    "avg": "Avg cost $535.37",
+    "roi": "-11.46%",
+    "price": "End price $474.00",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,000.00",
+    "buys": "1 purchase",
+    "value": "$1,594.06",
+    "profit": "-$405.94 loss",
+    "btc": "3.36302544",
+    "avg": "Avg cost $594.70",
+    "roi": "-20.30%",
+    "price": "End price $474.00",
+    "error": ""
+   }
+  },
+  {
+   "id": 30,
+   "dca": {
+    "invested": "$5,400.00",
+    "buys": "36 purchases",
+    "value": "$8,226.91",
+    "profit": "+$2,826.91 profit",
+    "btc": "18.99531538",
+    "avg": "Avg cost $284.28",
+    "roi": "+52.35%",
+    "price": "End price $433.10",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$5,400.00",
+    "buys": "1 purchase",
+    "value": "$5,926.50",
+    "profit": "+$526.50 profit",
+    "btc": "13.68384659",
+    "avg": "Avg cost $394.63",
+    "roi": "+9.75%",
+    "price": "End price $433.10",
+    "error": ""
+   }
+  },
+  {
+   "id": 31,
+   "dca": {
+    "invested": "$24,000.00",
+    "buys": "24 purchases · fees $600.00",
+    "value": "$28,965.82",
+    "profit": "+$4,965.82 profit",
+    "btc": "2.98873061",
+    "avg": "Avg cost $8,030.17",
+    "roi": "+20.69%",
+    "price": "End price $9,691.68",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$24,000.00",
+    "buys": "1 purchase · fees $600.00",
+    "value": "$32,951.51",
+    "profit": "+$8,951.51 profit",
+    "btc": "3.39997883",
+    "avg": "Avg cost $7,058.87",
+    "roi": "+37.30%",
+    "price": "End price $9,691.68",
+    "error": ""
+   }
+  },
+  {
+   "id": 32,
+   "dca": {
+    "invested": "$60.00",
+    "buys": "3 purchases",
+    "value": "$68.78",
+    "profit": "+$8.78 profit",
+    "btc": "0.00144147",
+    "avg": "Avg cost $41,624.26",
+    "roi": "+14.64%",
+    "price": "End price $47,717.49",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$60.00",
+    "buys": "1 purchase",
+    "value": "$71.69",
+    "profit": "+$11.69 profit",
+    "btc": "0.00150228",
+    "avg": "Avg cost $39,939.19",
+    "roi": "+19.48%",
+    "price": "End price $47,717.49",
+    "error": ""
+   }
+  },
+  {
+   "id": 33,
+   "dca": {
+    "invested": "$3,900.00",
+    "buys": "26 purchases · fees $3.90",
+    "value": "$3,025.46",
+    "profit": "-$874.54 loss",
+    "btc": "0.04658673",
+    "avg": "Avg cost $83,714.83",
+    "roi": "-22.42%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$3,900.00",
+    "buys": "1 purchase · fees $3.90",
+    "value": "$4,163.94",
+    "profit": "+$263.94 profit",
+    "btc": "0.06411725",
+    "avg": "Avg cost $60,826.06",
+    "roi": "+6.77%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 34,
+   "dca": {
+    "invested": "$750.00",
+    "buys": "3 purchases",
+    "value": "$7,524.78",
+    "profit": "+$6,774.78 profit",
+    "btc": "429.72445383",
+    "avg": "Avg cost $1.75",
+    "roi": "+903.30%",
+    "price": "End price $17.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$750.00",
+    "buys": "1 purchase",
+    "value": "$16,965.34",
+    "profit": "+$16,215.34 profit",
+    "btc": "968.85455555",
+    "avg": "Avg cost $0.7741",
+    "roi": "+2,162.05%",
+    "price": "End price $17.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 35,
+   "dca": {
+    "invested": "$1,867.23",
+    "buys": "3 purchases · fees $18.67",
+    "value": "$1,937.32",
+    "profit": "+$70.09 profit",
+    "btc": "115.44699345",
+    "avg": "Avg cost $16.17",
+    "roi": "+3.75%",
+    "price": "End price $16.78",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,867.23",
+    "buys": "1 purchase · fees $18.67",
+    "value": "$1,990.02",
+    "profit": "+$122.79 profit",
+    "btc": "118.58754879",
+    "avg": "Avg cost $15.75",
+    "roi": "+6.58%",
+    "price": "End price $16.78",
+    "error": ""
+   }
+  },
+  {
+   "id": 36,
+   "dca": {
+    "invested": "$2,500.00",
+    "buys": "1 purchase · fees $12.50",
+    "value": "$2,692.77",
+    "profit": "+$192.77 profit",
+    "btc": "0.17868071",
+    "avg": "Avg cost $13,991.44",
+    "roi": "+7.71%",
+    "price": "End price $15,070.30",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,500.00",
+    "buys": "1 purchase · fees $12.50",
+    "value": "$2,692.77",
+    "profit": "+$192.77 profit",
+    "btc": "0.17868071",
+    "avg": "Avg cost $13,991.44",
+    "roi": "+7.71%",
+    "price": "End price $15,070.30",
+    "error": ""
+   }
+  },
+  {
+   "id": 37,
+   "dca": {
+    "invested": "$130,000.00",
+    "buys": "52 purchases · fees $6,500.00",
+    "value": "$301,749.58",
+    "profit": "+$171,749.58 profit",
+    "btc": "9.97615048",
+    "avg": "Avg cost $13,031.08",
+    "roi": "+132.12%",
+    "price": "End price $30,247.10",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$130,000.00",
+    "buys": "1 purchase · fees $6,500.00",
+    "value": "$977,081.14",
+    "profit": "+$847,081.14 profit",
+    "btc": "32.30330411",
+    "avg": "Avg cost $4,024.36",
+    "roi": "+651.60%",
+    "price": "End price $30,247.10",
+    "error": ""
+   }
+  },
+  {
+   "id": 38,
+   "dca": {
+    "invested": "$105,950.00",
+    "buys": "2119 purchases · fees $5,297.50",
+    "value": "$1,316,097.12",
+    "profit": "+$1,210,147.12 profit",
+    "btc": "114.41754620",
+    "avg": "Avg cost $925.99",
+    "roi": "+1,142.19%",
+    "price": "End price $11,502.58",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$105,950.00",
+    "buys": "1 purchase · fees $5,297.50",
+    "value": "$3,652,130.23",
+    "profit": "+$3,546,180.23 profit",
+    "btc": "317.50527577",
+    "avg": "Avg cost $333.70",
+    "roi": "+3,347.03%",
+    "price": "End price $11,502.58",
+    "error": ""
+   }
+  },
+  {
+   "id": 39,
+   "dca": {
+    "invested": "$1,000.00",
+    "buys": "5 purchases · fees $14.90",
+    "value": "$952.47",
+    "profit": "-$47.53 loss",
+    "btc": "0.03550632",
+    "avg": "Avg cost $28,164.00",
+    "roi": "-4.75%",
+    "price": "End price $26,825.37",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,000.00",
+    "buys": "1 purchase · fees $14.90",
+    "value": "$904.32",
+    "profit": "-$95.68 loss",
+    "btc": "0.03371146",
+    "avg": "Avg cost $29,663.50",
+    "roi": "-9.57%",
+    "price": "End price $26,825.37",
+    "error": ""
+   }
+  },
+  {
+   "id": 40,
+   "dca": {
+    "invested": "$123,600.00",
+    "buys": "618 purchases · fees $618.00",
+    "value": "$313,598.55",
+    "profit": "+$189,998.55 profit",
+    "btc": "322.14751784",
+    "avg": "Avg cost $383.68",
+    "roi": "+153.72%",
+    "price": "End price $973.46",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$123,600.00",
+    "buys": "1 purchase · fees $618.00",
+    "value": "$512,005.53",
+    "profit": "+$388,405.53 profit",
+    "btc": "525.96325293",
+    "avg": "Avg cost $235.00",
+    "roi": "+314.24%",
+    "price": "End price $973.46",
+    "error": ""
+   }
+  },
+  {
+   "id": 41,
+   "dca": {
+    "invested": "$1,170.72",
+    "buys": "1 purchase · fees $11.71",
+    "value": "$983.20",
+    "profit": "-$187.52 loss",
+    "btc": "0.13627170",
+    "avg": "Avg cost $8,591.07",
+    "roi": "-16.02%",
+    "price": "End price $7,215.02",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,170.72",
+    "buys": "1 purchase · fees $11.71",
+    "value": "$983.20",
+    "profit": "-$187.52 loss",
+    "btc": "0.13627170",
+    "avg": "Avg cost $8,591.07",
+    "roi": "-16.02%",
+    "price": "End price $7,215.02",
+    "error": ""
+   }
+  },
+  {
+   "id": 42,
+   "dca": {
+    "invested": "$92.00",
+    "buys": "92 purchases · fees $2.30",
+    "value": "$63.77",
+    "profit": "-$28.23 loss",
+    "btc": "0.01783206",
+    "avg": "Avg cost $5,159.25",
+    "roi": "-30.69%",
+    "price": "End price $3,576.09",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$92.00",
+    "buys": "1 purchase · fees $2.30",
+    "value": "$180.23",
+    "profit": "+$88.23 profit",
+    "btc": "0.05039778",
+    "avg": "Avg cost $1,825.48",
+    "roi": "+95.90%",
+    "price": "End price $3,576.09",
+    "error": ""
+   }
+  },
+  {
+   "id": 43,
+   "dca": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $0.03",
+    "value": "$25.81",
+    "profit": "+$0.81 profit",
+    "btc": "0.00382808",
+    "avg": "Avg cost $6,530.70",
+    "roi": "+3.22%",
+    "price": "End price $6,741.14",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $0.03",
+    "value": "$25.81",
+    "profit": "+$0.81 profit",
+    "btc": "0.00382808",
+    "avg": "Avg cost $6,530.70",
+    "roi": "+3.22%",
+    "price": "End price $6,741.14",
+    "error": ""
+   }
+  },
+  {
+   "id": 44,
+   "dca": {
+    "invested": "$4,800.00",
+    "buys": "32 purchases · fees $120.00",
+    "value": "$4,495.37",
+    "profit": "-$304.63 loss",
+    "btc": "0.23823221",
+    "avg": "Avg cost $20,148.41",
+    "roi": "-6.35%",
+    "price": "End price $18,869.70",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$4,800.00",
+    "buys": "1 purchase · fees $120.00",
+    "value": "$2,937.36",
+    "profit": "-$1,862.64 loss",
+    "btc": "0.15566539",
+    "avg": "Avg cost $30,835.37",
+    "roi": "-38.81%",
+    "price": "End price $18,869.70",
+    "error": ""
+   }
+  },
+  {
+   "id": 45,
+   "dca": {
+    "invested": "$200.00",
+    "buys": "1 purchase",
+    "value": "$203.51",
+    "profit": "+$3.51 profit",
+    "btc": "0.02299378",
+    "avg": "Avg cost $8,698.00",
+    "roi": "+1.75%",
+    "price": "End price $8,850.58",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$200.00",
+    "buys": "1 purchase",
+    "value": "$203.51",
+    "profit": "+$3.51 profit",
+    "btc": "0.02299378",
+    "avg": "Avg cost $8,698.00",
+    "roi": "+1.75%",
+    "price": "End price $8,850.58",
+    "error": ""
+   }
+  },
+  {
+   "id": 46,
+   "dca": {
+    "invested": "$400.00",
+    "buys": "16 purchases · fees $0.40",
+    "value": "$464.82",
+    "profit": "+$64.82 profit",
+    "btc": "0.05069477",
+    "avg": "Avg cost $7,890.36",
+    "roi": "+16.21%",
+    "price": "End price $9,169.06",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$400.00",
+    "buys": "1 purchase · fees $0.40",
+    "value": "$356.69",
+    "profit": "-$43.31 loss",
+    "btc": "0.03890103",
+    "avg": "Avg cost $10,282.51",
+    "roi": "-10.83%",
+    "price": "End price $9,169.06",
+    "error": ""
+   }
+  },
+  {
+   "id": 47,
+   "dca": {
+    "invested": "$4,600.00",
+    "buys": "23 purchases · fees $11.50",
+    "value": "$7,461.75",
+    "profit": "+$2,861.75 profit",
+    "btc": "6.13573384",
+    "avg": "Avg cost $749.71",
+    "roi": "+62.21%",
+    "price": "End price $1,216.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$4,600.00",
+    "buys": "1 purchase · fees $11.50",
+    "value": "$9,646.39",
+    "profit": "+$5,046.39 profit",
+    "btc": "7.93214172",
+    "avg": "Avg cost $579.92",
+    "roi": "+109.70%",
+    "price": "End price $1,216.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 48,
+   "dca": {
+    "invested": "$430,000.00",
+    "buys": "43 purchases",
+    "value": "$1,038,828.23",
+    "profit": "+$608,828.23 profit",
+    "btc": "10.87252953",
+    "avg": "Avg cost $39,549.21",
+    "roi": "+141.59%",
+    "price": "End price $95,546.14",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$430,000.00",
+    "buys": "1 purchase",
+    "value": "$1,913,740.61",
+    "profit": "+$1,483,740.61 profit",
+    "btc": "20.02949165",
+    "avg": "Avg cost $21,468.34",
+    "roi": "+345.06%",
+    "price": "End price $95,546.14",
+    "error": ""
+   }
+  },
+  {
+   "id": 49,
+   "dca": {
+    "invested": "$20,500.00",
+    "buys": "82 purchases · fees $51.25",
+    "value": "$33,476.26",
+    "profit": "+$12,976.26 profit",
+    "btc": "2.93211365",
+    "avg": "Avg cost $6,991.54",
+    "roi": "+63.30%",
+    "price": "End price $11,417.11",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$20,500.00",
+    "buys": "1 purchase · fees $51.25",
+    "value": "$53,305.52",
+    "profit": "+$32,805.52 profit",
+    "btc": "4.66891603",
+    "avg": "Avg cost $4,390.74",
+    "roi": "+160.03%",
+    "price": "End price $11,417.11",
+    "error": ""
+   }
+  },
+  {
+   "id": 50,
+   "dca": {
+    "invested": "$9,900.00",
+    "buys": "66 purchases",
+    "value": "$699,057.78",
+    "profit": "+$689,157.78 profit",
+    "btc": "1019.84117631",
+    "avg": "Avg cost $9.71",
+    "roi": "+6,961.19%",
+    "price": "End price $685.46",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$9,900.00",
+    "buys": "1 purchase",
+    "value": "$555,587.22",
+    "profit": "+$545,687.22 profit",
+    "btc": "810.53489438",
+    "avg": "Avg cost $12.21",
+    "roi": "+5,511.99%",
+    "price": "End price $685.46",
+    "error": ""
+   }
+  },
+  {
+   "id": 51,
+   "dca": {
+    "invested": "$13,500.00",
+    "buys": "27 purchases · fees $67.50",
+    "value": "$12,988.45",
+    "profit": "-$511.55 loss",
+    "btc": "45.63798625",
+    "avg": "Avg cost $295.81",
+    "roi": "-3.79%",
+    "price": "End price $284.60",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$13,500.00",
+    "buys": "1 purchase · fees $67.50",
+    "value": "$6,408.73",
+    "profit": "-$7,091.27 loss",
+    "btc": "22.51860485",
+    "avg": "Avg cost $599.50",
+    "roi": "-52.53%",
+    "price": "End price $284.60",
+    "error": ""
+   }
+  },
+  {
+   "id": 52,
+   "dca": {
+    "invested": "$270,000.00",
+    "buys": "27 purchases · fees $1,350.00",
+    "value": "$319,158.47",
+    "profit": "+$49,158.47 profit",
+    "btc": "7.96181105",
+    "avg": "Avg cost $33,911.88",
+    "roi": "+18.21%",
+    "price": "End price $40,086.16",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$270,000.00",
+    "buys": "1 purchase · fees $1,350.00",
+    "value": "$311,353.02",
+    "profit": "+$41,353.02 profit",
+    "btc": "7.76709431",
+    "avg": "Avg cost $34,762.03",
+    "roi": "+15.32%",
+    "price": "End price $40,086.16",
+    "error": ""
+   }
+  },
+  {
+   "id": 53,
+   "dca": {
+    "invested": "$85,800.00",
+    "buys": "572 purchases · fees $429.00",
+    "value": "$199,611.87",
+    "profit": "+$113,811.87 profit",
+    "btc": "2.01753788",
+    "avg": "Avg cost $42,527.08",
+    "roi": "+132.65%",
+    "price": "End price $98,938.35",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$85,800.00",
+    "buys": "1 purchase · fees $429.00",
+    "value": "$300,426.10",
+    "profit": "+$214,626.10 profit",
+    "btc": "3.03649803",
+    "avg": "Avg cost $28,256.23",
+    "roi": "+250.15%",
+    "price": "End price $98,938.35",
+    "error": ""
+   }
+  },
+  {
+   "id": 54,
+   "dca": {
+    "invested": "$2,300.00",
+    "buys": "46 purchases · fees $34.27",
+    "value": "$70,129.05",
+    "profit": "+$67,829.05 profit",
+    "btc": "112.52148653",
+    "avg": "Avg cost $20.44",
+    "roi": "+2,949.09%",
+    "price": "End price $623.25",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,300.00",
+    "buys": "1 purchase · fees $34.27",
+    "value": "$277,448.10",
+    "profit": "+$275,148.10 profit",
+    "btc": "445.16318368",
+    "avg": "Avg cost $5.17",
+    "roi": "+11,962.96%",
+    "price": "End price $623.25",
+    "error": ""
+   }
+  },
+  {
+   "id": 55,
+   "dca": {
+    "invested": "$1,050.48",
+    "buys": "72 purchases · fees $26.26",
+    "value": "$1,317.76",
+    "profit": "+$267.28 profit",
+    "btc": "0.01964000",
+    "avg": "Avg cost $53,486.75",
+    "roi": "+25.44%",
+    "price": "End price $67,095.59",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,050.48",
+    "buys": "1 purchase · fees $26.26",
+    "value": "$1,458.24",
+    "profit": "+$407.76 profit",
+    "btc": "0.02173371",
+    "avg": "Avg cost $48,334.12",
+    "roi": "+38.82%",
+    "price": "End price $67,095.59",
+    "error": ""
+   }
+  },
+  {
+   "id": 56,
+   "dca": {
+    "invested": "$27,500.00",
+    "buys": "11 purchases",
+    "value": "$25,517.36",
+    "profit": "-$1,982.64 loss",
+    "btc": "1.30596121",
+    "avg": "Avg cost $21,057.29",
+    "roi": "-7.21%",
+    "price": "End price $19,539.14",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$27,500.00",
+    "buys": "1 purchase",
+    "value": "$22,540.23",
+    "profit": "-$4,959.77 loss",
+    "btc": "1.15359332",
+    "avg": "Avg cost $23,838.56",
+    "roi": "-18.04%",
+    "price": "End price $19,539.14",
+    "error": ""
+   }
+  },
+  {
+   "id": 57,
+   "dca": {
+    "invested": "$100.00",
+    "buys": "1 purchase",
+    "value": "$97.47",
+    "profit": "-$2.53 loss",
+    "btc": "0.17094838",
+    "avg": "Avg cost $584.97",
+    "roi": "-2.53%",
+    "price": "End price $570.20",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$100.00",
+    "buys": "1 purchase",
+    "value": "$97.47",
+    "profit": "-$2.53 loss",
+    "btc": "0.17094838",
+    "avg": "Avg cost $584.97",
+    "roi": "-2.53%",
+    "price": "End price $570.20",
+    "error": ""
+   }
+  },
+  {
+   "id": 58,
+   "dca": {
+    "invested": "$99,850.00",
+    "buys": "1997 purchases · fees $99.85",
+    "value": "$327,251.85",
+    "profit": "+$227,401.85 profit",
+    "btc": "17.21121973",
+    "avg": "Avg cost $5,801.45",
+    "roi": "+227.74%",
+    "price": "End price $19,013.87",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$99,850.00",
+    "buys": "1 purchase · fees $99.85",
+    "value": "$1,973,231.72",
+    "profit": "+$1,873,381.72 profit",
+    "btc": "103.77855775",
+    "avg": "Avg cost $962.14",
+    "roi": "+1,876.20%",
+    "price": "End price $19,013.87",
+    "error": ""
+   }
+  },
+  {
+   "id": 59,
+   "dca": {
+    "invested": "$72,500.00",
+    "buys": "29 purchases",
+    "value": "$75,775.93",
+    "profit": "+$3,275.93 profit",
+    "btc": "95.57658103",
+    "avg": "Avg cost $758.55",
+    "roi": "+4.52%",
+    "price": "End price $792.83",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$72,500.00",
+    "buys": "1 purchase",
+    "value": "$95,765.60",
+    "profit": "+$23,265.60 profit",
+    "btc": "120.78965694",
+    "avg": "Avg cost $600.22",
+    "roi": "+32.09%",
+    "price": "End price $792.83",
+    "error": ""
+   }
+  },
+  {
+   "id": 60,
+   "dca": {
+    "invested": "$148,000.00",
+    "buys": "148 purchases",
+    "value": "$1,571,936.25",
+    "profit": "+$1,423,936.25 profit",
+    "btc": "210.16869606",
+    "avg": "Avg cost $704.20",
+    "roi": "+962.12%",
+    "price": "End price $7,479.40",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$148,000.00",
+    "buys": "1 purchase",
+    "value": "$2,373,262.10",
+    "profit": "+$2,225,262.10 profit",
+    "btc": "317.30638010",
+    "avg": "Avg cost $466.43",
+    "roi": "+1,503.56%",
+    "price": "End price $7,479.40",
+    "error": ""
+   }
+  },
+  {
+   "id": 61,
+   "dca": {
+    "invested": "$625,000.00",
+    "buys": "250 purchases · fees $15,625.00",
+    "value": "$1,073,063.92",
+    "profit": "+$448,063.92 profit",
+    "btc": "840.77885311",
+    "avg": "Avg cost $743.36",
+    "roi": "+71.69%",
+    "price": "End price $1,276.27",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$625,000.00",
+    "buys": "1 purchase · fees $15,625.00",
+    "value": "$1,217,892.12",
+    "profit": "+$592,892.12 profit",
+    "btc": "954.25623206",
+    "avg": "Avg cost $654.96",
+    "roi": "+94.86%",
+    "price": "End price $1,276.27",
+    "error": ""
+   }
+  },
+  {
+   "id": 62,
+   "dca": {
+    "invested": "$41,081.52",
+    "buys": "24 purchases · fees $205.41",
+    "value": "$45,696.96",
+    "profit": "+$4,615.44 profit",
+    "btc": "165.08323777",
+    "avg": "Avg cost $248.85",
+    "roi": "+11.23%",
+    "price": "End price $276.81",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$41,081.52",
+    "buys": "1 purchase · fees $205.41",
+    "value": "$49,486.66",
+    "profit": "+$8,405.14 profit",
+    "btc": "178.77378502",
+    "avg": "Avg cost $229.80",
+    "roi": "+20.46%",
+    "price": "End price $276.81",
+    "error": ""
+   }
+  },
+  {
+   "id": 63,
+   "dca": {
+    "invested": "$20,000.00",
+    "buys": "2 purchases",
+    "value": "$19,002.39",
+    "profit": "-$997.61 loss",
+    "btc": "0.40411171",
+    "avg": "Avg cost $49,491.27",
+    "roi": "-4.99%",
+    "price": "End price $47,022.62",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$20,000.00",
+    "buys": "1 purchase",
+    "value": "$19,165.43",
+    "profit": "-$834.57 loss",
+    "btc": "0.40757901",
+    "avg": "Avg cost $49,070.24",
+    "roi": "-4.17%",
+    "price": "End price $47,022.62",
+    "error": ""
+   }
+  },
+  {
+   "id": 64,
+   "dca": {
+    "invested": "$141.00",
+    "buys": "141 purchases",
+    "value": "$212.53",
+    "profit": "+$71.53 profit",
+    "btc": "0.00327259",
+    "avg": "Avg cost $43,085.08",
+    "roi": "+50.73%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$141.00",
+    "buys": "1 purchase",
+    "value": "$287.13",
+    "profit": "+$146.13 profit",
+    "btc": "0.00442135",
+    "avg": "Avg cost $31,890.68",
+    "roi": "+103.64%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 65,
+   "dca": {
+    "invested": "$8,500.00",
+    "buys": "34 purchases",
+    "value": "$9,623.22",
+    "profit": "+$1,123.22 profit",
+    "btc": "0.45484288",
+    "avg": "Avg cost $18,687.77",
+    "roi": "+13.21%",
+    "price": "End price $21,157.24",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$8,500.00",
+    "buys": "1 purchase",
+    "value": "$20,201.91",
+    "profit": "+$11,701.91 profit",
+    "btc": "0.95484598",
+    "avg": "Avg cost $8,901.96",
+    "roi": "+137.67%",
+    "price": "End price $21,157.24",
+    "error": ""
+   }
+  },
+  {
+   "id": 66,
+   "dca": {
+    "invested": "$80.00",
+    "buys": "8 purchases · fees $0.20",
+    "value": "$282.47",
+    "profit": "+$202.47 profit",
+    "btc": "0.00598346",
+    "avg": "Avg cost $13,370.19",
+    "roi": "+253.09%",
+    "price": "End price $47,208.63",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$80.00",
+    "buys": "1 purchase · fees $0.20",
+    "value": "$402.60",
+    "profit": "+$322.60 profit",
+    "btc": "0.00852811",
+    "avg": "Avg cost $9,380.74",
+    "roi": "+403.25%",
+    "price": "End price $47,208.63",
+    "error": ""
+   }
+  },
+  {
+   "id": 67,
+   "dca": {
+    "invested": "$49,655.22",
+    "buys": "61 purchases",
+    "value": "$74,966.49",
+    "profit": "+$25,311.27 profit",
+    "btc": "1.15435151",
+    "avg": "Avg cost $43,015.68",
+    "roi": "+50.97%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$49,655.22",
+    "buys": "1 purchase",
+    "value": "$52,466.94",
+    "profit": "+$2,811.72 profit",
+    "btc": "0.80789822",
+    "avg": "Avg cost $61,462.22",
+    "roi": "+5.66%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 68,
+   "dca": {
+    "invested": "$675,000.00",
+    "buys": "270 purchases",
+    "value": "$791,983.46",
+    "profit": "+$116,983.46 profit",
+    "btc": "9.38452732",
+    "avg": "Avg cost $71,926.90",
+    "roi": "+17.33%",
+    "price": "End price $84,392.47",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$675,000.00",
+    "buys": "1 purchase",
+    "value": "$642,334.34",
+    "profit": "-$32,665.66 loss",
+    "btc": "7.61127534",
+    "avg": "Avg cost $88,684.22",
+    "roi": "-4.84%",
+    "price": "End price $84,392.47",
+    "error": ""
+   }
+  },
+  {
+   "id": 69,
+   "dca": {
+    "invested": "$45.00",
+    "buys": "9 purchases",
+    "value": "$68.64",
+    "profit": "+$23.64 profit",
+    "btc": "0.01079635",
+    "avg": "Avg cost $4,168.07",
+    "roi": "+52.53%",
+    "price": "End price $6,357.46",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$45.00",
+    "buys": "1 purchase",
+    "value": "$79.26",
+    "profit": "+$34.26 profit",
+    "btc": "0.01246735",
+    "avg": "Avg cost $3,609.43",
+    "roi": "+76.13%",
+    "price": "End price $6,357.46",
+    "error": ""
+   }
+  },
+  {
+   "id": 70,
+   "dca": {
+    "invested": "$3,188.20",
+    "buys": "10 purchases",
+    "value": "$4,531.79",
+    "profit": "+$1,343.59 profit",
+    "btc": "7.71226656",
+    "avg": "Avg cost $413.39",
+    "roi": "+42.14%",
+    "price": "End price $587.61",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$3,188.20",
+    "buys": "1 purchase",
+    "value": "$15,015.35",
+    "profit": "+$11,827.15 profit",
+    "btc": "25.55332771",
+    "avg": "Avg cost $124.77",
+    "roi": "+370.97%",
+    "price": "End price $587.61",
+    "error": ""
+   }
+  },
+  {
+   "id": 71,
+   "dca": {
+    "invested": "$2.00",
+    "buys": "2 purchases · fees $0.00",
+    "value": "$3.24",
+    "profit": "+$1.24 profit",
+    "btc": "0.66565754",
+    "avg": "Avg cost $3.00",
+    "roi": "+62.10%",
+    "price": "End price $4.87",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2.00",
+    "buys": "1 purchase · fees $0.00",
+    "value": "$3.22",
+    "profit": "+$1.22 profit",
+    "btc": "0.66208099",
+    "avg": "Avg cost $3.02",
+    "roi": "+61.23%",
+    "price": "End price $4.87",
+    "error": ""
+   }
+  },
+  {
+   "id": 72,
+   "dca": {
+    "invested": "$100.00",
+    "buys": "10 purchases · fees $2.50",
+    "value": "$86.96",
+    "profit": "-$13.04 loss",
+    "btc": "0.00133902",
+    "avg": "Avg cost $74,681.44",
+    "roi": "-13.04%",
+    "price": "End price $64,942.51",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$100.00",
+    "buys": "1 purchase · fees $2.50",
+    "value": "$101.78",
+    "profit": "+$1.78 profit",
+    "btc": "0.00156717",
+    "avg": "Avg cost $63,809.27",
+    "roi": "+1.78%",
+    "price": "End price $64,942.51",
+    "error": ""
+   }
+  },
+  {
+   "id": 73,
+   "dca": {
+    "invested": "$3,456.11",
+    "buys": "97 purchases",
+    "value": "$24,074.69",
+    "profit": "+$20,618.58 profit",
+    "btc": "35.34732346",
+    "avg": "Avg cost $97.78",
+    "roi": "+596.58%",
+    "price": "End price $681.09",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$3,456.11",
+    "buys": "1 purchase",
+    "value": "$211,188.36",
+    "profit": "+$207,732.25 profit",
+    "btc": "310.07426200",
+    "avg": "Avg cost $11.15",
+    "roi": "+6,010.58%",
+    "price": "End price $681.09",
+    "error": ""
+   }
+  },
+  {
+   "id": 74,
+   "dca": {
+    "invested": "$200.00",
+    "buys": "1 purchase · fees $0.20",
+    "value": "$153.12",
+    "profit": "-$46.88 loss",
+    "btc": "39.90363534",
+    "avg": "Avg cost $5.01",
+    "roi": "-23.44%",
+    "price": "End price $3.84",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$200.00",
+    "buys": "1 purchase · fees $0.20",
+    "value": "$153.12",
+    "profit": "-$46.88 loss",
+    "btc": "39.90363534",
+    "avg": "Avg cost $5.01",
+    "roi": "-23.44%",
+    "price": "End price $3.84",
+    "error": ""
+   }
+  },
+  {
+   "id": 75,
+   "dca": {
+    "invested": "$1,800,000.00",
+    "buys": "180 purchases",
+    "value": "$2,149,142.60",
+    "profit": "+$349,142.60 profit",
+    "btc": "82.96342942",
+    "avg": "Avg cost $21,696.31",
+    "roi": "+19.40%",
+    "price": "End price $25,904.70",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,800,000.00",
+    "buys": "1 purchase",
+    "value": "$6,905,973.01",
+    "profit": "+$5,105,973.01 profit",
+    "btc": "266.59152530",
+    "avg": "Avg cost $6,751.90",
+    "roi": "+283.67%",
+    "price": "End price $25,904.70",
+    "error": ""
+   }
+  },
+  {
+   "id": 76,
+   "dca": {
+    "invested": "$150.00",
+    "buys": "1 purchase",
+    "value": "$153.41",
+    "profit": "+$3.41 profit",
+    "btc": "0.00358706",
+    "avg": "Avg cost $41,816.95",
+    "roi": "+2.27%",
+    "price": "End price $42,768.18",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$150.00",
+    "buys": "1 purchase",
+    "value": "$153.41",
+    "profit": "+$3.41 profit",
+    "btc": "0.00358706",
+    "avg": "Avg cost $41,816.95",
+    "roi": "+2.27%",
+    "price": "End price $42,768.18",
+    "error": ""
+   }
+  },
+  {
+   "id": 77,
+   "dca": {
+    "invested": "$87,128.00",
+    "buys": "100 purchases · fees $87.13",
+    "value": "$806,807.79",
+    "profit": "+$719,679.79 profit",
+    "btc": "1700.18387726",
+    "avg": "Avg cost $51.25",
+    "roi": "+826.00%",
+    "price": "End price $474.54",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$87,128.00",
+    "buys": "1 purchase · fees $87.13",
+    "value": "$3,239,005.20",
+    "profit": "+$3,151,877.20 profit",
+    "btc": "6825.54692115",
+    "avg": "Avg cost $12.76",
+    "roi": "+3,617.53%",
+    "price": "End price $474.54",
+    "error": ""
+   }
+  },
+  {
+   "id": 78,
+   "dca": {
+    "invested": "$4,708.85",
+    "buys": "5 purchases · fees $235.44",
+    "value": "$7,035.93",
+    "profit": "+$2,327.08 profit",
+    "btc": "13.18311457",
+    "avg": "Avg cost $357.19",
+    "roi": "+49.42%",
+    "price": "End price $533.71",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$4,708.85",
+    "buys": "1 purchase · fees $235.44",
+    "value": "$18,958.35",
+    "profit": "+$14,249.50 profit",
+    "btc": "35.52197611",
+    "avg": "Avg cost $132.56",
+    "roi": "+302.61%",
+    "price": "End price $533.71",
+    "error": ""
+   }
+  },
+  {
+   "id": 79,
+   "dca": {
+    "invested": "$701.35",
+    "buys": "1 purchase",
+    "value": "$671.22",
+    "profit": "-$30.13 loss",
+    "btc": "0.27366635",
+    "avg": "Avg cost $2,562.79",
+    "roi": "-4.30%",
+    "price": "End price $2,452.71",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$701.35",
+    "buys": "1 purchase",
+    "value": "$671.22",
+    "profit": "-$30.13 loss",
+    "btc": "0.27366635",
+    "avg": "Avg cost $2,562.79",
+    "roi": "-4.30%",
+    "price": "End price $2,452.71",
+    "error": ""
+   }
+  },
+  {
+   "id": 80,
+   "dca": {
+    "invested": "$16,000.00",
+    "buys": "16 purchases · fees $40.00",
+    "value": "$40,015.75",
+    "profit": "+$24,015.75 profit",
+    "btc": "1341.91840027",
+    "avg": "Avg cost $11.92",
+    "roi": "+150.10%",
+    "price": "End price $29.82",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$16,000.00",
+    "buys": "1 purchase · fees $40.00",
+    "value": "$62,397.99",
+    "profit": "+$46,397.99 profit",
+    "btc": "2092.50144947",
+    "avg": "Avg cost $7.65",
+    "roi": "+289.99%",
+    "price": "End price $29.82",
+    "error": ""
+   }
+  },
+  {
+   "id": 81,
+   "dca": {
+    "invested": "$2,978.56",
+    "buys": "4 purchases · fees $74.46",
+    "value": "$2,766.51",
+    "profit": "-$212.05 loss",
+    "btc": "0.33146293",
+    "avg": "Avg cost $8,986.10",
+    "roi": "-7.12%",
+    "price": "End price $8,346.37",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,978.56",
+    "buys": "1 purchase · fees $74.46",
+    "value": "$2,377.36",
+    "profit": "-$601.20 loss",
+    "btc": "0.28483785",
+    "avg": "Avg cost $10,457.04",
+    "roi": "-20.18%",
+    "price": "End price $8,346.37",
+    "error": ""
+   }
+  },
+  {
+   "id": 82,
+   "dca": {
+    "invested": "$75.00",
+    "buys": "1 purchase · fees $1.88",
+    "value": "$64.64",
+    "profit": "-$10.36 loss",
+    "btc": "0.00905398",
+    "avg": "Avg cost $8,283.65",
+    "roi": "-13.82%",
+    "price": "End price $7,139.04",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$75.00",
+    "buys": "1 purchase · fees $1.88",
+    "value": "$64.64",
+    "profit": "-$10.36 loss",
+    "btc": "0.00905398",
+    "avg": "Avg cost $8,283.65",
+    "roi": "-13.82%",
+    "price": "End price $7,139.04",
+    "error": ""
+   }
+  },
+  {
+   "id": 83,
+   "dca": {
+    "invested": "$7,000.00",
+    "buys": "70 purchases · fees $350.00",
+    "value": "$18,035.25",
+    "profit": "+$11,035.25 profit",
+    "btc": "0.67187326",
+    "avg": "Avg cost $10,418.63",
+    "roi": "+157.65%",
+    "price": "End price $26,843.24",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$7,000.00",
+    "buys": "1 purchase · fees $350.00",
+    "value": "$64,790.26",
+    "profit": "+$57,790.26 profit",
+    "btc": "2.41365334",
+    "avg": "Avg cost $2,900.17",
+    "roi": "+825.58%",
+    "price": "End price $26,843.24",
+    "error": ""
+   }
+  },
+  {
+   "id": 84,
+   "dca": {
+    "invested": "$10,791.60",
+    "buys": "10 purchases · fees $10.79",
+    "value": "$17,241.21",
+    "profit": "+$6,449.61 profit",
+    "btc": "0.27268273",
+    "avg": "Avg cost $39,575.66",
+    "roi": "+59.77%",
+    "price": "End price $63,228.10",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$10,791.60",
+    "buys": "1 purchase · fees $10.79",
+    "value": "$23,462.22",
+    "profit": "+$12,670.62 profit",
+    "btc": "0.37107262",
+    "avg": "Avg cost $29,082.18",
+    "roi": "+117.41%",
+    "price": "End price $63,228.10",
+    "error": ""
+   }
+  },
+  {
+   "id": 85,
+   "dca": {
+    "invested": "$1,000.00",
+    "buys": "1 purchase",
+    "value": "$960.28",
+    "profit": "-$39.72 loss",
+    "btc": "0.01469365",
+    "avg": "Avg cost $68,056.62",
+    "roi": "-3.97%",
+    "price": "End price $65,353.39",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,000.00",
+    "buys": "1 purchase",
+    "value": "$960.28",
+    "profit": "-$39.72 loss",
+    "btc": "0.01469365",
+    "avg": "Avg cost $68,056.62",
+    "roi": "-3.97%",
+    "price": "End price $65,353.39",
+    "error": ""
+   }
+  },
+  {
+   "id": 86,
+   "dca": {
+    "invested": "$1,050.00",
+    "buys": "7 purchases · fees $5.25",
+    "value": "$1,829.62",
+    "profit": "+$779.62 profit",
+    "btc": "0.07717447",
+    "avg": "Avg cost $13,605.54",
+    "roi": "+74.25%",
+    "price": "End price $23,707.63",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,050.00",
+    "buys": "1 purchase · fees $5.25",
+    "value": "$2,236.68",
+    "profit": "+$1,186.68 profit",
+    "btc": "0.09434448",
+    "avg": "Avg cost $11,129.43",
+    "roi": "+113.02%",
+    "price": "End price $23,707.63",
+    "error": ""
+   }
+  },
+  {
+   "id": 87,
+   "dca": {
+    "invested": "$40.00",
+    "buys": "2 purchases",
+    "value": "$212.95",
+    "profit": "+$172.95 profit",
+    "btc": "0.26521684",
+    "avg": "Avg cost $150.82",
+    "roi": "+432.37%",
+    "price": "End price $802.92",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$40.00",
+    "buys": "1 purchase",
+    "value": "$273.16",
+    "profit": "+$233.16 profit",
+    "btc": "0.34020695",
+    "avg": "Avg cost $117.58",
+    "roi": "+582.89%",
+    "price": "End price $802.92",
+    "error": ""
+   }
+  },
+  {
+   "id": 88,
+   "dca": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $0.06",
+    "value": "$25.95",
+    "profit": "+$0.95 profit",
+    "btc": "92.98098434",
+    "avg": "Avg cost $0.2689",
+    "roi": "+3.78%",
+    "price": "End price $0.2790",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $0.06",
+    "value": "$25.95",
+    "profit": "+$0.95 profit",
+    "btc": "92.98098434",
+    "avg": "Avg cost $0.2689",
+    "roi": "+3.78%",
+    "price": "End price $0.2790",
+    "error": ""
+   }
+  },
+  {
+   "id": 89,
+   "dca": {
+    "invested": "$50.00",
+    "buys": "1 purchase · fees $0.50",
+    "value": "$48.88",
+    "profit": "-$1.12 loss",
+    "btc": "0.00044349",
+    "avg": "Avg cost $112,741.96",
+    "roi": "-2.25%",
+    "price": "End price $110,206.35",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$50.00",
+    "buys": "1 purchase · fees $0.50",
+    "value": "$48.88",
+    "profit": "-$1.12 loss",
+    "btc": "0.00044349",
+    "avg": "Avg cost $112,741.96",
+    "roi": "-2.25%",
+    "price": "End price $110,206.35",
+    "error": ""
+   }
+  },
+  {
+   "id": 90,
+   "dca": {
+    "invested": "$11,000.00",
+    "buys": "55 purchases",
+    "value": "$98,201.35",
+    "profit": "+$87,201.35 profit",
+    "btc": "2.75442864",
+    "avg": "Avg cost $3,993.57",
+    "roi": "+792.74%",
+    "price": "End price $35,652.17",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$11,000.00",
+    "buys": "1 purchase",
+    "value": "$568,417.99",
+    "profit": "+$557,417.99 profit",
+    "btc": "15.94343369",
+    "avg": "Avg cost $689.94",
+    "roi": "+5,067.44%",
+    "price": "End price $35,652.17",
+    "error": ""
+   }
+  },
+  {
+   "id": 91,
+   "dca": {
+    "invested": "$15,000.00",
+    "buys": "6 purchases",
+    "value": "$34,979.07",
+    "profit": "+$19,979.07 profit",
+    "btc": "393.67761326",
+    "avg": "Avg cost $38.10",
+    "roi": "+133.19%",
+    "price": "End price $88.85",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$15,000.00",
+    "buys": "1 purchase",
+    "value": "$48,737.41",
+    "profit": "+$33,737.41 profit",
+    "btc": "548.52301191",
+    "avg": "Avg cost $27.35",
+    "roi": "+224.92%",
+    "price": "End price $88.85",
+    "error": ""
+   }
+  },
+  {
+   "id": 92,
+   "dca": {
+    "invested": "$460.00",
+    "buys": "46 purchases",
+    "value": "$5,650.11",
+    "profit": "+$5,190.11 profit",
+    "btc": "45.43769668",
+    "avg": "Avg cost $10.12",
+    "roi": "+1,128.28%",
+    "price": "End price $124.35",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$460.00",
+    "buys": "1 purchase",
+    "value": "$18,129.55",
+    "profit": "+$17,669.55 profit",
+    "btc": "145.79631950",
+    "avg": "Avg cost $3.16",
+    "roi": "+3,841.21%",
+    "price": "End price $124.35",
+    "error": ""
+   }
+  },
+  {
+   "id": 93,
+   "dca": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $1.25",
+    "value": "$23.67",
+    "profit": "-$1.33 loss",
+    "btc": "0.05513966",
+    "avg": "Avg cost $453.39",
+    "roi": "-5.31%",
+    "price": "End price $429.34",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$25.00",
+    "buys": "1 purchase · fees $1.25",
+    "value": "$23.67",
+    "profit": "-$1.33 loss",
+    "btc": "0.05513966",
+    "avg": "Avg cost $453.39",
+    "roi": "-5.31%",
+    "price": "End price $429.34",
+    "error": ""
+   }
+  },
+  {
+   "id": 94,
+   "dca": {
+    "invested": "$2,330,000.00",
+    "buys": "932 purchases",
+    "value": "$22,912,732.94",
+    "profit": "+$20,582,732.94 profit",
+    "btc": "2904.85473254",
+    "avg": "Avg cost $802.11",
+    "roi": "+883.38%",
+    "price": "End price $7,887.74",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$2,330,000.00",
+    "buys": "1 purchase",
+    "value": "$77,436,256.35",
+    "profit": "+$75,106,256.35 profit",
+    "btc": "9817.29575250",
+    "avg": "Avg cost $237.34",
+    "roi": "+3,223.44%",
+    "price": "End price $7,887.74",
+    "error": ""
+   }
+  },
+  {
+   "id": 95,
+   "dca": {
+    "invested": "$1,523.88",
+    "buys": "6 purchases",
+    "value": "$1,296.17",
+    "profit": "-$227.71 loss",
+    "btc": "0.07727096",
+    "avg": "Avg cost $19,721.25",
+    "roi": "-14.94%",
+    "price": "End price $16,774.39",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,523.88",
+    "buys": "1 purchase",
+    "value": "$1,231.85",
+    "profit": "-$292.03 loss",
+    "btc": "0.07343628",
+    "avg": "Avg cost $20,751.05",
+    "roi": "-19.16%",
+    "price": "End price $16,774.39",
+    "error": ""
+   }
+  },
+  {
+   "id": 96,
+   "dca": {
+    "invested": "$18,924.84",
+    "buys": "18 purchases",
+    "value": "$16,751.12",
+    "profit": "-$2,173.72 loss",
+    "btc": "32.45338296",
+    "avg": "Avg cost $583.14",
+    "roi": "-11.49%",
+    "price": "End price $516.16",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$18,924.84",
+    "buys": "1 purchase",
+    "value": "$16,361.28",
+    "profit": "-$2,563.56 loss",
+    "btc": "31.69812066",
+    "avg": "Avg cost $597.03",
+    "roi": "-13.55%",
+    "price": "End price $516.16",
+    "error": ""
+   }
+  },
+  {
+   "id": 97,
+   "dca": {
+    "invested": "$5.00",
+    "buys": "1 purchase · fees $0.05",
+    "value": "$5.08",
+    "profit": "+$0.08 profit",
+    "btc": "0.00015165",
+    "avg": "Avg cost $32,970.34",
+    "roi": "+1.64%",
+    "price": "End price $33,511.29",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$5.00",
+    "buys": "1 purchase · fees $0.05",
+    "value": "$5.08",
+    "profit": "+$0.08 profit",
+    "btc": "0.00015165",
+    "avg": "Avg cost $32,970.34",
+    "roi": "+1.64%",
+    "price": "End price $33,511.29",
+    "error": ""
+   }
+  },
+  {
+   "id": 98,
+   "dca": {
+    "invested": "$600.00",
+    "buys": "4 purchases · fees $3.00",
+    "value": "$683.99",
+    "profit": "+$83.99 profit",
+    "btc": "5.42462224",
+    "avg": "Avg cost $110.61",
+    "roi": "+14.00%",
+    "price": "End price $126.09",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$600.00",
+    "buys": "1 purchase · fees $3.00",
+    "value": "$806.87",
+    "profit": "+$206.87 profit",
+    "btc": "6.39915601",
+    "avg": "Avg cost $93.76",
+    "roi": "+34.48%",
+    "price": "End price $126.09",
+    "error": ""
+   }
+  },
+  {
+   "id": 99,
+   "dca": {
+    "invested": "$1,950.00",
+    "buys": "13 purchases · fees $97.50",
+    "value": "$1,784.87",
+    "profit": "-$165.13 loss",
+    "btc": "0.02163549",
+    "avg": "Avg cost $90,129.68",
+    "roi": "-8.47%",
+    "price": "End price $82,497.18",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$1,950.00",
+    "buys": "1 purchase · fees $97.50",
+    "value": "$2,511.18",
+    "profit": "+$561.18 profit",
+    "btc": "0.03043959",
+    "avg": "Avg cost $64,061.31",
+    "roi": "+28.78%",
+    "price": "End price $82,497.18",
+    "error": ""
+   }
+  },
+  {
+   "id": 100,
+   "dca": {
+    "invested": "$741.03",
+    "buys": "1 purchase · fees $3.71",
+    "value": "$712.87",
+    "profit": "-$28.16 loss",
+    "btc": "0.07671097",
+    "avg": "Avg cost $9,660.03",
+    "roi": "-3.80%",
+    "price": "End price $9,292.94",
+    "error": ""
+   },
+   "lump": {
+    "invested": "$741.03",
+    "buys": "1 purchase · fees $3.71",
+    "value": "$712.87",
+    "profit": "-$28.16 loss",
+    "btc": "0.07671097",
+    "avg": "Avg cost $9,660.03",
+    "roi": "-3.80%",
+    "price": "End price $9,292.94",
+    "error": ""
+   }
+  }
+ ],
+ "outputB": [
+  {
+   "id": 1,
+   "error": "",
+   "busy": false,
+   "value": "$4,058.14",
+   "roi": "−23.43%",
+   "btc": "0.06466960 BTC",
+   "avg": "$81,955.05",
+   "buys": "53 DCA purchases",
+   "invested": "$5,300.00",
+   "fees": "$0.00",
+   "profit": "−$1,241.86",
+   "valuation": "Valuation price: $62,751.88 · BTC/USD · Aug 1, 2026 daily closing price.",
+   "lumpValue": "$2,935.90",
+   "lumpBtc": "0.04678584 BTC",
+   "lumpRoi": "−44.61%"
+  },
+  {
+   "id": 2,
+   "error": "",
+   "busy": false,
+   "value": "$4,612.53",
+   "roi": "−12.97%",
+   "btc": "0.07102488 BTC",
+   "avg": "$74,621.74",
+   "buys": "53 DCA purchases",
+   "invested": "$5,300.00",
+   "fees": "$0.00",
+   "profit": "−$687.47",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$3,654.56",
+   "lumpBtc": "0.05627384 BTC",
+   "lumpRoi": "−31.05%"
+  },
+  {
+   "id": 3,
+   "error": "",
+   "busy": false,
+   "value": "$533,481.55",
+   "roi": "+3630.64%",
+   "btc": "8.18359919 BTC",
+   "avg": "$1,747.40",
+   "buys": "143 DCA purchases",
+   "invested": "$14,300.00",
+   "fees": "$0.00",
+   "profit": "+$519,181.55",
+   "valuation": "Valuation price: $65,189.11 · BTC/USD · Nov 15, 2026 daily closing price.",
+   "lumpValue": "$2,961,480.18",
+   "lumpBtc": "45.42906244 BTC",
+   "lumpRoi": "+20609.65%"
+  },
+  {
+   "id": 4,
+   "error": "",
+   "busy": false,
+   "value": "$42,584.78",
+   "roi": "+297.99%",
+   "btc": "0.65324985 BTC",
+   "avg": "$16,379.64",
+   "buys": "107 DCA purchases",
+   "invested": "$10,700.00",
+   "fees": "$0.00",
+   "profit": "+$31,884.78",
+   "valuation": "Valuation price: $65,189.11 · BTC/USD · Nov 15, 2026 daily closing price.",
+   "lumpValue": "$51,804.04",
+   "lumpBtc": "0.79467325 BTC",
+   "lumpRoi": "+384.15%"
+  },
+  {
+   "id": 5,
+   "error": "",
+   "busy": false,
+   "value": "$10,738.10",
+   "roi": "+51.24%",
+   "btc": "0.16472225 BTC",
+   "avg": "$43,102.86",
+   "buys": "71 DCA purchases",
+   "invested": "$7,100.00",
+   "fees": "$0.00",
+   "profit": "+$3,638.10",
+   "valuation": "Valuation price: $65,189.11 · BTC/USD · Nov 15, 2026 daily closing price.",
+   "lumpValue": "$15,753.29",
+   "lumpBtc": "0.24165529 BTC",
+   "lumpRoi": "+121.88%"
+  },
+  {
+   "id": 6,
+   "error": "",
+   "busy": false,
+   "value": "$1,251.99",
+   "roi": "−47.83%",
+   "btc": "0.07576677 BTC",
+   "avg": "$31,676.15",
+   "buys": "24 DCA purchases",
+   "invested": "$2,400.00",
+   "fees": "$0.00",
+   "profit": "−$1,148.01",
+   "valuation": "Valuation price: $16,524.22 · BTC/USD · Dec 31, 2022 daily closing price.",
+   "lumpValue": "$1,196.04",
+   "lumpBtc": "0.07238109 BTC",
+   "lumpRoi": "−50.16%"
+  },
+  {
+   "id": 7,
+   "error": "",
+   "busy": false,
+   "value": "$7,045.09",
+   "roi": "+369.67%",
+   "btc": "0.12005015 BTC",
+   "avg": "$12,494.78",
+   "buys": "15 DCA purchases",
+   "invested": "$1,500.00",
+   "fees": "$0.00",
+   "profit": "+$5,545.09",
+   "valuation": "Valuation price: $58,684.55 · BTC/USD · Mar 30, 2021 daily closing price.",
+   "lumpValue": "$9,257.29",
+   "lumpBtc": "0.15774661 BTC",
+   "lumpRoi": "+517.15%"
+  },
+  {
+   "id": 8,
+   "error": "",
+   "busy": false,
+   "value": "$37,358.42",
+   "roi": "+1424.83%",
+   "btc": "86.31639746 BTC",
+   "avg": "$28.38",
+   "buys": "49 DCA purchases",
+   "invested": "$2,450.00",
+   "fees": "$0.00",
+   "profit": "+$34,908.42",
+   "valuation": "Valuation price: $432.81 · BTC/USD · Mar 1, 2016 daily closing price.",
+   "lumpValue": "$217,614.19",
+   "lumpBtc": "502.79629072 BTC",
+   "lumpRoi": "+8782.21%"
+  },
+  {
+   "id": 9,
+   "error": "",
+   "busy": false,
+   "value": "$5,265.06",
+   "roi": "+215.27%",
+   "btc": "17550.20720705 BTC",
+   "avg": "$0.10",
+   "buys": "167 DCA purchases",
+   "invested": "$1,670.00",
+   "fees": "$0.00",
+   "profit": "+$3,595.06",
+   "valuation": "Valuation price: $0.30 · BTC/USD · Dec 31, 2010 daily closing price.",
+   "lumpValue": "$5,836.44",
+   "lumpBtc": "19454.79962721 BTC",
+   "lumpRoi": "+249.49%"
+  },
+  {
+   "id": 10,
+   "error": "",
+   "busy": false,
+   "value": "$1,328,339,665.18",
+   "roi": "+2226416.37%",
+   "btc": "20454.08559099 BTC",
+   "avg": "$2.92",
+   "buys": "5,966 DCA purchases",
+   "invested": "$59,660.00",
+   "fees": "$0.00",
+   "profit": "+$1,328,280,005.18",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$45,135,952,556.37",
+   "lumpBtc": "695013.97949674 BTC",
+   "lumpRoi": "+75655200.97%"
+  },
+  {
+   "id": 11,
+   "error": "",
+   "busy": false,
+   "value": "$100.00",
+   "roi": "+0.00%",
+   "btc": "0.00153982 BTC",
+   "avg": "$64,942.51",
+   "buys": "1 DCA purchases",
+   "invested": "$100.00",
+   "fees": "$0.00",
+   "profit": "+$0.00",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$100.00",
+   "lumpBtc": "0.00153982 BTC",
+   "lumpRoi": "+0.00%"
+  },
+  {
+   "id": 12,
+   "error": "",
+   "busy": false,
+   "value": "$1,084.16",
+   "roi": "−58.30%",
+   "btc": "0.34038856 BTC",
+   "avg": "$7,638.33",
+   "buys": "26 DCA purchases",
+   "invested": "$2,600.00",
+   "fees": "$26.00",
+   "profit": "−$1,515.84",
+   "valuation": "Valuation price: $3,185.07 · BTC/USD · Dec 15, 2018 daily closing price.",
+   "lumpValue": "$425.88",
+   "lumpBtc": "0.13371104 BTC",
+   "lumpRoi": "−83.62%"
+  },
+  {
+   "id": 13,
+   "error": "",
+   "busy": false,
+   "value": "$6,971.85",
+   "roi": "−46.37%",
+   "btc": "0.44187079 BTC",
+   "avg": "$29,420.37",
+   "buys": "13 DCA purchases",
+   "invested": "$13,000.00",
+   "fees": "$65.00",
+   "profit": "−$6,028.15",
+   "valuation": "Valuation price: $15,778.02 · BTC/USD · Nov 21, 2022 daily closing price.",
+   "lumpValue": "$3,151.65",
+   "lumpBtc": "0.19974959 BTC",
+   "lumpRoi": "−75.76%"
+  },
+  {
+   "id": 14,
+   "error": "",
+   "busy": false,
+   "value": "$13,558.93",
+   "roi": "+48.19%",
+   "btc": "0.14518654 BTC",
+   "avg": "$63,022.37",
+   "buys": "366 DCA purchases",
+   "invested": "$9,150.00",
+   "fees": "$9.15",
+   "profit": "+$4,408.93",
+   "valuation": "Valuation price: $93,389.73 · BTC/USD · Dec 31, 2024 daily closing price.",
+   "lumpValue": "$19,379.61",
+   "lumpBtc": "0.20751326 BTC",
+   "lumpRoi": "+111.80%"
+  },
+  {
+   "id": 15,
+   "error": "",
+   "busy": false,
+   "value": "$7,484.49",
+   "roi": "+5.74%",
+   "btc": "0.11481204 BTC",
+   "avg": "$61,652.94",
+   "buys": "2,145 DCA purchases",
+   "invested": "$7,078.50",
+   "fees": "$2,123.55",
+   "profit": "+$405.99",
+   "valuation": "Valuation price: $65,189.11 · BTC/USD · Nov 15, 2026 daily closing price.",
+   "lumpValue": "$10,993.91",
+   "lumpBtc": "0.16864646 BTC",
+   "lumpRoi": "+55.31%"
+  },
+  {
+   "id": 16,
+   "error": "",
+   "busy": false,
+   "value": "$10,219.38",
+   "roi": "+44.73%",
+   "btc": "0.15676520 BTC",
+   "avg": "$45,041.88",
+   "buys": "307 DCA purchases",
+   "invested": "$7,061.00",
+   "fees": "$303.93",
+   "profit": "+$3,158.38",
+   "valuation": "Valuation price: $65,189.11 · BTC/USD · Nov 15, 2026 daily closing price.",
+   "lumpValue": "$14,992.41",
+   "lumpBtc": "0.22998334 BTC",
+   "lumpRoi": "+112.33%"
+  },
+  {
+   "id": 17,
+   "error": "",
+   "busy": false,
+   "value": "$22.68",
+   "roi": "−9.27%",
+   "btc": "0.12218943 BTC",
+   "avg": "$204.60",
+   "buys": "1 DCA purchases",
+   "invested": "$25.00",
+   "fees": "$0.00",
+   "profit": "−$2.32",
+   "valuation": "Valuation price: $185.64 · BTC/USD · Oct 25, 2013 daily closing price.",
+   "lumpValue": "$22.68",
+   "lumpBtc": "0.12218943 BTC",
+   "lumpRoi": "−9.27%"
+  },
+  {
+   "id": 18,
+   "error": "",
+   "busy": false,
+   "value": "$88,329.60",
+   "roi": "−50.09%",
+   "btc": "27.73235465 BTC",
+   "avg": "$6,381.17",
+   "buys": "250 DCA purchases",
+   "invested": "$176,965.00",
+   "fees": "$176.97",
+   "profit": "−$88,635.40",
+   "valuation": "Valuation price: $3,185.07 · BTC/USD · Dec 15, 2018 daily closing price.",
+   "lumpValue": "$82,603.23",
+   "lumpBtc": "25.93447742 BTC",
+   "lumpRoi": "−53.32%"
+  },
+  {
+   "id": 19,
+   "error": "",
+   "busy": false,
+   "value": "$6.26",
+   "roi": "−37.42%",
+   "btc": "0.00017673 BTC",
+   "avg": "$56,583.94",
+   "buys": "1 DCA purchases",
+   "invested": "$10.00",
+   "fees": "$0.01",
+   "profit": "−$3.74",
+   "valuation": "Valuation price: $35,409.57 · BTC/USD · Jun 5, 2021 daily closing price.",
+   "lumpValue": "$6.26",
+   "lumpBtc": "0.00017673 BTC",
+   "lumpRoi": "−37.42%"
+  },
+  {
+   "id": 20,
+   "error": "",
+   "busy": false,
+   "value": "$638,268.31",
+   "roi": "−24.02%",
+   "btc": "9.82820502 BTC",
+   "avg": "$85,468.30",
+   "buys": "84 DCA purchases",
+   "invested": "$840,000.00",
+   "fees": "$12,516.00",
+   "profit": "−$201,731.69",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$675,459.95",
+   "lumpBtc": "10.40089065 BTC",
+   "lumpRoi": "−19.59%"
+  },
+  {
+   "id": 21,
+   "error": "",
+   "busy": false,
+   "value": "$25,563.96",
+   "roi": "−7.38%",
+   "btc": "51.35753261 BTC",
+   "avg": "$537.41",
+   "buys": "138 DCA purchases",
+   "invested": "$27,600.00",
+   "fees": "$0.00",
+   "profit": "−$2,036.04",
+   "valuation": "Valuation price: $497.76 · BTC/USD · Aug 17, 2014 daily closing price.",
+   "lumpValue": "$31,293.72",
+   "lumpBtc": "62.86851363 BTC",
+   "lumpRoi": "+13.38%"
+  },
+  {
+   "id": 22,
+   "error": "",
+   "busy": false,
+   "value": "$2,102.75",
+   "roi": "+5.26%",
+   "btc": "309.39608533 BTC",
+   "avg": "$6.46",
+   "buys": "1 DCA purchases",
+   "invested": "$1,997.60",
+   "fees": "$2.00",
+   "profit": "+$105.15",
+   "valuation": "Valuation price: $6.80 · BTC/USD · Jul 8, 2012 daily closing price.",
+   "lumpValue": "$2,102.75",
+   "lumpBtc": "309.39608533 BTC",
+   "lumpRoi": "+5.26%"
+  },
+  {
+   "id": 23,
+   "error": "",
+   "busy": false,
+   "value": "$63.97",
+   "roi": "−14.70%",
+   "btc": "0.00098505 BTC",
+   "avg": "$76,138.46",
+   "buys": "15 DCA purchases",
+   "invested": "$75.00",
+   "fees": "$0.00",
+   "profit": "−$11.03",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$75.04",
+   "lumpBtc": "0.00115550 BTC",
+   "lumpRoi": "+0.05%"
+  },
+  {
+   "id": 24,
+   "error": "",
+   "busy": false,
+   "value": "$396.09",
+   "roi": "−0.98%",
+   "btc": "0.01409692 BTC",
+   "avg": "$28,374.99",
+   "buys": "4 DCA purchases",
+   "invested": "$400.00",
+   "fees": "$2.00",
+   "profit": "−$3.91",
+   "valuation": "Valuation price: $28,097.52 · BTC/USD · May 28, 2023 daily closing price.",
+   "lumpValue": "$368.21",
+   "lumpBtc": "0.01310468 BTC",
+   "lumpRoi": "−7.95%"
+  },
+  {
+   "id": 25,
+   "error": "",
+   "busy": false,
+   "value": "$505.09",
+   "roi": "+152.54%",
+   "btc": "6.79665878 BTC",
+   "avg": "$29.43",
+   "buys": "4 DCA purchases",
+   "invested": "$200.00",
+   "fees": "$2.98",
+   "profit": "+$305.09",
+   "valuation": "Valuation price: $74.31 · BTC/USD · Mar 25, 2013 daily closing price.",
+   "lumpValue": "$745.64",
+   "lumpBtc": "10.03366196 BTC",
+   "lumpRoi": "+272.82%"
+  },
+  {
+   "id": 26,
+   "error": "",
+   "busy": false,
+   "value": "$1,060.61",
+   "roi": "+6.06%",
+   "btc": "0.03572585 BTC",
+   "avg": "$27,990.93",
+   "buys": "1 DCA purchases",
+   "invested": "$1,000.00",
+   "fees": "$5.00",
+   "profit": "+$60.61",
+   "valuation": "Valuation price: $29,687.57 · BTC/USD · Apr 10, 2023 daily closing price.",
+   "lumpValue": "$1,060.61",
+   "lumpBtc": "0.03572585 BTC",
+   "lumpRoi": "+6.06%"
+  },
+  {
+   "id": 27,
+   "error": "",
+   "busy": false,
+   "value": "$122,029.21",
+   "roi": "+429.41%",
+   "btc": "3.18370232 BTC",
+   "avg": "$7,240.00",
+   "buys": "922 DCA purchases",
+   "invested": "$23,050.00",
+   "fees": "$23.05",
+   "profit": "+$98,979.21",
+   "valuation": "Valuation price: $38,329.34 · BTC/USD · Jan 10, 2021 daily closing price.",
+   "lumpValue": "$134,148.51",
+   "lumpBtc": "3.49989105 BTC",
+   "lumpRoi": "+481.99%"
+  },
+  {
+   "id": 28,
+   "error": "",
+   "busy": false,
+   "value": "$2,301.19",
+   "roi": "−14.04%",
+   "btc": "0.03745536 BTC",
+   "avg": "$71,470.67",
+   "buys": "11 DCA purchases",
+   "invested": "$2,676.96",
+   "fees": "$2.68",
+   "profit": "−$375.77",
+   "valuation": "Valuation price: $61,438.19 · BTC/USD · Jul 2, 2026 daily closing price.",
+   "lumpValue": "$2,167.18",
+   "lumpBtc": "0.03527420 BTC",
+   "lumpRoi": "−19.04%"
+  },
+  {
+   "id": 29,
+   "error": "",
+   "busy": false,
+   "value": "$1,770.73",
+   "roi": "−11.46%",
+   "btc": "3.73573970 BTC",
+   "avg": "$535.37",
+   "buys": "4 DCA purchases",
+   "invested": "$2,000.00",
+   "fees": "$0.00",
+   "profit": "−$229.27",
+   "valuation": "Valuation price: $474.00 · BTC/USD · Sep 12, 2014 daily closing price.",
+   "lumpValue": "$1,594.06",
+   "lumpBtc": "3.36302544 BTC",
+   "lumpRoi": "−20.30%"
+  },
+  {
+   "id": 30,
+   "error": "",
+   "busy": false,
+   "value": "$8,226.91",
+   "roi": "+52.35%",
+   "btc": "18.99531537 BTC",
+   "avg": "$284.28",
+   "buys": "36 DCA purchases",
+   "invested": "$5,400.00",
+   "fees": "$0.00",
+   "profit": "+$2,826.91",
+   "valuation": "Valuation price: $433.10 · BTC/USD · Feb 28, 2016 daily closing price.",
+   "lumpValue": "$5,926.50",
+   "lumpBtc": "13.68384659 BTC",
+   "lumpRoi": "+9.75%"
+  },
+  {
+   "id": 31,
+   "error": "",
+   "busy": false,
+   "value": "$28,965.82",
+   "roi": "+20.69%",
+   "btc": "2.98873061 BTC",
+   "avg": "$8,030.17",
+   "buys": "24 DCA purchases",
+   "invested": "$24,000.00",
+   "fees": "$600.00",
+   "profit": "+$4,965.82",
+   "valuation": "Valuation price: $9,691.68 · BTC/USD · May 30, 2020 daily closing price.",
+   "lumpValue": "$32,951.51",
+   "lumpBtc": "3.39997883 BTC",
+   "lumpRoi": "+37.30%"
+  },
+  {
+   "id": 32,
+   "error": "",
+   "busy": false,
+   "value": "$68.78",
+   "roi": "+14.64%",
+   "btc": "0.00144147 BTC",
+   "avg": "$41,624.26",
+   "buys": "3 DCA purchases",
+   "invested": "$60.00",
+   "fees": "$0.00",
+   "profit": "+$8.78",
+   "valuation": "Valuation price: $47,717.49 · BTC/USD · Aug 13, 2021 daily closing price.",
+   "lumpValue": "$71.69",
+   "lumpBtc": "0.00150228 BTC",
+   "lumpRoi": "+19.48%"
+  },
+  {
+   "id": 33,
+   "error": "",
+   "busy": false,
+   "value": "$3,025.46",
+   "roi": "−22.42%",
+   "btc": "0.04658673 BTC",
+   "avg": "$83,714.83",
+   "buys": "26 DCA purchases",
+   "invested": "$3,900.00",
+   "fees": "$3.90",
+   "profit": "−$874.54",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$4,163.94",
+   "lumpBtc": "0.06411725 BTC",
+   "lumpRoi": "+6.77%"
+  },
+  {
+   "id": 34,
+   "error": "",
+   "busy": false,
+   "value": "$7,524.78",
+   "roi": "+903.30%",
+   "btc": "429.72445381 BTC",
+   "avg": "$1.75",
+   "buys": "3 DCA purchases",
+   "invested": "$750.00",
+   "fees": "$0.00",
+   "profit": "+$6,774.78",
+   "valuation": "Valuation price: $17.51 · BTC/USD · Jun 23, 2011 daily closing price.",
+   "lumpValue": "$16,965.34",
+   "lumpBtc": "968.85455555 BTC",
+   "lumpRoi": "+2162.05%"
+  },
+  {
+   "id": 35,
+   "error": "",
+   "busy": false,
+   "value": "$1,937.32",
+   "roi": "+3.75%",
+   "btc": "115.44699346 BTC",
+   "avg": "$16.17",
+   "buys": "3 DCA purchases",
+   "invested": "$1,867.23",
+   "fees": "$18.67",
+   "profit": "+$70.09",
+   "valuation": "Valuation price: $16.78 · BTC/USD · Jan 21, 2013 daily closing price.",
+   "lumpValue": "$1,990.02",
+   "lumpBtc": "118.58754879 BTC",
+   "lumpRoi": "+6.58%"
+  },
+  {
+   "id": 36,
+   "error": "",
+   "busy": false,
+   "value": "$2,692.77",
+   "roi": "+7.71%",
+   "btc": "0.17868071 BTC",
+   "avg": "$13,991.44",
+   "buys": "1 DCA purchases",
+   "invested": "$2,500.00",
+   "fees": "$12.50",
+   "profit": "+$192.77",
+   "valuation": "Valuation price: $15,070.30 · BTC/USD · Jan 4, 2018 daily closing price.",
+   "lumpValue": "$2,692.77",
+   "lumpBtc": "0.17868071 BTC",
+   "lumpRoi": "+7.71%"
+  },
+  {
+   "id": 37,
+   "error": "",
+   "busy": false,
+   "value": "$301,749.58",
+   "roi": "+132.12%",
+   "btc": "9.97615048 BTC",
+   "avg": "$13,031.08",
+   "buys": "52 DCA purchases",
+   "invested": "$130,000.00",
+   "fees": "$6,500.00",
+   "profit": "+$171,749.58",
+   "valuation": "Valuation price: $30,247.10 · BTC/USD · Apr 11, 2023 daily closing price.",
+   "lumpValue": "$977,081.14",
+   "lumpBtc": "32.30330411 BTC",
+   "lumpRoi": "+651.60%"
+  },
+  {
+   "id": 38,
+   "error": "",
+   "busy": false,
+   "value": "$1,316,097.12",
+   "roi": "+1142.19%",
+   "btc": "114.41754620 BTC",
+   "avg": "$925.99",
+   "buys": "2,119 DCA purchases",
+   "invested": "$105,950.00",
+   "fees": "$5,297.50",
+   "profit": "+$1,210,147.12",
+   "valuation": "Valuation price: $11,502.58 · BTC/USD · Oct 15, 2020 daily closing price.",
+   "lumpValue": "$3,652,130.23",
+   "lumpBtc": "317.50527574 BTC",
+   "lumpRoi": "+3347.03%"
+  },
+  {
+   "id": 39,
+   "error": "",
+   "busy": false,
+   "value": "$952.47",
+   "roi": "−4.75%",
+   "btc": "0.03550632 BTC",
+   "avg": "$28,164.00",
+   "buys": "5 DCA purchases",
+   "invested": "$1,000.00",
+   "fees": "$14.90",
+   "profit": "−$47.53",
+   "valuation": "Valuation price: $26,825.37 · BTC/USD · Jun 1, 2023 daily closing price.",
+   "lumpValue": "$904.32",
+   "lumpBtc": "0.03371146 BTC",
+   "lumpRoi": "−9.57%"
+  },
+  {
+   "id": 40,
+   "error": "",
+   "busy": false,
+   "value": "$313,598.55",
+   "roi": "+153.72%",
+   "btc": "322.14751784 BTC",
+   "avg": "$383.68",
+   "buys": "618 DCA purchases",
+   "invested": "$123,600.00",
+   "fees": "$618.00",
+   "profit": "+$189,998.55",
+   "valuation": "Valuation price: $973.46 · BTC/USD · Dec 29, 2016 daily closing price.",
+   "lumpValue": "$512,005.53",
+   "lumpBtc": "525.96325302 BTC",
+   "lumpRoi": "+314.24%"
+  },
+  {
+   "id": 41,
+   "error": "",
+   "busy": false,
+   "value": "$983.20",
+   "roi": "−16.02%",
+   "btc": "0.13627170 BTC",
+   "avg": "$8,591.07",
+   "buys": "1 DCA purchases",
+   "invested": "$1,170.72",
+   "fees": "$11.71",
+   "profit": "−$187.52",
+   "valuation": "Valuation price: $7,215.02 · BTC/USD · Dec 4, 2019 daily closing price.",
+   "lumpValue": "$983.20",
+   "lumpBtc": "0.13627170 BTC",
+   "lumpRoi": "−16.02%"
+  },
+  {
+   "id": 42,
+   "error": "",
+   "busy": false,
+   "value": "$63.77",
+   "roi": "−30.69%",
+   "btc": "0.01783206 BTC",
+   "avg": "$5,159.25",
+   "buys": "92 DCA purchases",
+   "invested": "$92.00",
+   "fees": "$2.30",
+   "profit": "−$28.23",
+   "valuation": "Valuation price: $3,576.09 · BTC/USD · Feb 13, 2019 daily closing price.",
+   "lumpValue": "$180.23",
+   "lumpBtc": "0.05039778 BTC",
+   "lumpRoi": "+95.90%"
+  },
+  {
+   "id": 43,
+   "error": "",
+   "busy": false,
+   "value": "$25.81",
+   "roi": "+3.22%",
+   "btc": "0.00382808 BTC",
+   "avg": "$6,530.70",
+   "buys": "1 DCA purchases",
+   "invested": "$25.00",
+   "fees": "$0.03",
+   "profit": "+$0.81",
+   "valuation": "Valuation price: $6,741.14 · BTC/USD · Sep 21, 2018 daily closing price.",
+   "lumpValue": "$25.81",
+   "lumpBtc": "0.00382808 BTC",
+   "lumpRoi": "+3.22%"
+  },
+  {
+   "id": 44,
+   "error": "",
+   "busy": false,
+   "value": "$4,495.37",
+   "roi": "−6.35%",
+   "btc": "0.23823221 BTC",
+   "avg": "$20,148.41",
+   "buys": "32 DCA purchases",
+   "invested": "$4,800.00",
+   "fees": "$120.00",
+   "profit": "−$304.63",
+   "valuation": "Valuation price: $18,869.70 · BTC/USD · Jan 12, 2023 daily closing price.",
+   "lumpValue": "$2,937.36",
+   "lumpBtc": "0.15566539 BTC",
+   "lumpRoi": "−38.81%"
+  },
+  {
+   "id": 45,
+   "error": "",
+   "busy": false,
+   "value": "$203.51",
+   "roi": "+1.75%",
+   "btc": "0.02299378 BTC",
+   "avg": "$8,698.00",
+   "buys": "1 DCA purchases",
+   "invested": "$200.00",
+   "fees": "$0.00",
+   "profit": "+$3.51",
+   "valuation": "Valuation price: $8,850.58 · BTC/USD · Jun 15, 2019 daily closing price.",
+   "lumpValue": "$203.51",
+   "lumpBtc": "0.02299378 BTC",
+   "lumpRoi": "+1.75%"
+  },
+  {
+   "id": 46,
+   "error": "",
+   "busy": false,
+   "value": "$464.82",
+   "roi": "+16.21%",
+   "btc": "0.05069477 BTC",
+   "avg": "$7,890.36",
+   "buys": "16 DCA purchases",
+   "invested": "$400.00",
+   "fees": "$0.40",
+   "profit": "+$64.82",
+   "valuation": "Valuation price: $9,169.06 · BTC/USD · May 27, 2020 daily closing price.",
+   "lumpValue": "$356.69",
+   "lumpBtc": "0.03890103 BTC",
+   "lumpRoi": "−10.83%"
+  },
+  {
+   "id": 47,
+   "error": "",
+   "busy": false,
+   "value": "$7,461.75",
+   "roi": "+62.21%",
+   "btc": "6.13573384 BTC",
+   "avg": "$749.71",
+   "buys": "23 DCA purchases",
+   "invested": "$4,600.00",
+   "fees": "$11.50",
+   "profit": "+$2,861.75",
+   "valuation": "Valuation price: $1,216.11 · BTC/USD · Apr 12, 2017 daily closing price.",
+   "lumpValue": "$9,646.39",
+   "lumpBtc": "7.93214172 BTC",
+   "lumpRoi": "+109.70%"
+  },
+  {
+   "id": 48,
+   "error": "",
+   "busy": false,
+   "value": "$1,038,828.23",
+   "roi": "+141.59%",
+   "btc": "10.87252953 BTC",
+   "avg": "$39,549.21",
+   "buys": "43 DCA purchases",
+   "invested": "$430,000.00",
+   "fees": "$0.00",
+   "profit": "+$608,828.23",
+   "valuation": "Valuation price: $95,546.14 · BTC/USD · Jan 15, 2026 daily closing price.",
+   "lumpValue": "$1,913,740.61",
+   "lumpBtc": "20.02949165 BTC",
+   "lumpRoi": "+345.06%"
+  },
+  {
+   "id": 49,
+   "error": "",
+   "busy": false,
+   "value": "$33,476.26",
+   "roi": "+63.30%",
+   "btc": "2.93211364 BTC",
+   "avg": "$6,991.54",
+   "buys": "82 DCA purchases",
+   "invested": "$20,500.00",
+   "fees": "$51.25",
+   "profit": "+$12,976.26",
+   "valuation": "Valuation price: $11,417.11 · BTC/USD · Oct 14, 2020 daily closing price.",
+   "lumpValue": "$53,305.52",
+   "lumpBtc": "4.66891604 BTC",
+   "lumpRoi": "+160.03%"
+  },
+  {
+   "id": 50,
+   "error": "",
+   "busy": false,
+   "value": "$699,057.78",
+   "roi": "+6961.19%",
+   "btc": "1019.84117631 BTC",
+   "avg": "$9.71",
+   "buys": "66 DCA purchases",
+   "invested": "$9,900.00",
+   "fees": "$0.00",
+   "profit": "+$689,157.78",
+   "valuation": "Valuation price: $685.46 · BTC/USD · Feb 10, 2014 daily closing price.",
+   "lumpValue": "$555,587.22",
+   "lumpBtc": "810.53489445 BTC",
+   "lumpRoi": "+5511.99%"
+  },
+  {
+   "id": 51,
+   "error": "",
+   "busy": false,
+   "value": "$12,988.45",
+   "roi": "−3.79%",
+   "btc": "45.63798624 BTC",
+   "avg": "$295.81",
+   "buys": "27 DCA purchases",
+   "invested": "$13,500.00",
+   "fees": "$67.50",
+   "profit": "−$511.55",
+   "valuation": "Valuation price: $284.60 · BTC/USD · Jul 31, 2015 daily closing price.",
+   "lumpValue": "$6,408.73",
+   "lumpBtc": "22.51860485 BTC",
+   "lumpRoi": "−52.53%"
+  },
+  {
+   "id": 52,
+   "error": "",
+   "busy": false,
+   "value": "$319,158.47",
+   "roi": "+18.21%",
+   "btc": "7.96181105 BTC",
+   "avg": "$33,911.88",
+   "buys": "27 DCA purchases",
+   "invested": "$270,000.00",
+   "fees": "$1,350.00",
+   "profit": "+$49,158.47",
+   "valuation": "Valuation price: $40,086.16 · BTC/USD · Jul 29, 2021 daily closing price.",
+   "lumpValue": "$311,353.02",
+   "lumpBtc": "7.76709431 BTC",
+   "lumpRoi": "+15.32%"
+  },
+  {
+   "id": 53,
+   "error": "",
+   "busy": false,
+   "value": "$199,611.87",
+   "roi": "+132.65%",
+   "btc": "2.01753788 BTC",
+   "avg": "$42,527.08",
+   "buys": "572 DCA purchases",
+   "invested": "$85,800.00",
+   "fees": "$429.00",
+   "profit": "+$113,811.87",
+   "valuation": "Valuation price: $98,938.35 · BTC/USD · Nov 22, 2024 daily closing price.",
+   "lumpValue": "$300,426.10",
+   "lumpBtc": "3.03649803 BTC",
+   "lumpRoi": "+250.15%"
+  },
+  {
+   "id": 54,
+   "error": "",
+   "busy": false,
+   "value": "$70,129.05",
+   "roi": "+2949.09%",
+   "btc": "112.52148653 BTC",
+   "avg": "$20.44",
+   "buys": "46 DCA purchases",
+   "invested": "$2,300.00",
+   "fees": "$34.27",
+   "profit": "+$67,829.05",
+   "valuation": "Valuation price: $623.25 · BTC/USD · Feb 16, 2014 daily closing price.",
+   "lumpValue": "$277,448.10",
+   "lumpBtc": "445.16318364 BTC",
+   "lumpRoi": "+11962.96%"
+  },
+  {
+   "id": 55,
+   "error": "",
+   "busy": false,
+   "value": "$1,317.76",
+   "roi": "+25.44%",
+   "btc": "0.01964000 BTC",
+   "avg": "$53,486.75",
+   "buys": "72 DCA purchases",
+   "invested": "$1,050.48",
+   "fees": "$26.26",
+   "profit": "+$267.28",
+   "valuation": "Valuation price: $67,095.59 · BTC/USD · Nov 9, 2021 daily closing price.",
+   "lumpValue": "$1,458.24",
+   "lumpBtc": "0.02173371 BTC",
+   "lumpRoi": "+38.82%"
+  },
+  {
+   "id": 56,
+   "error": "",
+   "busy": false,
+   "value": "$25,517.36",
+   "roi": "−7.21%",
+   "btc": "1.30596121 BTC",
+   "avg": "$21,057.29",
+   "buys": "11 DCA purchases",
+   "invested": "$27,500.00",
+   "fees": "$0.00",
+   "profit": "−$1,982.64",
+   "valuation": "Valuation price: $19,539.14 · BTC/USD · Oct 7, 2022 daily closing price.",
+   "lumpValue": "$22,540.23",
+   "lumpBtc": "1.15359332 BTC",
+   "lumpRoi": "−18.04%"
+  },
+  {
+   "id": 57,
+   "error": "",
+   "busy": false,
+   "value": "$97.47",
+   "roi": "−2.53%",
+   "btc": "0.17094838 BTC",
+   "avg": "$584.97",
+   "buys": "1 DCA purchases",
+   "invested": "$100.00",
+   "fees": "$0.00",
+   "profit": "−$2.53",
+   "valuation": "Valuation price: $570.20 · BTC/USD · Aug 27, 2016 daily closing price.",
+   "lumpValue": "$97.47",
+   "lumpBtc": "0.17094838 BTC",
+   "lumpRoi": "−2.53%"
+  },
+  {
+   "id": 58,
+   "error": "",
+   "busy": false,
+   "value": "$327,251.85",
+   "roi": "+227.74%",
+   "btc": "17.21121973 BTC",
+   "avg": "$5,801.45",
+   "buys": "1,997 DCA purchases",
+   "invested": "$99,850.00",
+   "fees": "$99.85",
+   "profit": "+$227,401.85",
+   "valuation": "Valuation price: $19,013.87 · BTC/USD · Jun 18, 2022 daily closing price.",
+   "lumpValue": "$1,973,231.72",
+   "lumpBtc": "103.77855775 BTC",
+   "lumpRoi": "+1876.20%"
+  },
+  {
+   "id": 59,
+   "error": "",
+   "busy": false,
+   "value": "$75,775.93",
+   "roi": "+4.52%",
+   "btc": "95.57658103 BTC",
+   "avg": "$758.55",
+   "buys": "29 DCA purchases",
+   "invested": "$72,500.00",
+   "fees": "$0.00",
+   "profit": "+$3,275.93",
+   "valuation": "Valuation price: $792.83 · BTC/USD · Jan 17, 2014 daily closing price.",
+   "lumpValue": "$95,765.60",
+   "lumpBtc": "120.78965695 BTC",
+   "lumpRoi": "+32.09%"
+  },
+  {
+   "id": 60,
+   "error": "",
+   "busy": false,
+   "value": "$1,571,936.25",
+   "roi": "+962.12%",
+   "btc": "210.16869605 BTC",
+   "avg": "$704.20",
+   "buys": "148 DCA purchases",
+   "invested": "$148,000.00",
+   "fees": "$0.00",
+   "profit": "+$1,423,936.25",
+   "valuation": "Valuation price: $7,479.40 · BTC/USD · Dec 22, 2019 daily closing price.",
+   "lumpValue": "$2,373,262.10",
+   "lumpBtc": "317.30638007 BTC",
+   "lumpRoi": "+1503.56%"
+  },
+  {
+   "id": 61,
+   "error": "",
+   "busy": false,
+   "value": "$1,073,063.92",
+   "roi": "+71.69%",
+   "btc": "840.77885311 BTC",
+   "avg": "$743.36",
+   "buys": "250 DCA purchases",
+   "invested": "$625,000.00",
+   "fees": "$15,625.00",
+   "profit": "+$448,063.92",
+   "valuation": "Valuation price: $1,276.27 · BTC/USD · Mar 5, 2017 daily closing price.",
+   "lumpValue": "$1,217,892.12",
+   "lumpBtc": "954.25623200 BTC",
+   "lumpRoi": "+94.86%"
+  },
+  {
+   "id": 62,
+   "error": "",
+   "busy": false,
+   "value": "$45,696.96",
+   "roi": "+11.23%",
+   "btc": "165.08323776 BTC",
+   "avg": "$248.85",
+   "buys": "24 DCA purchases",
+   "invested": "$41,081.52",
+   "fees": "$205.41",
+   "profit": "+$4,615.44",
+   "valuation": "Valuation price: $276.81 · BTC/USD · Jul 23, 2015 daily closing price.",
+   "lumpValue": "$49,486.66",
+   "lumpBtc": "178.77378501 BTC",
+   "lumpRoi": "+20.46%"
+  },
+  {
+   "id": 63,
+   "error": "",
+   "busy": false,
+   "value": "$19,002.39",
+   "roi": "−4.99%",
+   "btc": "0.40411171 BTC",
+   "avg": "$49,491.27",
+   "buys": "2 DCA purchases",
+   "invested": "$20,000.00",
+   "fees": "$0.00",
+   "profit": "−$997.61",
+   "valuation": "Valuation price: $47,022.62 · BTC/USD · Sep 14, 2021 daily closing price.",
+   "lumpValue": "$19,165.43",
+   "lumpBtc": "0.40757901 BTC",
+   "lumpRoi": "−4.17%"
+  },
+  {
+   "id": 64,
+   "error": "",
+   "busy": false,
+   "value": "$212.53",
+   "roi": "+50.73%",
+   "btc": "0.00327259 BTC",
+   "avg": "$43,085.08",
+   "buys": "141 DCA purchases",
+   "invested": "$141.00",
+   "fees": "$0.00",
+   "profit": "+$71.53",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$287.13",
+   "lumpBtc": "0.00442135 BTC",
+   "lumpRoi": "+103.64%"
+  },
+  {
+   "id": 65,
+   "error": "",
+   "busy": false,
+   "value": "$9,623.22",
+   "roi": "+13.21%",
+   "btc": "0.45484288 BTC",
+   "avg": "$18,687.77",
+   "buys": "34 DCA purchases",
+   "invested": "$8,500.00",
+   "fees": "$0.00",
+   "profit": "+$1,123.22",
+   "valuation": "Valuation price: $21,157.24 · BTC/USD · Nov 4, 2022 daily closing price.",
+   "lumpValue": "$20,201.91",
+   "lumpBtc": "0.95484598 BTC",
+   "lumpRoi": "+137.67%"
+  },
+  {
+   "id": 66,
+   "error": "",
+   "busy": false,
+   "value": "$282.47",
+   "roi": "+253.09%",
+   "btc": "0.00598346 BTC",
+   "avg": "$13,370.19",
+   "buys": "8 DCA purchases",
+   "invested": "$80.00",
+   "fees": "$0.20",
+   "profit": "+$202.47",
+   "valuation": "Valuation price: $47,208.63 · BTC/USD · Feb 13, 2021 daily closing price.",
+   "lumpValue": "$402.60",
+   "lumpBtc": "0.00852811 BTC",
+   "lumpRoi": "+403.25%"
+  },
+  {
+   "id": 67,
+   "error": "",
+   "busy": false,
+   "value": "$74,966.49",
+   "roi": "+50.97%",
+   "btc": "1.15435151 BTC",
+   "avg": "$43,015.68",
+   "buys": "61 DCA purchases",
+   "invested": "$49,655.22",
+   "fees": "$0.00",
+   "profit": "+$25,311.27",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$52,466.94",
+   "lumpBtc": "0.80789822 BTC",
+   "lumpRoi": "+5.66%"
+  },
+  {
+   "id": 68,
+   "error": "",
+   "busy": false,
+   "value": "$791,983.46",
+   "roi": "+17.33%",
+   "btc": "9.38452732 BTC",
+   "avg": "$71,926.90",
+   "buys": "270 DCA purchases",
+   "invested": "$675,000.00",
+   "fees": "$0.00",
+   "profit": "+$116,983.46",
+   "valuation": "Valuation price: $84,392.47 · BTC/USD · Sep 27, 2026 daily closing price.",
+   "lumpValue": "$642,334.34",
+   "lumpBtc": "7.61127534 BTC",
+   "lumpRoi": "−4.84%"
+  },
+  {
+   "id": 69,
+   "error": "",
+   "busy": false,
+   "value": "$68.64",
+   "roi": "+52.53%",
+   "btc": "0.01079635 BTC",
+   "avg": "$4,168.07",
+   "buys": "9 DCA purchases",
+   "invested": "$45.00",
+   "fees": "$0.00",
+   "profit": "+$23.64",
+   "valuation": "Valuation price: $6,357.46 · BTC/USD · May 10, 2019 daily closing price.",
+   "lumpValue": "$79.26",
+   "lumpBtc": "0.01246735 BTC",
+   "lumpRoi": "+76.13%"
+  },
+  {
+   "id": 70,
+   "error": "",
+   "busy": false,
+   "value": "$4,531.79",
+   "roi": "+42.14%",
+   "btc": "7.71226656 BTC",
+   "avg": "$413.39",
+   "buys": "10 DCA purchases",
+   "invested": "$3,188.20",
+   "fees": "$0.00",
+   "profit": "+$1,343.59",
+   "valuation": "Valuation price: $587.61 · BTC/USD · Aug 4, 2014 daily closing price.",
+   "lumpValue": "$15,015.35",
+   "lumpBtc": "25.55332770 BTC",
+   "lumpRoi": "+370.97%"
+  },
+  {
+   "id": 71,
+   "error": "",
+   "busy": false,
+   "value": "$3.24",
+   "roi": "+62.10%",
+   "btc": "0.66565754 BTC",
+   "avg": "$3.00",
+   "buys": "2 DCA purchases",
+   "invested": "$2.00",
+   "fees": "$0.002",
+   "profit": "+$1.24",
+   "valuation": "Valuation price: $4.87 · BTC/USD · Jan 3, 2012 daily closing price.",
+   "lumpValue": "$3.22",
+   "lumpBtc": "0.66208099 BTC",
+   "lumpRoi": "+61.23%"
+  },
+  {
+   "id": 72,
+   "error": "",
+   "busy": false,
+   "value": "$86.96",
+   "roi": "−13.04%",
+   "btc": "0.00133902 BTC",
+   "avg": "$74,681.44",
+   "buys": "10 DCA purchases",
+   "invested": "$100.00",
+   "fees": "$2.50",
+   "profit": "−$13.04",
+   "valuation": "Valuation price: $64,942.51 · BTC/USD · Nov 16, 2026 daily closing price.",
+   "lumpValue": "$101.78",
+   "lumpBtc": "0.00156717 BTC",
+   "lumpRoi": "+1.78%"
+  },
+  {
+   "id": 73,
+   "error": "",
+   "busy": false,
+   "value": "$24,074.69",
+   "roi": "+596.58%",
+   "btc": "35.34732346 BTC",
+   "avg": "$97.78",
+   "buys": "97 DCA purchases",
+   "invested": "$3,456.11",
+   "fees": "$0.00",
+   "profit": "+$20,618.58",
+   "valuation": "Valuation price: $681.09 · BTC/USD · Jul 17, 2016 daily closing price.",
+   "lumpValue": "$211,188.36",
+   "lumpBtc": "310.07426205 BTC",
+   "lumpRoi": "+6010.58%"
+  },
+  {
+   "id": 74,
+   "error": "",
+   "busy": false,
+   "value": "$153.12",
+   "roi": "−23.44%",
+   "btc": "39.90363534 BTC",
+   "avg": "$5.01",
+   "buys": "1 DCA purchases",
+   "invested": "$200.00",
+   "fees": "$0.20",
+   "profit": "−$46.88",
+   "valuation": "Valuation price: $3.84 · BTC/USD · Oct 15, 2011 daily closing price.",
+   "lumpValue": "$153.12",
+   "lumpBtc": "39.90363534 BTC",
+   "lumpRoi": "−23.44%"
+  },
+  {
+   "id": 75,
+   "error": "",
+   "busy": false,
+   "value": "$2,149,142.60",
+   "roi": "+19.40%",
+   "btc": "82.96342942 BTC",
+   "avg": "$21,696.31",
+   "buys": "180 DCA purchases",
+   "invested": "$1,800,000.00",
+   "fees": "$0.00",
+   "profit": "+$349,142.60",
+   "valuation": "Valuation price: $25,904.70 · BTC/USD · Sep 8, 2023 daily closing price.",
+   "lumpValue": "$6,905,973.01",
+   "lumpBtc": "266.59152531 BTC",
+   "lumpRoi": "+283.67%"
+  },
+  {
+   "id": 76,
+   "error": "",
+   "busy": false,
+   "value": "$153.41",
+   "roi": "+2.27%",
+   "btc": "0.00358706 BTC",
+   "avg": "$41,816.95",
+   "buys": "1 DCA purchases",
+   "invested": "$150.00",
+   "fees": "$0.00",
+   "profit": "+$3.41",
+   "valuation": "Valuation price: $42,768.18 · BTC/USD · Jan 11, 2022 daily closing price.",
+   "lumpValue": "$153.41",
+   "lumpBtc": "0.00358706 BTC",
+   "lumpRoi": "+2.27%"
+  },
+  {
+   "id": 77,
+   "error": "",
+   "busy": false,
+   "value": "$806,807.79",
+   "roi": "+826.00%",
+   "btc": "1700.18387720 BTC",
+   "avg": "$51.25",
+   "buys": "100 DCA purchases",
+   "invested": "$87,128.00",
+   "fees": "$87.13",
+   "profit": "+$719,679.79",
+   "valuation": "Valuation price: $474.54 · BTC/USD · Sep 1, 2014 daily closing price.",
+   "lumpValue": "$3,239,005.20",
+   "lumpBtc": "6825.54692166 BTC",
+   "lumpRoi": "+3617.53%"
+  },
+  {
+   "id": 78,
+   "error": "",
+   "busy": false,
+   "value": "$7,035.93",
+   "roi": "+49.42%",
+   "btc": "13.18311457 BTC",
+   "avg": "$357.19",
+   "buys": "5 DCA purchases",
+   "invested": "$4,708.85",
+   "fees": "$235.44",
+   "profit": "+$2,327.08",
+   "valuation": "Valuation price: $533.71 · BTC/USD · Feb 25, 2014 daily closing price.",
+   "lumpValue": "$18,958.35",
+   "lumpBtc": "35.52197611 BTC",
+   "lumpRoi": "+302.61%"
+  },
+  {
+   "id": 79,
+   "error": "",
+   "busy": false,
+   "value": "$671.22",
+   "roi": "−4.30%",
+   "btc": "0.27366635 BTC",
+   "avg": "$2,562.79",
+   "buys": "1 DCA purchases",
+   "invested": "$701.35",
+   "fees": "$0.00",
+   "profit": "−$30.13",
+   "valuation": "Valuation price: $2,452.71 · BTC/USD · Jun 30, 2017 daily closing price.",
+   "lumpValue": "$671.22",
+   "lumpBtc": "0.27366635 BTC",
+   "lumpRoi": "−4.30%"
+  },
+  {
+   "id": 80,
+   "error": "",
+   "busy": false,
+   "value": "$40,015.75",
+   "roi": "+150.10%",
+   "btc": "1341.91840033 BTC",
+   "avg": "$11.92",
+   "buys": "16 DCA purchases",
+   "invested": "$16,000.00",
+   "fees": "$40.00",
+   "profit": "+$24,015.75",
+   "valuation": "Valuation price: $29.82 · BTC/USD · Feb 20, 2013 daily closing price.",
+   "lumpValue": "$62,397.99",
+   "lumpBtc": "2092.50144954 BTC",
+   "lumpRoi": "+289.99%"
+  },
+  {
+   "id": 81,
+   "error": "",
+   "busy": false,
+   "value": "$2,766.51",
+   "roi": "−7.12%",
+   "btc": "0.33146293 BTC",
+   "avg": "$8,986.10",
+   "buys": "4 DCA purchases",
+   "invested": "$2,978.56",
+   "fees": "$74.46",
+   "profit": "−$212.05",
+   "valuation": "Valuation price: $8,346.37 · BTC/USD · Oct 14, 2019 daily closing price.",
+   "lumpValue": "$2,377.36",
+   "lumpBtc": "0.28483785 BTC",
+   "lumpRoi": "−20.18%"
+  },
+  {
+   "id": 82,
+   "error": "",
+   "busy": false,
+   "value": "$64.64",
+   "roi": "−13.82%",
+   "btc": "0.00905398 BTC",
+   "avg": "$8,283.65",
+   "buys": "1 DCA purchases",
+   "invested": "$75.00",
+   "fees": "$1.88",
+   "profit": "−$10.36",
+   "valuation": "Valuation price: $7,139.04 · BTC/USD · Nov 25, 2019 daily closing price.",
+   "lumpValue": "$64.64",
+   "lumpBtc": "0.00905398 BTC",
+   "lumpRoi": "−13.82%"
+  },
+  {
+   "id": 83,
+   "error": "",
+   "busy": false,
+   "value": "$18,035.25",
+   "roi": "+157.65%",
+   "btc": "0.67187326 BTC",
+   "avg": "$10,418.63",
+   "buys": "70 DCA purchases",
+   "invested": "$7,000.00",
+   "fees": "$350.00",
+   "profit": "+$11,035.25",
+   "valuation": "Valuation price: $26,843.24 · BTC/USD · May 18, 2023 daily closing price.",
+   "lumpValue": "$64,790.26",
+   "lumpBtc": "2.41365334 BTC",
+   "lumpRoi": "+825.58%"
+  },
+  {
+   "id": 84,
+   "error": "",
+   "busy": false,
+   "value": "$17,241.21",
+   "roi": "+59.77%",
+   "btc": "0.27268273 BTC",
+   "avg": "$39,575.66",
+   "buys": "10 DCA purchases",
+   "invested": "$10,791.60",
+   "fees": "$10.79",
+   "profit": "+$6,449.61",
+   "valuation": "Valuation price: $63,228.10 · BTC/USD · May 6, 2024 daily closing price.",
+   "lumpValue": "$23,462.22",
+   "lumpBtc": "0.37107262 BTC",
+   "lumpRoi": "+117.41%"
+  },
+  {
+   "id": 85,
+   "error": "",
+   "busy": false,
+   "value": "$960.28",
+   "roi": "−3.97%",
+   "btc": "0.01469365 BTC",
+   "avg": "$68,056.62",
+   "buys": "1 DCA purchases",
+   "invested": "$1,000.00",
+   "fees": "$0.00",
+   "profit": "−$39.72",
+   "valuation": "Valuation price: $65,353.39 · BTC/USD · Jul 24, 2024 daily closing price.",
+   "lumpValue": "$960.28",
+   "lumpBtc": "0.01469365 BTC",
+   "lumpRoi": "−3.97%"
+  },
+  {
+   "id": 86,
+   "error": "",
+   "busy": false,
+   "value": "$1,829.62",
+   "roi": "+74.25%",
+   "btc": "0.07717447 BTC",
+   "avg": "$13,605.54",
+   "buys": "7 DCA purchases",
+   "invested": "$1,050.00",
+   "fees": "$5.25",
+   "profit": "+$779.62",
+   "valuation": "Valuation price: $23,707.63 · BTC/USD · Dec 24, 2020 daily closing price.",
+   "lumpValue": "$2,236.68",
+   "lumpBtc": "0.09434448 BTC",
+   "lumpRoi": "+113.02%"
+  },
+  {
+   "id": 87,
+   "error": "",
+   "busy": false,
+   "value": "$212.95",
+   "roi": "+432.37%",
+   "btc": "0.26521684 BTC",
+   "avg": "$150.82",
+   "buys": "2 DCA purchases",
+   "invested": "$40.00",
+   "fees": "$0.00",
+   "profit": "+$172.95",
+   "valuation": "Valuation price: $802.92 · BTC/USD · Nov 22, 2013 daily closing price.",
+   "lumpValue": "$273.16",
+   "lumpBtc": "0.34020695 BTC",
+   "lumpRoi": "+582.89%"
+  },
+  {
+   "id": 88,
+   "error": "",
+   "busy": false,
+   "value": "$25.95",
+   "roi": "+3.78%",
+   "btc": "92.98098434 BTC",
+   "avg": "$0.27",
+   "buys": "1 DCA purchases",
+   "invested": "$25.00",
+   "fees": "$0.06",
+   "profit": "+$0.95",
+   "valuation": "Valuation price: $0.28 · BTC/USD · Nov 14, 2010 daily closing price.",
+   "lumpValue": "$25.95",
+   "lumpBtc": "92.98098434 BTC",
+   "lumpRoi": "+3.78%"
+  },
+  {
+   "id": 89,
+   "error": "",
+   "busy": false,
+   "value": "$48.88",
+   "roi": "−2.25%",
+   "btc": "0.00044349 BTC",
+   "avg": "$112,741.96",
+   "buys": "1 DCA purchases",
+   "invested": "$50.00",
+   "fees": "$0.50",
+   "profit": "−$1.12",
+   "valuation": "Valuation price: $110,206.35 · BTC/USD · Oct 29, 2025 daily closing price.",
+   "lumpValue": "$48.88",
+   "lumpBtc": "0.00044349 BTC",
+   "lumpRoi": "−2.25%"
+  },
+  {
+   "id": 90,
+   "error": "",
+   "busy": false,
+   "value": "$98,201.35",
+   "roi": "+792.74%",
+   "btc": "2.75442864 BTC",
+   "avg": "$3,993.57",
+   "buys": "55 DCA purchases",
+   "invested": "$11,000.00",
+   "fees": "$0.00",
+   "profit": "+$87,201.35",
+   "valuation": "Valuation price: $35,652.17 · BTC/USD · May 30, 2021 daily closing price.",
+   "lumpValue": "$568,417.99",
+   "lumpBtc": "15.94343370 BTC",
+   "lumpRoi": "+5067.44%"
+  },
+  {
+   "id": 91,
+   "error": "",
+   "busy": false,
+   "value": "$34,979.07",
+   "roi": "+133.19%",
+   "btc": "393.67761325 BTC",
+   "avg": "$38.10",
+   "buys": "6 DCA purchases",
+   "invested": "$15,000.00",
+   "fees": "$0.00",
+   "profit": "+$19,979.07",
+   "valuation": "Valuation price: $88.85 · BTC/USD · Mar 27, 2013 daily closing price.",
+   "lumpValue": "$48,737.41",
+   "lumpBtc": "548.52301187 BTC",
+   "lumpRoi": "+224.92%"
+  },
+  {
+   "id": 92,
+   "error": "",
+   "busy": false,
+   "value": "$5,650.11",
+   "roi": "+1128.28%",
+   "btc": "45.43769668 BTC",
+   "avg": "$10.12",
+   "buys": "46 DCA purchases",
+   "invested": "$460.00",
+   "fees": "$0.00",
+   "profit": "+$5,190.11",
+   "valuation": "Valuation price: $124.35 · BTC/USD · Sep 14, 2013 daily closing price.",
+   "lumpValue": "$18,129.55",
+   "lumpBtc": "145.79631949 BTC",
+   "lumpRoi": "+3841.21%"
+  },
+  {
+   "id": 93,
+   "error": "",
+   "busy": false,
+   "value": "$23.67",
+   "roi": "−5.31%",
+   "btc": "0.05513966 BTC",
+   "avg": "$453.39",
+   "buys": "1 DCA purchases",
+   "invested": "$25.00",
+   "fees": "$1.25",
+   "profit": "−$1.33",
+   "valuation": "Valuation price: $429.34 · BTC/USD · Apr 17, 2016 daily closing price.",
+   "lumpValue": "$23.67",
+   "lumpBtc": "0.05513966 BTC",
+   "lumpRoi": "−5.31%"
+  },
+  {
+   "id": 94,
+   "error": "",
+   "busy": false,
+   "value": "$22,912,732.94",
+   "roi": "+883.38%",
+   "btc": "2904.85473252 BTC",
+   "avg": "$802.11",
+   "buys": "932 DCA purchases",
+   "invested": "$2,330,000.00",
+   "fees": "$0.00",
+   "profit": "+$20,582,732.94",
+   "valuation": "Valuation price: $7,887.74 · BTC/USD · Apr 17, 2018 daily closing price.",
+   "lumpValue": "$77,436,256.36",
+   "lumpBtc": "9817.29575327 BTC",
+   "lumpRoi": "+3223.44%"
+  },
+  {
+   "id": 95,
+   "error": "",
+   "busy": false,
+   "value": "$1,296.17",
+   "roi": "−14.94%",
+   "btc": "0.07727096 BTC",
+   "avg": "$19,721.25",
+   "buys": "6 DCA purchases",
+   "invested": "$1,523.88",
+   "fees": "$0.00",
+   "profit": "−$227.71",
+   "valuation": "Valuation price: $16,774.39 · BTC/USD · Dec 17, 2022 daily closing price.",
+   "lumpValue": "$1,231.85",
+   "lumpBtc": "0.07343628 BTC",
+   "lumpRoi": "−19.16%"
+  },
+  {
+   "id": 96,
+   "error": "",
+   "busy": false,
+   "value": "$16,751.12",
+   "roi": "−11.49%",
+   "btc": "32.45338296 BTC",
+   "avg": "$583.14",
+   "buys": "18 DCA purchases",
+   "invested": "$18,924.84",
+   "fees": "$0.00",
+   "profit": "−$2,173.72",
+   "valuation": "Valuation price: $516.16 · BTC/USD · Aug 22, 2014 daily closing price.",
+   "lumpValue": "$16,361.28",
+   "lumpBtc": "31.69812066 BTC",
+   "lumpRoi": "−13.55%"
+  },
+  {
+   "id": 97,
+   "error": "",
+   "busy": false,
+   "value": "$5.08",
+   "roi": "+1.64%",
+   "btc": "0.00015165 BTC",
+   "avg": "$32,970.34",
+   "buys": "1 DCA purchases",
+   "invested": "$5.00",
+   "fees": "$0.05",
+   "profit": "+$0.08",
+   "valuation": "Valuation price: $33,511.29 · BTC/USD · Jan 28, 2021 daily closing price.",
+   "lumpValue": "$5.08",
+   "lumpBtc": "0.00015165 BTC",
+   "lumpRoi": "+1.64%"
+  },
+  {
+   "id": 98,
+   "error": "",
+   "busy": false,
+   "value": "$683.99",
+   "roi": "+14.00%",
+   "btc": "5.42462224 BTC",
+   "avg": "$110.61",
+   "buys": "4 DCA purchases",
+   "invested": "$600.00",
+   "fees": "$3.00",
+   "profit": "+$83.99",
+   "valuation": "Valuation price: $126.09 · BTC/USD · Sep 30, 2013 daily closing price.",
+   "lumpValue": "$806.87",
+   "lumpBtc": "6.39915601 BTC",
+   "lumpRoi": "+34.48%"
+  },
+  {
+   "id": 99,
+   "error": "",
+   "busy": false,
+   "value": "$1,784.87",
+   "roi": "−8.47%",
+   "btc": "0.02163549 BTC",
+   "avg": "$90,129.68",
+   "buys": "13 DCA purchases",
+   "invested": "$1,950.00",
+   "fees": "$97.50",
+   "profit": "−$165.13",
+   "valuation": "Valuation price: $82,497.18 · BTC/USD · Mar 29, 2025 daily closing price.",
+   "lumpValue": "$2,511.18",
+   "lumpBtc": "0.03043959 BTC",
+   "lumpRoi": "+28.78%"
+  },
+  {
+   "id": 100,
+   "error": "",
+   "busy": false,
+   "value": "$712.87",
+   "roi": "−3.80%",
+   "btc": "0.07671097 BTC",
+   "avg": "$9,660.03",
+   "buys": "1 DCA purchases",
+   "invested": "$741.03",
+   "fees": "$3.71",
+   "profit": "−$28.16",
+   "valuation": "Valuation price: $9,292.94 · BTC/USD · Jun 24, 2020 daily closing price.",
+   "lumpValue": "$712.87",
+   "lumpBtc": "0.07671097 BTC",
+   "lumpRoi": "−3.80%"
+  }
+ ]
+}
