@@ -35,9 +35,9 @@ jobs:
     timeout-minutes: 15
     environment:
       name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
+      url: ${{ steps.deploy.outputs.page_url || steps.deploy_retry.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Update BTC daily prices
         id: prices
@@ -69,15 +69,28 @@ jobs:
           mkdir -p _site
           rsync -a ./ _site/ --exclude '.git' --exclude '.github' --exclude '_site' --exclude '.DS_Store'
 
-      - uses: actions/configure-pages@v5
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: _site
 
+      # deploy-pages occasionally fails with "No artifacts named github-pages were found" /
+      # "Fetching artifact metadata failed" right after a successful upload (artifact API
+      # lag). Retry once after a pause instead of failing the whole run.
       - name: Deploy to GitHub Pages
         id: deploy
-        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        uses: actions/deploy-pages@v5
+
+      - name: Wait before retrying deploy
+        if: steps.deploy.outcome == 'failure'
+        run: sleep 60
+
+      - name: Deploy to GitHub Pages (retry)
+        id: deploy_retry
+        if: steps.deploy.outcome == 'failure'
+        uses: actions/deploy-pages@v5
 
       # After deploying: the site still ships, but the run turns red (and GitHub
       # emails you) if the price data is more than 3 days old.
