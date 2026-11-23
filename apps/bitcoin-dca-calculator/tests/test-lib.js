@@ -3,7 +3,7 @@
  * needed) and on the command line (node tests/run.js). No dependencies.
  *
  * Every test result carries `details` so each test can be expanded to see:
- *   calls   - every call the test made into the calculator (core functions and strategy.run),
+ *   calls   - every call the test made into the calculator (BitcoinDCA.run, fillTrade, ...),
  *             with its input and output (big values such as price tables are summarised)
  *   checks  - every assertion: what was expected, what came out, tolerance, pass/fail
  *   notes   - extra context a test adds with T.note(label, value)
@@ -146,10 +146,9 @@
   function instrument() {
     var core = root.BitcoinDCA;
     if (!core) return;
-    ['parseCsv', 'scheduleDates', 'validateInput', 'simulate', 'registerStrategy'].forEach(function (k) {
-      wrap(core, k, 'core.' + k);
+    ['parseCsv', 'scheduleDates', 'run', 'normaliseInput', 'fillTrade', 'tradesToCsv', 'tradesFromCsv', 'defineStrategy', 'chartMarkers'].forEach(function (k) {
+      wrap(core, k, 'BitcoinDCA.' + k);
     });
-    core.listStrategies().forEach(function (s) { wrap(s, 'run', s.id + '.run'); });
   }
 
   /* ------------------------------------------------------------ assertions */

@@ -1,39 +1,44 @@
 /*
  * Results history: the list of previous calculations shown under the calculator,
- * so different strategies, amounts, frequencies and dates can be compared side by side.
+ * so any strategies, amounts, frequencies and dates can be compared side by side.
  *
  * Pure functions (no DOM) so they are unit-tested like the strategies; the page only
  * renders the list. Saved in the browser's localStorage when available.
  *
- * Entry shape:
+ * Entry shape (built from a lib/engine.js run output):
  *   {
  *     id:        'r1700000000000-1',
  *     createdAt: '2026-11-16T10:00:00.000Z',
- *     input:  { strategyId, strategyName, amount, feePct, frequency /* null if unused *\/, start, end },
- *     output: { purchases, invested, fees, btc, avgCost, endPrice, value, profit, roi }
+ *     input:  { strategyId, strategyName, amount, fee, frequency, startDate, endDate },   // null = not used
+ *     output: { trades, buys, sells, invested, received, fees, btcHeld, avgCost, endPrice,
+ *               value, totalValue, profit, roi }
  *   }
+ * Entries saved by the first version of the calculator (start/end/feePct/purchases/btc) are
+ * converted when loaded.
  */
 (function (root) {
   'use strict';
-  var core = root.BitcoinDCA || require('./core.js');
+  var core = root.BitcoinDCA && root.BitcoinDCA.run ? root.BitcoinDCA : require('./engine.js');
 
   var MAX_ENTRIES = 200;
   var STORAGE_KEY = 'bitcoinlogbook.dca-calculator.results.v1';
   var seq = 0;
 
-  /** Columns for comparison; `get` reads the value used for display, sorting and CSV. */
+  /** Columns for comparison; `get` reads the value used for display, sorting and CSV (null = not used). */
   var COLUMNS = [
     { key: 'strategy', label: 'Strategy', group: 'input', type: 'text', get: function (e) { return e.input.strategyName; } },
     { key: 'amount', label: 'Amount', group: 'input', type: 'usd', get: function (e) { return e.input.amount; } },
-    { key: 'frequency', label: 'Frequency', group: 'input', type: 'text', get: function (e) { return e.input.frequency ? core.FREQUENCIES[e.input.frequency] : '—'; } },
-    { key: 'start', label: 'Start', group: 'input', type: 'date', get: function (e) { return e.input.start; } },
-    { key: 'end', label: 'End', group: 'input', type: 'date', get: function (e) { return e.input.end; } },
-    { key: 'feePct', label: 'Fee', group: 'input', type: 'pct-plain', get: function (e) { return e.input.feePct; } },
-    { key: 'purchases', label: 'Buys', group: 'output', type: 'int', get: function (e) { return e.output.purchases; } },
+    { key: 'frequency', label: 'Frequency', group: 'input', type: 'text', get: function (e) { return e.input.frequency ? core.FREQUENCIES[e.input.frequency] : null; } },
+    { key: 'startDate', label: 'Start', group: 'input', type: 'date', get: function (e) { return e.input.startDate; } },
+    { key: 'endDate', label: 'End', group: 'input', type: 'date', get: function (e) { return e.input.endDate; } },
+    { key: 'fee', label: 'Fee', group: 'input', type: 'pct-plain', get: function (e) { return e.input.fee; } },
+    { key: 'buys', label: 'Buys', group: 'output', type: 'int', get: function (e) { return e.output.buys; } },
+    { key: 'sells', label: 'Sells', group: 'output', type: 'int', get: function (e) { return e.output.sells; } },
     { key: 'invested', label: 'Invested', group: 'output', type: 'usd', get: function (e) { return e.output.invested; } },
-    { key: 'btc', label: 'BTC', group: 'output', type: 'btc', get: function (e) { return e.output.btc; } },
+    { key: 'received', label: 'Received', group: 'output', type: 'usd', get: function (e) { return e.output.received; } },
+    { key: 'btcHeld', label: 'BTC', group: 'output', type: 'btc', get: function (e) { return e.output.btcHeld; } },
     { key: 'avgCost', label: 'Avg cost', group: 'output', type: 'usd', get: function (e) { return e.output.avgCost; } },
-    { key: 'value', label: 'Final value', group: 'output', type: 'usd', get: function (e) { return e.output.value; } },
+    { key: 'totalValue', label: 'Final value', group: 'output', type: 'usd', get: function (e) { return e.output.totalValue; } },
     { key: 'profit', label: 'Profit', group: 'output', type: 'usd-signed', get: function (e) { return e.output.profit; } },
     { key: 'roi', label: 'Return', group: 'output', type: 'pct', get: function (e) { return e.output.roi; } }
   ];
@@ -44,39 +49,36 @@
     return c;
   }
 
-  /** Build a history entry from a strategy, the input it ran with, and its result. */
-  function makeEntry(strategy, input, result, now) {
+  /** Build a history entry from a run output (BitcoinDCA.run). */
+  function makeEntry(result, now) {
     var when = now || new Date();
+    var i = result.input, s = result.summary;
     seq++;
     return {
       id: 'r' + when.getTime() + '-' + seq,
       createdAt: when.toISOString(),
       input: {
-        strategyId: strategy.id,
-        strategyName: strategy.name,
-        amount: input.amount,
-        feePct: input.feePct || 0,
-        frequency: strategy.usesFrequency ? input.frequency : null,
-        start: input.start,
-        end: input.end
+        strategyId: i.strategyId,
+        strategyName: i.strategyName,
+        amount: i.amount,
+        fee: i.fee,
+        frequency: i.frequency,
+        startDate: i.startDate,
+        endDate: i.endDate
       },
       output: {
-        purchases: result.purchases.length,
-        invested: result.invested,
-        fees: result.fees,
-        btc: result.btc,
-        avgCost: result.avgCost,
-        endPrice: result.endPrice,
-        value: result.value,
-        profit: result.profit,
-        roi: result.roi
+        trades: s.trades, buys: s.buys, sells: s.sells,
+        invested: s.invested, received: s.received, fees: s.fees,
+        btcHeld: s.btcHeld, avgCost: s.avgCost, endPrice: s.endPrice,
+        value: s.value, totalValue: s.totalValue, profit: s.profit, roi: s.roi
       }
     };
   }
 
-  /** Same inputs => same key (frequency ignored by strategies that do not use it). */
+  /** Same inputs => same key (fields a strategy does not use are null, so they never differ). */
   function inputKey(input) {
-    return [input.strategyId, input.amount, input.feePct || 0, input.frequency || '', input.start, input.end].join('|');
+    return [input.strategyId, input.amount, input.fee, input.frequency, input.startDate, input.endDate]
+      .map(function (v) { return v == null ? '' : v; }).join('|');
   }
 
   /**
@@ -96,7 +98,7 @@
     return list.filter(function (e) { return e.id !== id; });
   }
 
-  /** Sorted copy; dir = 'asc' | 'desc'. Ties keep the original order. */
+  /** Sorted copy; dir = 'asc' | 'desc'. Rows without a value (null) go last. Ties keep the original order. */
   function sort(list, key, dir) {
     var get = column(key).get;
     var sign = dir === 'asc' ? 1 : -1;
@@ -104,6 +106,7 @@
       .map(function (e, i) { return { e: e, i: i }; })
       .sort(function (a, b) {
         var x = get(a.e), y = get(b.e);
+        if (x == null || y == null) return x == null && y == null ? a.i - b.i : x == null ? 1 : -1;
         if (x < y) return -sign;
         if (x > y) return sign;
         return a.i - b.i;
@@ -115,35 +118,56 @@
   function best(list, key) {
     if (list.length < 2) return null;
     var get = column(key).get, top = null;
-    list.forEach(function (e) { if (top === null || get(e) > get(top)) top = e; });
-    return top.id;
+    list.forEach(function (e) { if (get(e) != null && (top === null || get(e) > get(top))) top = e; });
+    return top ? top.id : null;
   }
 
   /** Re-run a saved row's inputs against the price data (rows only store summary numbers). */
   function rerun(entry, prices) {
     var i = entry.input;
-    return core.getStrategy(i.strategyId).run({
-      prices: prices, amount: i.amount, feePct: i.feePct, frequency: i.frequency || 'daily', start: i.start, end: i.end
-    });
+    return core.run({
+      strategyId: i.strategyId, startDate: i.startDate, endDate: i.endDate,
+      amount: i.amount, frequency: i.frequency, fee: i.fee
+    }, prices);
   }
 
-  /** Every purchase of a result as CSV (same format as "Download purchases (CSV)"). */
-  function purchasesCsv(result) {
-    var lines = ['date,btc_price_usd,btc_bought,total_btc,total_invested_usd,value_usd'].concat(result.purchases.map(function (p) {
-      return [p.date, p.price, p.btc.toFixed(8), p.totalBtc.toFixed(8), p.invested.toFixed(2), p.value.toFixed(2)].join(',');
-    }));
-    return lines.join('\n') + '\n';
+  /** Every trade of a result as CSV (same file as "Download trades (CSV)"). */
+  function tradesCsv(result) {
+    return core.tradesToCsv(result.trades);
   }
 
-  /** e.g. bitcoin-dca-standard-dca-weekly-100usd-2023-11-15-to-2026-11-15.csv */
+  /** e.g. bitcoin-dca-standard-dca-weekly-100usd-fee1pct-2023-11-15-to-2026-11-15.csv */
   function fileName(input) {
-    return 'bitcoin-dca-' + input.strategyId + (input.frequency ? '-' + input.frequency : '') + '-' + input.amount + 'usd' +
-      (input.feePct ? '-fee' + input.feePct + 'pct' : '') + '-' + input.start + '-to-' + input.end + '.csv';
+    return 'bitcoin-dca-' + input.strategyId + (input.frequency ? '-' + input.frequency : '') +
+      (input.amount != null ? '-' + input.amount + 'usd' : '') + (input.fee ? '-fee' + input.fee + 'pct' : '') +
+      '-' + input.startDate + '-to-' + input.endDate + '.csv';
+  }
+
+  /** Entries saved before the strategy model v2: { start, end, feePct } / { purchases, btc, value }. */
+  function upgrade(e) {
+    if (!e || !e.input || e.input.startDate || !e.input.start) return e;
+    var i = e.input, o = e.output || {};
+    var lump = i.strategyId === 'lump-sum';
+    return {
+      id: e.id,
+      createdAt: e.createdAt,
+      input: {
+        strategyId: i.strategyId, strategyName: i.strategyName,
+        amount: i.amount, fee: i.feePct || 0, frequency: lump ? null : i.frequency,
+        startDate: i.start, endDate: i.end
+      },
+      output: {
+        trades: o.purchases, buys: o.purchases, sells: 0,
+        invested: o.invested, received: 0, fees: o.fees,
+        btcHeld: o.btc, avgCost: o.avgCost, endPrice: o.endPrice,
+        value: o.value, totalValue: o.value, profit: o.profit, roi: o.roi
+      }
+    };
   }
 
   function isEntry(e) {
-    return e && typeof e.id === 'string' && e.input && e.output &&
-      typeof e.input.strategyId === 'string' && typeof e.output.value === 'number';
+    return !!(e && typeof e.id === 'string' && e.input && e.output && typeof e.input.strategyId === 'string' &&
+      typeof e.input.startDate === 'string' && typeof e.output.totalValue === 'number');
   }
 
   /** Read the saved list; anything unreadable gives an empty list. */
@@ -151,7 +175,7 @@
     try {
       var raw = storage && storage.getItem(STORAGE_KEY);
       var list = raw ? JSON.parse(raw) : [];
-      return Array.isArray(list) ? list.filter(isEntry).slice(0, MAX_ENTRIES) : [];
+      return Array.isArray(list) ? list.map(upgrade).filter(isEntry).slice(0, MAX_ENTRIES) : [];
     } catch (err) {
       return [];
     }
@@ -177,8 +201,9 @@
     sort: sort,
     best: best,
     rerun: rerun,
-    purchasesCsv: purchasesCsv,
+    tradesCsv: tradesCsv,
     fileName: fileName,
+    upgrade: upgrade,
     load: load,
     save: save
   };

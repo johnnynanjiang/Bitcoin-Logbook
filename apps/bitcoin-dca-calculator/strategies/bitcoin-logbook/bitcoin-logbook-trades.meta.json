@@ -1,0 +1,14 @@
+{
+  "strategyId": "bitcoin-logbook",
+  "file": "bitcoin-logbook-trades.csv",
+  "description": "Real Bitcoin trades from the Bitcoin Logbook, in tradeData columns.",
+  "source": "/blog/bitcoin-dca-vs-lump-sum/trades.csv",
+  "sourceSha256": "77c8c442ea05888a471dd06b2b907e464a620e6d85ef5d4100afca7c0f6d2a9e",
+  "conventions": "amount = USD spent (buy) or received (sell), fee included; amountBTC = BTC actually received (buy) or sent (sell); fee (USD) is already inside both and is never deducted again; atPrice = reference price recorded with the trade.",
+  "firstDate": "2026-02-28",
+  "lastDate": "2026-08-21",
+  "rows": 18,
+  "buys": 14,
+  "sells": 4,
+  "sha256": "188ac07c1133c2a0c381545bfcc9b1b8119661b550052cd2a8662c0ae8dfe44a"
+}

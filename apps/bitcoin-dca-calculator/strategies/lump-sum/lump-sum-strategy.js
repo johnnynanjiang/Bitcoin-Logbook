@@ -1,28 +1,21 @@
 /*
- * Lump sum: spend the amount per purchase once, and only once, on the start date,
- * then hold until the end date. Frequency is accepted (common interface) but not used.
+ * Lump sum (kind 'rule'): the input becomes one trade. Spend the amount once, on the start
+ * date, and hold until the end date. Frequency is not used.
  */
 (function (root) {
   'use strict';
-  var core = root.BitcoinDCA || require('../../lib/core.js');
+  var engine = root.BitcoinDCA && root.BitcoinDCA.defineStrategy ? root.BitcoinDCA : require('../../lib/engine.js');
 
-  var strategy = {
+  var strategy = engine.defineStrategy({
     id: 'lump-sum',
     name: 'Lump sum',
     description: 'Buy once on the start date and hold.',
-    usesFrequency: false,
-    run: function (input) {
-      core.validateInput(input, { usesFrequency: false });
-      return core.simulate({
-        prices: input.prices,
-        start: input.start,
-        end: input.end,
-        feePct: input.feePct,
-        plan: [{ date: input.start, amount: input.amount }]
-      });
+    kind: 'rule',
+    uses: { amount: true, frequency: false, fee: true, tradeData: false },
+    rule: function (input) {
+      return [{ tradeType: 'buy', date: input.startDate, amount: input.amount }];
     }
-  };
+  });
 
-  core.registerStrategy(strategy);
   if (typeof module !== 'undefined' && module.exports) module.exports = strategy;
 })(typeof window !== 'undefined' ? window : globalThis);

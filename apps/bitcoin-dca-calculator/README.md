@@ -6,12 +6,62 @@ A static page that runs entirely in the browser: no Node.js, no npm and no build
 
 ```
 index.html                        page: inline CSS + one inline UI script
-lib/core.js                       dates, CSV parsing, schedules, validation, simulation, strategy registry
+lib/core.js                       dates, price CSV parsing, schedules
+lib/engine.js                     strategy model: kinds, input, trades, fill, valuation, trades CSV
 lib/results-history.js            "Previous results" list (sort, best, per-row CSV, localStorage)
-strategies/<id>/<id>-strategy.js  one folder per strategy (standard-dca, lump-sum) + its .test.js
+lib/chart-markers.js              chart dots: one per trade, buys green / sells red, area ∝ amount
+strategies/<id>/                  one folder per strategy + its .test.js
 data/                             BTC/USD daily closes (see below)
 tests/                            tests: tests/index.html in a browser, or node tests/run.js
 ```
+
+## Strategies
+
+A strategy is defined by **where its trades come from**. Once the trades exist, every strategy is
+filled, valued and shown the same way (`lib/engine.js`), so any two runs can be compared.
+
+| Strategy | Kind | Trades come from | Uses |
+|---|---|---|---|
+| Standard DCA (`strategies/standard-dca/`) | `rule` | code: one buy of the amount on each scheduled date | amount, frequency, fee, dates |
+| Lump sum (`strategies/lump-sum/`) | `rule` | code: the input becomes one buy on the start date | amount, fee, dates |
+| Bitcoin Logbook (`strategies/bitcoin-logbook/`) | `trades` | data: the real buys and sells in `bitcoin-logbook-trades.csv`; no rule | dates |
+
+A third kind, `rule+data` (code that also reads the strategy's own data), is supported and tested
+but has no strategy yet. Any strategy's trades may include buys, sells or both.
+
+**Input** (JSON): `{ strategyId, startDate, endDate, amount, frequency, fee, tradeData }`. Fields a strategy
+does not use become `null`.
+
+**Trade** (a `tradeData` item = what a rule returns = one CSV row):
+`tradeType` (buy/sell), `date`, `amount` (USD spent or received, fee included), `amountBTC` (BTC received or
+sent), `atPrice` (missing = that day's close), `fee` (USD, already inside the amounts, never deducted twice),
+plus optional `platform`, `feeEstimated`, `note`. The engine computes only missing fields; a recorded trade
+with both `amount` and `amountBTC` is used exactly as recorded.
+
+**Output** (JSON): `{ input, summary, trades, timeline, warnings }`. Final value = BTC held × the end
+date's close + cash received from sells; profit = final value − invested.
+
+To add a strategy: a folder `strategies/<id>/` with `<id>-strategy.js` calling `BitcoinDCA.defineStrategy({...})`
+and `<id>-strategy.test.js`, then add both (and any generated `.data.js`, before the strategy) to
+`tests/manifest.js` and a `<script>` tag in `index.html`. The common checks in
+`tests/strategy-interface.test.js` (output shape, totals, unused fields, no look-ahead) then run on it
+automatically.
+
+### Bitcoin Logbook trades
+
+| File | What it is |
+|---|---|
+| `bitcoin-logbook-trades.csv` | The 18 trades of `/blog/bitcoin-dca-vs-lump-sum/trades.csv`, in tradeData columns. |
+| `bitcoin-logbook-trades.meta.json` | Source, SHA-256 of the source and of the CSV, rows, buys, sells, first/last date. |
+| `bitcoin-logbook-trades.data.js` | The same CSV + metadata as a script, so the page works from `file://`. **Generated.** |
+
+When the blog's `trades.csv` changes, regenerate all three from the website repo root (Python 3, nothing to install):
+
+```bash
+python3 .github/scripts/build_trade_data.py
+```
+
+The tests fail until you do: they check the copy against the source's SHA-256 and row by row.
 
 ## Price data
 

@@ -18,7 +18,6 @@
 (function () {
   'use strict';
   var test = T.test, assert = T.assert, DCA = BitcoinDCA;
-  var dca = DCA.getStrategy('standard-dca');
   T.section('Comparison with bitcoindata.science', 'tests/fixtures/bitcoindata.js');
 
   var cache = {};
@@ -30,6 +29,11 @@
       cache.fixture = f;
     }
     return cache.fixture;
+  }
+  /** Standard DCA through the engine, in the shape these comparisons read. */
+  function runDca(prices, s) {
+    var r = DCA.run({ strategyId: 'standard-dca', amount: s.amount, fee: 0, frequency: s.frequency, startDate: s.start, endDate: s.end }, prices);
+    return { dates: r.trades.map(function (t) { return t.date; }), buys: r.summary.buys, invested: r.summary.invested, btc: r.summary.btcHeld, avgCost: r.summary.avgCost };
   }
   function ourData() {
     if (!cache.ours) cache.ours = DCA.parseCsv(T.priceData().csvText);
@@ -54,10 +58,10 @@
       T.note('bitcoindata.science displayed', { purchases: t.purchases, invested: t.invested, btc: t.btc, avgCost: t.avgCost, value: t.value, roiPct: t.roiPct, spot: t.spot });
       T.note('How values are compared', 'They value holdings at their live spot price, so our value = our BTC × their spot. Tolerances allow for their rounding: BTC to 8 decimals on every purchase, whole dollars on screen.');
       (function () {
-        var r = dca.run({ prices: f.prices, amount: s.amount, feePct: 0, frequency: s.frequency, start: s.start, end: s.end });
+        var r = runDca(f.prices, s);
 
-        assert.deepEqual(r.purchases.map(function (p) { return p.date; }), t.buyDates, 'buy dates');
-        assert.equal(r.purchases.length, t.purchases, 'number of purchases');
+        assert.deepEqual(r.dates, t.buyDates, 'buy dates');
+        assert.equal(r.buys, t.purchases, 'number of purchases');
         assert.equal(r.invested, t.invested, 'total invested');
 
         var btcTol = t.purchases * 5e-9 + 5e-9;          // their per-purchase 8 dp rounding
@@ -78,8 +82,8 @@
       T.note('Prices used', 'our data/btc-usd-daily.csv (' + ours.count + ' rows, ' + ours.firstDate + ' → ' + ours.lastDate + ')');
       T.note('bitcoindata.science BTC', s.theirs.btc);
       (function () {
-        var r = dca.run({ prices: ours.prices, amount: s.amount, feePct: 0, frequency: s.frequency, start: s.start, end: s.end });
-        assert.equal(r.purchases.length, s.theirs.purchases, 'number of purchases');
+        var r = runDca(ours.prices, s);
+        assert.equal(r.buys, s.theirs.purchases, 'number of purchases');
         var diffPct = (r.btc / s.theirs.btc - 1) * 100;
         assert.ok(Math.abs(diffPct) <= 3, 'BTC differs by ' + diffPct.toFixed(2) + '% (ours ' + r.btc.toFixed(8) + ', theirs ' + s.theirs.btc + ')');
       })();

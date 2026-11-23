@@ -11,18 +11,18 @@
   var prices = null;
   function run(strategyId, input) {
     if (!prices) prices = DCA.parseCsv(T.priceData().csvText).prices;
-    return DCA.getStrategy(strategyId).run({
-      prices: prices, amount: input.amount, feePct: input.feePct || 0,
-      frequency: input.frequency, start: input.start, end: input.end
-    });
+    return DCA.run({
+      strategyId: strategyId, amount: input.amount, fee: input.feePct || 0,
+      frequency: input.frequency, startDate: input.start, endDate: input.end
+    }, prices).summary;
   }
   function check(r, e) {
-    if ('buys' in e) assert.equal(r.purchases.length, e.buys, 'number of purchases');
+    if ('buys' in e) assert.equal(r.buys, e.buys, 'number of buys');
     if ('invested' in e) assert.close(r.invested, e.invested, 0.005, 'invested (USD)');
     if ('fees' in e) assert.close(r.fees, e.fees, 0.005, 'fees (USD)');
-    if ('btc' in e) assert.close(r.btc, e.btc, 5e-9, 'BTC');
+    if ('btc' in e) assert.close(r.btcHeld, e.btc, 5e-9, 'BTC');
     if ('avgCost' in e) assert.close(r.avgCost, e.avgCost, 0.005, 'average cost (USD)');
-    if ('value' in e) assert.close(r.value, e.value, 0.005, 'final value (USD)');
+    if ('value' in e) assert.close(r.totalValue, e.value, 0.005, 'final value (USD)');
     if ('roiPct' in e) assert.close(r.roi * 100, e.roiPct, 0.005, 'return (%)');
     if ('endPrice' in e) assert.close(r.endPrice, e.endPrice, 0.005, 'end price (USD)');
   }
@@ -44,7 +44,7 @@
     test('history table: $100 monthly from ' + row[0] + ' to ' + END, function () {
       var r = run('standard-dca', { amount: 100, frequency: 'monthly', start: row[0], end: END });
       check(r, row[1]);
-      assert.close(run('lump-sum', { amount: r.invested, start: row[0], end: END }).value, row[2], 0.005, 'lump sum of the same total (USD)');
+      assert.close(run('lump-sum', { amount: r.invested, start: row[0], end: END }).totalValue, row[2], 0.005, 'lump sum of the same total (USD)');
     });
   });
 

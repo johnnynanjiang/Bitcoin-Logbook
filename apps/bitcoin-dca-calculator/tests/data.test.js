@@ -47,13 +47,12 @@
 
   test('the whole history runs through every strategy', function () {
     var c = load().csv;
-    BitcoinDCA.listStrategies().forEach(function (s) {
-      var r = s.run({ prices: c.prices, amount: 100, feePct: 0, frequency: 'monthly', start: c.firstDate, end: c.lastDate });
-      assert.ok(r.value > 0 && isFinite(r.roi), s.id + ': finite result');
+    DCA.listStrategies().forEach(function (s) {
+      var m = DCA.run({ strategyId: s.id, amount: 100, fee: 0, frequency: 'monthly', startDate: c.firstDate, endDate: c.lastDate }, c.prices).summary;
+      assert.ok(m.totalValue > 0 && isFinite(m.roi), s.id + ': finite result');
     });
-    var r = DCA.getStrategy('standard-dca').run({ prices: c.prices, amount: 100, feePct: 0, frequency: 'monthly', start: c.firstDate, end: c.lastDate });
-    assert.ok(r.purchases.length > 190, 'monthly buys since 2010');
-    assert.ok(r.value > 0 && isFinite(r.roi), 'finite result');
+    var m = DCA.run({ strategyId: 'standard-dca', amount: 100, fee: 0, frequency: 'monthly', startDate: c.firstDate, endDate: c.lastDate }, c.prices).summary;
+    assert.ok(m.buys > 190, 'monthly buys since 2010');
   });
 
   // The browser tests read data/btc-usd-daily.js; make sure it is an exact copy of the real files.
